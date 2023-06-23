@@ -2,6 +2,7 @@
 
 @section('content')
 
-<p>Toto</p>
+<p class="text-main">Toto</p>
+<p class="text-light">Toto</p>
 
 @endsection
