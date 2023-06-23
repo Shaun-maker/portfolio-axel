@@ -10,7 +10,7 @@
         @livewireStyles
 
     </head>
-    <body class="antialiased">
+    <body class="antialiased text-main">
         @include('partials._header')
 
         <main>
