@@ -2,7 +2,11 @@
 
 @section('content')
 
-<p class="text-main">Toto</p>
-<p class="text-light">Toto</p>
+<p class="font-ibm-plex text-3xl">
+    The quick brown fox jumps over the lazy dogs
+</p>
+<p class="font-poppins text-3xl">
+    The quick brown fox jumps over the lazy dogs
+</p>
 
 @endsection

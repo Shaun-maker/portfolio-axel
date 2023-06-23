@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/assets/fonts/IBMPlexSans-Regular.ttf', function () {
+    $path = public_path('assets/fonts/' . "IBMPlexSans-Regular.ttf");
+
+    if (file_exists($path)) {
+        return response()->file($path);
+    }
+
+    abort(404);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
