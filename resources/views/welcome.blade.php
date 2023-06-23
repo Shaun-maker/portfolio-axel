@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p class="font-ibm-plex text-3xl">
+<p class="text-3xl">
     The quick brown fox jumps over the lazy dogs
 </p>
 

@@ -14,8 +14,7 @@ export default {
       },
     },
     fontFamily: {
-      'poppins' : ['Poppins', 'sans-serif'],
-      'ibm-plex' : ['ibm plex sans', 'sans-serif'],
+      'sans' : ['ibm plex sans', 'sans-serif'],
     }
   },
   plugins: [],
