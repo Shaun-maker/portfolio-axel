@@ -1,12 +1,26 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
-@import url('https://fonts.cdnfonts.com/css/ibm-plex-sans');
+/* @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans'); */
 
-/* @font-face{
+@font-face{
     font-family:ibm plex sans;
     font-style:normal;
-    font-weight:400;
-    src:url(assets/fonts/IBMPlexSans-Regular.ttf) format('ttf');
-} */
+    font-weight: 400;
+    src:url(../fonts/IBMPlexSans-Regular.ttf);
+}
+
+@font-face{
+    font-family:ibm plex sans;
+    font-style:normal;
+    font-weight: 600;
+    src:url(../fonts/IBMPlexSans-SemiBold.ttf);
+}
+
+@font-face{
+    font-family:ibm plex sans;
+    font-style:normal;
+    font-weight: 700;
+    src:url(../fonts/IBMPlexSans-Bold.ttf);
+}
 
 @tailwind base;
 @tailwind components;
