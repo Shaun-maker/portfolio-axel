@@ -3,10 +3,10 @@
         Axel
     </a>
     <nav class="basis-2/3 flex justify-end max-w-5xl gap-16">
-        <a class="uppercase">
+        <a href="#" class="uppercase">
             projets
         </a>
-        <a class="uppercase">
+        <a href="#" class="uppercase">
             contact
         </a>
     </nav>
