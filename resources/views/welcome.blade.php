@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p class="text-3xl">
+<p class="text-3xl h-60">
     The quick brown fox jumps over the lazy dogs
 </p>
 
