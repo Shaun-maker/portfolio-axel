@@ -19,18 +19,21 @@
             contact@axelweb.fr
         </a>
         <div class="flex gap-8">
-            <a href="#" class="flex flex-col items-center gap-1">
-                <i class="fa-brands fa-linkedin text-4xl"></i>
-                <span>LinkedIn</span>
-            </a>
-            <a href="#" class="flex flex-col items-center gap-1">
-                <i class="fa-regular fa-file text-4xl"></i>
-                <span>CV</span>
-            </a>
-            <a href="#" class="flex flex-col items-center gap-1">
-                <i class="fa-brands fa-github text-4xl"></i>
-                <span>GitHub</span>
-            </a>
+            <x-social-media 
+                class="fa-brands fa-linkedin"
+                href="https://www.linkedin.com/in/axel-paillaud/"
+            >
+                LinkedIn
+            </x-social-media>
+            <x-social-media class="fa-regular fa-file">
+                CV
+            </x-social-media>
+            <x-social-media 
+                class="fa-brands fa-github"
+                href="https://github.com/Shaun-maker"
+            >
+                GitHub
+            </x-social-media>
         </div>
     </section>
     <div class="p-8">
