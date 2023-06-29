@@ -1,6 +1,6 @@
 <footer class="bg-main text-white">
-    <div class="py-11 relative border-b-2">
-        <div class="text-2xl font-semibold flex items-center">
+    <div class="py-11 relative border-b-2 overflow-hidden relative flex items-center">
+        <div class="text-2xl font-semibold flex items-center absolute animate-marquee">
             <span>Contact</span>
             <i class="fa-solid fa-circle text-xs ml-16"></i>
         </div>
