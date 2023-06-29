@@ -5,18 +5,18 @@
             <i class="fa-solid fa-circle text-xs ml-16"></i>
         </div>
     </div>
-    <section class="flex flex-col items-center gap-16 p-16 border-b-2">
-        <p class="text-2xl">
+    <section class="flex flex-col items-center gap-16 sm:p-16 p-8 border-b-2">
+        <p class="sm:text-2xl text-xl text-center">
             Une idée ? Un projet sur lequel vous avez besoin d'aide ? Une question ?
         </p>
-        <p class="text-6xl uppercase">
+        <p class="sm:text-6xl text-4xl text-center uppercase">
             contactez-moi
         </p>
         <a 
-            href="mailto:contact@axelpaillaud.fr?subject=Contact depuis Portfolio !"
-            class="text-2xl"
+            href="mailto:contact@axelweb.fr?subject=Contact depuis Portfolio !"
+            class="sm:text-2xl text-xl"
         >
-            contact@axelpaillaud.fr
+            contact@axelweb.fr
         </a>
         <div class="flex gap-8">
             <a href="#" class="flex flex-col items-center gap-1">
