@@ -10,12 +10,12 @@ export default {
     extend: {
       keyframes: {
         marquee: {
-          'from': {right: '-150px'},
+          'from': {right: '-160px'},
 	        'to': {right: '2070px'},
         }
       },
       animation: {
-        marquee: 'marquee 20s linear infinite',
+      marquee: 'marquee 40s linear infinite',
       },
       colors: {
         main: '#871414',

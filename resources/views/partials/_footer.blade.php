@@ -1,10 +1,19 @@
 <footer class="bg-main text-white">
-    <div class="py-11 relative border-b-2 overflow-hidden relative flex items-center">
-        <div class="text-2xl font-semibold flex items-center absolute animate-marquee">
+{{--     <div class="py-16 relative border-b-2 overflow-hidden relative flex items-center">
+        <div class="text-2xl font-semibold flex items-center absolute animate-marquee" style="animation-delay: -4s">
             <span>Contact</span>
             <i class="fa-solid fa-circle text-xs ml-16"></i>
         </div>
-    </div>
+        <div class="text-2xl font-semibold flex items-center absolute animate-marquee" style="animation-delay: -8s">
+            <span>Contact</span>
+            <i class="fa-solid fa-circle text-xs ml-16"></i>
+        </div>
+        <div class="text-2xl font-semibold flex items-center absolute animate-marquee" style="animation-delay: -12s">
+            <span>Contact</span>
+            <i class="fa-solid fa-circle text-xs ml-16"></i>
+        </div>
+    </div> --}}
+    <x-marquee-contact />
     <section class="flex flex-col items-center gap-16 sm:p-16 p-8 border-b-2">
         <p class="sm:text-2xl text-xl text-center">
             Une idée ? Un projet sur lequel vous avez besoin d'aide ? Une question ?
