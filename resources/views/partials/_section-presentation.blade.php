@@ -54,7 +54,7 @@
                 transition-all duration-700 ease-out left-7">
             </i>
             <div 
-                class="group-hover:translate-x-3.5 transition-transform duration-700
+                class="group-hover:translate-x-3 transition-transform duration-700
                 ease-out"
             >
                 voir mes projets
