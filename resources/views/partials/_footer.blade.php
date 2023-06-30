@@ -39,7 +39,7 @@
             </x-social-media>
             <x-social-media 
                 class="fa-brands fa-github"
-                href="https://github.com/Shaun-maker"
+                href="https://github.com/axel-paillaud"
             >
                 GitHub
             </x-social-media>
