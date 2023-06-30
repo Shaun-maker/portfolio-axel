@@ -51,10 +51,10 @@
         >
             <i 
                 class="fa-solid fa-circle absolute text-[0] group-hover:text-xs 
-                transition-all duration-500 ease-out left-7">
+                transition-all duration-700 ease-out left-7">
             </i>
             <div 
-                class="group-hover:translate-x-3.5 transition-transform duration-500
+                class="group-hover:translate-x-3.5 transition-transform duration-700
                 ease-out"
             >
                 voir mes projets
