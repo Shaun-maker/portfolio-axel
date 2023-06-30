@@ -3,8 +3,11 @@
 @section('content')
 
 {{-- Presentation section --}}
-<section>
-    <div>
+<section class="text-2xl flex px-32 pb-16 bg-light">
+
+    {{-- Bloc 1 : Name and stack --}}
+
+    <div class="flex flex-col justify-evenly">
         <p>Axel Paillaud, 28 ans</p>
         <h3>
             Fullstack<br>
@@ -13,6 +16,9 @@
             & more
         </h3>
     </div>
+
+    {{-- Bloc 2 : Pictures and social media --}}
+
     <div>
         <picture>
             <img src="" alt="">
@@ -28,6 +34,9 @@
             </a>
         </div>
     </div>
+
+    {{-- Bloc 3 : CTA button and geographic mobility --}}
+
     <div>
         <a href="#">Voir mes projets</a>
         <h3>
