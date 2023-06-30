@@ -44,7 +44,22 @@
     {{-- Bloc 3 : CTA button and geographic mobility --}}
 
     <div class="basis-1/3 flex flex-col justify-evenly items-end">
-        <a href="#">Voir mes projets</a>
+        <a 
+            href="#"
+            class="relative text-white bg-main py-5 px-11 rounded-full self-center
+            text-base uppercase flex items-center group"
+        >
+            <i 
+                class="fa-solid fa-circle absolute text-[0] group-hover:text-xs 
+                transition-all duration-500 ease-out left-7">
+            </i>
+            <div 
+                class="group-hover:translate-x-3.5 transition-transform duration-500
+                ease-out"
+            >
+                voir mes projets
+            </div>
+        </a>
         <h3 class="max-w-[20rem]">
             Développeur web sur Orléans, Loiret.<br>
             Mobile sur Tours, Blois, Paris.<br>
