@@ -10,7 +10,7 @@ export default {
     extend: {
       keyframes: {
         marquee: {
-          'from': {right: '-160px'},
+          'from': {right: '-450px'},
 	        'to': {right: '2070px'},
         }
       },
