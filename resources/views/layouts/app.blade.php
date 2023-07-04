@@ -11,13 +11,18 @@
 
     </head>
     <body class="antialiased text-main">
-        @include('partials._header')
 
-        <main>
-            @yield('content')
-        </main>
+        <div class="viewport">
 
-        @include('partials._footer')
+            @include('partials._header')
+
+            <main>
+                @yield('content')
+            </main>
+
+            @include('partials._footer')
+
+        </div>
 
        @livewireScripts
     </body>
