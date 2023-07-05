@@ -6,10 +6,9 @@
     hover:after:opacity-100 hover:after:translate-y-[1.30rem]";
 @endphp
 
-<a 
+<button
 {{ $attributes->merge(['class' => $classes ]) }}
-href="{{ $href ?? '#'}}"
-data-navlink
+data-navlink="{{ $data ?? ''}}"
 >
     {{ $slot }}
-</a>
+</button>

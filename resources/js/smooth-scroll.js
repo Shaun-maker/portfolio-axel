@@ -1,9 +1,16 @@
 let body = document.body;
-var setScrollValue = false;
+
+const EASE_SLOW = 0.003;
+const EASE_SPEED = 0.020;
+
+let scrollPosition = {
+    project: 1440,
+    contact: 1920,
+}
 
 let scroller = {
     target: document.getElementById('js-smooth-scroll'),
-    ease: 0.003,
+    ease: EASE_SLOW,
     endY: 0,
     y: 0,
     scrollRequest: 0,
@@ -30,13 +37,7 @@ function updateScroller() {
       body.style.height = height + "px";
       scroller.resizeRequest = 0;
     }
-    //let scrollY = window.scrollY;
-    let scrollY;
-    if (!setScrollValue) {
-        scrollY = window.scrollY;
-    } else {
-        scrollY = setScrollValue;
-    }
+    let scrollY = window.scrollY;
 
     scroller.endY = scrollY;
     
@@ -54,7 +55,6 @@ function updateScroller() {
 }
 
 const onScroll = function() {
-    setScrollValue = false;
     scroller.scrollRequest++;
     requestId = requestAnimationFrame(updateScroller);
 }
@@ -64,19 +64,27 @@ const onResize = function() {
     requestId = requestAnimationFrame(updateScroller);
 }
 
+/* Smooth scroll for anchor tag on Navmenu */
+
 document.querySelectorAll('[data-navlink]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
+        e.preventDefault();
 
-      console.log(e.target.href);
+        let target = e.target.dataset.navlink;
 
-        setScrollValue = 1400;
+        // We want to increase scroll speed only for anchor tag, and set it to
+        // default slow ease after.
+        scroller.ease = EASE_SPEED;
+        setTimeout(() => {
+            scroller.ease = EASE_SLOW;
+        }, 2000);
+
         scroller.scrollRequest++;
         document.getElementById('js-header').style.transform = "translate(0, -100%)"
         requestId = requestAnimationFrame(updateScroller);
 
         window.scrollTo({
-            top: 1400
-          });
+            top: scrollPosition[target],
+        });
     });
   });
