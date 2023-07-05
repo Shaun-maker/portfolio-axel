@@ -2,7 +2,8 @@ let header = {
     target: document.getElementById('js-header'),
     y: 0,
     preventTrigger: false,
-    hide: false
+    hide: false,
+    valueAtFirstContent: 120,
 }
 
 window.addEventListener('load', onLoad);
@@ -14,7 +15,8 @@ function onLoad() {
 function onScroll() {
     let scrollY = window.scrollY;
 
-    scrollY > 55 ? header.hide = true : header.hide = false;
+    // If header did not reach first content, don't hide it
+    scrollY > header.valueAtFirstContent ? header.hide = true : header.hide = false;
 
 
     if (!header.preventTrigger) {
@@ -29,11 +31,7 @@ function onScroll() {
 
         setTimeout(() => {
             header.preventTrigger = false;
-        }, 300)
+        }, 100)
     }
     header.y = scrollY;
-
-    if (header.y != scrollY) {
-        onScroll();
-    }
 }
