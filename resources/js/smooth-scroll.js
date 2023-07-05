@@ -6,22 +6,29 @@ let scroller = {
     endY: 0,
     y: 0,
     scrollRequest: 0,
+    resizeRequest: 1,
 }
 
 var requestId = null;
-
-let height = scroller.target.clientHeight;
-body.style.height = height + "px";
 
 window.addEventListener('load', onLoad);
 
 function onLoad() {
     updateScroller();
     window.focus();
-    window.addEventListener('scroll', onScroll);
+    document.addEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize);
+
 }
 
 function updateScroller() {
+    let resized = scroller.resizeRequest > 0;
+    
+    if (resized) {    
+      var height = scroller.target.clientHeight;
+      body.style.height = height + "px";
+      scroller.resizeRequest = 0;
+    }
     let scrollY = window.scrollY;
 
     scroller.endY = scrollY;
@@ -47,3 +54,7 @@ const onScroll = function() {
     requestId = requestAnimationFrame(updateScroller);
 }
 
+const onResize = function() {
+    scroller.resizeRequest++;
+    requestId = requestAnimationFrame(updateScroller);
+}
