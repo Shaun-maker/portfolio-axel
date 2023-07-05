@@ -34,7 +34,6 @@ function updateScroller() {
     scroller.endY = scrollY;
     
     scroller.y += (scrollY - scroller.y) * scroller.ease;
-    console.log(scroller.y);
 
     if (Math.abs(scrollY - scroller.y) < 0.5) {
         scroller.y = scrollY;

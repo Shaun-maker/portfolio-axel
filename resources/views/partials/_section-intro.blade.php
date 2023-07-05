@@ -1,4 +1,4 @@
-<section class="pb-24 pr-24 pl-60 pt-36 border-b-2 border-main">
+<section class="pb-24 pr-24 pl-60 pt-52 border-b-2 border-main">
     <h2 class="text-right text-8.5xl w-4/5 ml-auto mb-20">
         Développeur web freelance basé à Orléans
     </h2>
