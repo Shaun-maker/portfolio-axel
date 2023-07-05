@@ -13,12 +13,8 @@
     {{-- Smooth scroll body, fixed height --}}
     <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
 
-<<<<<<< HEAD
-        <div class="" id="js-smooth-scroll">
-=======
         {{-- Smooth scroll viewport, fixed --}}
         <div class="fixed overflow-hidden w-full h-full inset-0">
->>>>>>> smooth-scroll
 
             {{-- Smooth scroll container, absolute --}}
             <div 
