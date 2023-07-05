@@ -10,17 +10,31 @@
         @livewireStyles
 
     </head>
-    <body class="antialiased text-main">
+    {{-- Smooth scroll body, fixed height --}}
+    <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
 
+<<<<<<< HEAD
         <div class="" id="js-smooth-scroll">
+=======
+        {{-- Smooth scroll viewport, fixed --}}
+        <div class="fixed overflow-hidden w-full h-full inset-0">
+>>>>>>> smooth-scroll
 
-            @include('partials._header')
+            {{-- Smooth scroll container, absolute --}}
+            <div 
+                id="js-smooth-scroll" 
+                class="absolute overflow-hidden"
+            >
 
-            <main>
-                @yield('content')
-            </main>
+                @include('partials._header')
 
-            @include('partials._footer')
+                <main>
+                    @yield('content')
+                </main>
+
+                @include('partials._footer')
+
+            </div>
 
         </div>
 
