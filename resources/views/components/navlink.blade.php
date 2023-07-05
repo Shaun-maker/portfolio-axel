@@ -9,6 +9,7 @@
 <a 
 {{ $attributes->merge(['class' => $classes ]) }}
 href="{{ $href ?? '#'}}"
+data-navlink
 >
     {{ $slot }}
 </a>

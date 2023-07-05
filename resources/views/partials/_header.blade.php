@@ -13,7 +13,7 @@
     <nav 
         class="basis-2/3 flex justify-end max-w-5xl sm:gap-16 gap-8 sm:mr-8 mr-4"
     >
-        <x-navlink>projets</x-navlink>
+        <x-navlink href="/#projects">projets</x-navlink>
         <x-navlink>contact</x-navlink>
     </nav>
 </header>
