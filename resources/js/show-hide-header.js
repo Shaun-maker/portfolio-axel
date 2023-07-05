@@ -18,7 +18,8 @@ function onScroll() {
     // If header did not reach first content, don't hide it
     scrollY > header.valueAtFirstContent ? header.hide = true : header.hide = false;
 
-
+    // preventTrigger is because scroll event is fired at high rate,
+    // we don't need to check that much if we can hide or show header and we want to save some CPU
     if (!header.preventTrigger) {
 
         if (scrollY > header.y && header.hide) {

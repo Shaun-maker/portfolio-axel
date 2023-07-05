@@ -8,7 +8,7 @@
 
 <a 
 {{ $attributes->merge(['class' => $classes ]) }}
-href="#"
+href="{{ $href ?? '#'}}"
 >
     {{ $slot }}
 </a>
