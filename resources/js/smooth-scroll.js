@@ -2,7 +2,7 @@ let body = document.body;
 
 let scroller = {
     target: document.getElementById('js-smooth-scroll'),
-    ease: 0.005,
+    ease: 0.003,
     endY: 0,
     y: 0,
     scrollRequest: 0,
