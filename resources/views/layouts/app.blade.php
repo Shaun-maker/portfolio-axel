@@ -12,7 +12,7 @@
     </head>
     <body class="antialiased text-main">
 
-        <div class="fixed" id="js-smooth-scroll">
+        <div class="" id="js-smooth-scroll">
 
             @include('partials._header')
 
