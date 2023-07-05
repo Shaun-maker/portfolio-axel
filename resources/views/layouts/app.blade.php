@@ -19,7 +19,7 @@
             {{-- Smooth scroll container, absolute --}}
             <div 
                 id="js-smooth-scroll" 
-                class="absolute overflow-hidden transition-all ease-in-out duration-500"
+                class="absolute overflow-hidden"
             >
 
                 @include('partials._header')
