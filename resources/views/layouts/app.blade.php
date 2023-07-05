@@ -11,7 +11,7 @@
 
     </head>
     {{-- Smooth scroll body, fixed height --}}
-    <body class="antialiased text-main overflow-x-hidden overflow-y-scroll h-[2000px]">
+    <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
 
         {{-- Smooth scroll viewport, fixed --}}
         <div class="fixed overflow-hidden w-full h-full inset-0">
