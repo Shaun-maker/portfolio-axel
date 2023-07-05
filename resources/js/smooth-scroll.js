@@ -80,7 +80,10 @@ document.querySelectorAll('[data-navlink]').forEach(anchor => {
         }, 2000);
 
         scroller.scrollRequest++;
+
+        // Hide header when scroll down to target
         document.getElementById('js-header').style.transform = "translate(0, -100%)"
+        
         requestId = requestAnimationFrame(updateScroller);
 
         window.scrollTo({
