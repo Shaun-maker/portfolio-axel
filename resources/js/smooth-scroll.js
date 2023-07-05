@@ -57,3 +57,4 @@ const onResize = function() {
     scroller.resizeRequest++;
     requestId = requestAnimationFrame(updateScroller);
 }
+
