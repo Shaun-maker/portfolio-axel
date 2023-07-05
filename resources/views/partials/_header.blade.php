@@ -1,4 +1,4 @@
-<header class="border-solid border-b-2 border-main flex items-center">
+<header class="border-solid border-b-2 border-main flex items-center sticky top-0 left-0 bg-white z-50">
     <a 
         href="/" 
         class="sm:text-5xl text-2xl font-bold text-main sm:border-r-2 border-main 
