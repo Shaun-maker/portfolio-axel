@@ -74,5 +74,9 @@ document.querySelectorAll('[data-navlink]').forEach(anchor => {
         scroller.scrollRequest++;
         document.getElementById('js-header').style.transform = "translate(0, -100%)"
         requestId = requestAnimationFrame(updateScroller);
+
+        window.scrollTo({
+            top: 1400
+          });
     });
   });
