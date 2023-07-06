@@ -20,7 +20,7 @@
             <picture class="block w-[512px] h-[512px]">
                 <source srcset="images/profile.webp" type="image/webp">
                 <img
-                    data-parallax data-direction="up" data-speed="0.1"
+                    data-parallax data-direction="up" data-speed="0.1" data-defer="20"
                     src="images/profile.jpg" 
                     alt="Axel Paillaud, développeur web"
                     width="512" height="512"

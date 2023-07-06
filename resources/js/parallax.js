@@ -3,27 +3,18 @@ let parallax = {
     target: document.querySelectorAll('[data-parallax]'),
 }
 
-// Set default value
+// Set default value if data-attribute is not set
 
 parallax.target.forEach((parallaxElt) => {
 
-    if (parallaxElt.dataset.speed) parallaxElt.speed = parallaxElt.dataset.speed;
-    else parallaxElt.speed = 0.3;
-
-    if (parallaxElt.dataset.ease) parallaxElt.ease = parallaxElt.dataset.ease;
-    else parallaxElt.ease = 0.002;
-
-    if (parallaxElt.dataset.endY) parallaxElt.endY = parallaxElt.dataset.endY;
-    else parallaxElt.endY = 600;
-
-    if (parallaxElt.dataset.direction == "up")  parallaxElt.direction = "-"
-    else parallaxElt.direction = "";
-
+    parallaxElt.speed = parallaxElt.dataset.speed || 0.3;
+    parallaxElt.ease = parallaxElt.dataset.ease || 0.002;
+    parallaxElt.endY = parallaxElt.dataset.endY || 600;
+    parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
+    parallaxElt.defer = parallaxElt.dataset.defer || 0;
     parallaxElt.pos = 0;
-});
 
-parallax.target[1].startY = 20;
-parallax.target[0].startY = 0;
+});
 
 var requestId = null;
 
@@ -45,7 +36,7 @@ function updateParallax() {
 
         if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
         
-        parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.startY) * parallaxElt.ease;
+        parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
 
         if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
             parallaxElt.pos = scrollY;
