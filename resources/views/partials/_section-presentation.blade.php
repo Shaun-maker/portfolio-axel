@@ -1,3 +1,7 @@
+{{-- Horizontal line expand --}}
+
+<div id="js-line-expand" class="h-0.5 bg-main w-0 transition-all ease-out duration-[2500ms]"></div>
+
 {{-- Presentation section --}}
 <section class="text-2xl flex px-32 pb-16 bg-light gap-16">
 
