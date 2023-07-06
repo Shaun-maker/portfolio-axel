@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/assets/fonts/IBMPlexSans-Regular.ttf', function () {
+/* Route::get('/assets/fonts/IBMPlexSans-Regular.ttf', function () {
     $path = public_path('assets/fonts/' . "IBMPlexSans-Regular.ttf");
 
     if (file_exists($path)) {
@@ -21,7 +21,7 @@ Route::get('/assets/fonts/IBMPlexSans-Regular.ttf', function () {
     }
 
     abort(404);
-});
+}); */
 
 Route::get('/', function () {
     return view('home');
