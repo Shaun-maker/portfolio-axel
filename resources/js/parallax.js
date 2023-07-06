@@ -1,9 +1,9 @@
-// default value
-
 let parallax = {
     parallaxRequest: 0,
     target: document.querySelectorAll('[data-parallax]'),
 }
+
+// Set default value
 
 parallax.target.forEach((parallaxElt) => {
 
@@ -16,8 +16,6 @@ parallax.target.forEach((parallaxElt) => {
     if (parallaxElt.dataset.endY) parallaxElt.endY = parallaxElt.dataset.endY;
     else parallaxElt.endY = 600;
 
-/*     if (parallaxElt.dataset.direction) parallaxElt.direction = parallaxElt.dataset.direction;
-    else parallaxElt.direction = 600; */
     if (parallaxElt.dataset.direction == "up")  parallaxElt.direction = "-"
     else parallaxElt.direction = "";
 
