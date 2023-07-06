@@ -3,7 +3,7 @@ let header = {
     y: 0,
     preventTrigger: false,
     hide: false,
-    valueAtFirstContent: 120,
+    valueAtFirstContent: 200,
 }
 
 window.addEventListener('load', onLoad);
