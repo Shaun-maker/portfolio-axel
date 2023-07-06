@@ -1,4 +1,4 @@
-<section data-parallax data-speed="0.3"
+<section data-parallax data-speed="0.4"
     class="relative -z-10 pb-24 pr-24 pl-60 pt-72 border-main"
 >
     <h2 id="js-split-text" 
