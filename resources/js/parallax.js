@@ -22,7 +22,8 @@ parallax.target.forEach((parallaxElt) => {
     parallaxElt.pos = 0;
 });
 
-console.log(parallax.target[1].ease);
+parallax.target[1].startY = 20;
+parallax.target[0].startY = 0;
 
 var requestId = null;
 
@@ -44,7 +45,7 @@ function updateParallax() {
 
         if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
         
-        parallaxElt.pos += (scrollY - parallaxElt.pos) * parallaxElt.ease;
+        parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.startY) * parallaxElt.ease;
 
         if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
             parallaxElt.pos = scrollY;
