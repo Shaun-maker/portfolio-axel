@@ -19,7 +19,7 @@ parallax.target.forEach((parallaxElt) => {
 /*     if (parallaxElt.dataset.direction) parallaxElt.direction = parallaxElt.dataset.direction;
     else parallaxElt.direction = 600; */
     if (parallaxElt.dataset.direction == "up")  parallaxElt.direction = "-"
-    else parallaxElt.direction = ""
+    else parallaxElt.direction = "";
 
     parallaxElt.pos = 0;
 });
@@ -54,6 +54,7 @@ function updateParallax() {
         }
 
         parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
+
     });
 
     requestId = parallax.parallaxRequest > 0 ? 

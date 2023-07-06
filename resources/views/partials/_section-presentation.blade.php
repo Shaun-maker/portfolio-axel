@@ -16,16 +16,18 @@
     {{-- Bloc 2 : Pictures and social media --}}
 
     <div class="flex basis-1/3 flex-col gap-16">
-        <picture class="block w-[512px] h-[512px]">
-            <source srcset="images/profile.webp" type="image/webp">
-            <img
-                data-parallax data-direction="up"
-                src="images/profile.jpg" 
-                alt="Axel Paillaud, développeur web"
-                width="512" height="512"
-                class="block w-[512px] h-[512px] object-cover object-top border-x-2 border-b-2 border-main relative"
-            >
-        </picture>
+        <div class="border-x-2 border-b-2 border-main overflow-hidden" >
+            <picture class="block w-[512px] h-[512px]">
+                <source srcset="images/profile.webp" type="image/webp">
+                <img
+                    data-parallax data-direction="up" data-speed="0.08"
+                    src="images/profile.jpg" 
+                    alt="Axel Paillaud, développeur web"
+                    width="512" height="512"
+                    class="block w-[512px] h-[512px] object-cover relative"
+                >
+            </picture>
+            </div>
         <div class="flex justify-evenly">
             <x-social-media 
                 class="fa-brands fa-github"
