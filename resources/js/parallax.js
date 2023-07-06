@@ -1,10 +1,30 @@
+// default value
+
 let parallax = {
-    speed: 0.002,
-    y: 0,
     parallaxRequest: 0,
     target: document.querySelectorAll('[data-parallax]'),
-    endY: 550,
 }
+
+parallax.target.forEach((parallaxElt) => {
+
+    if (parallaxElt.dataset.speed) parallaxElt.speed = parallaxElt.dataset.speed;
+    else parallaxElt.speed = 0.3;
+
+    if (parallaxElt.dataset.ease) parallaxElt.ease = parallaxElt.dataset.ease;
+    else parallaxElt.ease = 0.002;
+
+    if (parallaxElt.dataset.endY) parallaxElt.endY = parallaxElt.dataset.endY;
+    else parallaxElt.endY = 600;
+
+/*     if (parallaxElt.dataset.direction) parallaxElt.direction = parallaxElt.dataset.direction;
+    else parallaxElt.direction = 600; */
+    if (parallaxElt.dataset.direction == "up")  parallaxElt.direction = "-"
+    else parallaxElt.direction = ""
+
+    parallaxElt.pos = 0;
+});
+
+console.log(parallax.target[1].ease);
 
 var requestId = null;
 
@@ -21,24 +41,21 @@ const onScroll = function() {
 
 function updateParallax() {
     parallax.target.forEach((parallaxElt) => {
-        let scrollY = window.scrollY * 0.3;
-
-        if (scrollY > parallax.endY) scrollY = parallax.endY;
         
-        parallax.y += (scrollY - parallax.y) * parallax.speed;
-        console.log(Math.abs(scrollY - parallax.y));
-        if (Math.abs(scrollY - parallax.y) < 0.05) {
-            parallax.y = scrollY;
+        let scrollY = window.scrollY * parallaxElt.speed;
+
+        if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
+        
+        parallaxElt.pos += (scrollY - parallaxElt.pos) * parallaxElt.ease;
+
+        if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
+            parallaxElt.pos = scrollY;
             parallax.parallaxRequest = 0;
-        }    
-        parallaxElt.style.transform = `translateY(${parallax.y}px)`
+        }
+
+        parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
     });
+
     requestId = parallax.parallaxRequest > 0 ? 
     requestAnimationFrame(updateParallax) : null;
 }
-
-
-
-document.querySelectorAll('[data-parallax]').forEach((parallaxElt) => {
-    //console.log(parallaxElt);
-})

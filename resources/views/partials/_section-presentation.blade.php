@@ -18,11 +18,12 @@
     <div class="flex basis-1/3 flex-col gap-16">
         <picture class="block w-[512px] h-[512px]">
             <source srcset="images/profile.webp" type="image/webp">
-            <img 
+            <img
+                data-parallax data-direction="up"
                 src="images/profile.jpg" 
                 alt="Axel Paillaud, développeur web"
                 width="512" height="512"
-                class="block w-[512px] h-[512px] object-cover object-top border-x-2 border-b-2 border-main"
+                class="block w-[512px] h-[512px] object-cover object-top border-x-2 border-b-2 border-main relative"
             >
         </picture>
         <div class="flex justify-evenly">

@@ -1,4 +1,4 @@
-<section data-parallax 
+<section data-parallax data-speed="0.3"
     class="relative -z-10 pb-24 pr-24 pl-60 pt-72 border-b-2 border-main"
 >
     <h2 class="text-right text-8.5xl w-4/5 ml-auto mb-20">
