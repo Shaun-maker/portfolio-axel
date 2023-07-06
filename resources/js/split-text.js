@@ -22,7 +22,7 @@ function splitText() {
         childSpan.style.transform = "translate(0, 90%)";
         childSpan.style.animationFillMode = "forwards";
         childSpan.style.animationDelay = `${animationDelay}s`;
-        animationDelay += 0.15;
+        animationDelay += 0.18;
 
         childSpan.textContent = char;
         parentSpan.append(childSpan);
