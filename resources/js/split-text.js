@@ -20,6 +20,7 @@ function splitText() {
         parentSpan.classList.add('overflow-hidden');
         childSpan.classList.add('animate-splitText', 'block');
         childSpan.style.transform = "translate(0, 90%)";
+        
         childSpan.style.animationFillMode = "forwards";
         childSpan.style.animationDelay = `${animationDelay}s`;
         animationDelay += 0.18;

@@ -7,7 +7,7 @@
     </h2>
     <div class="flex gap-24">
         <img src="svg/arrow-down.svg" alt="" class="relative top-12">
-        <p class="w-1/3 animate-splitText">
+        <p class="w-1/3">
             Bonjour ! Je suis Axel Paillaud, développeur web passionné.
             Explorez mon portfolio pour en savoir plus sur mon travail !
         </p>
