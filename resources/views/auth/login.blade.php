@@ -1,5 +1,31 @@
 @extends('layouts.auth')
 
 @section('content')
-    <p> hello world !! </p>
+<div class="h-[calc(100vh-130px)] flex justify-center items-center">
+    <form 
+        method="post"
+        class="flex p-14 bg-light flex flex-col gap-8 rounded-3xl sm:w-[600px] w-[300px]"
+    >
+    <div class="flex flex-col gap-2">
+        <label for="user">Utilisateur</label>
+        <input 
+            class="border border-neutral-300 py-3.5 px-4 focus-visible:outline-main"
+            type="text" required name="user" id="user"
+        >
+    </div>
+    <div class="flex flex-col gap-2">
+        <label for="password">Mot de passe</label>
+        <input
+            class="py-3.5 px-4 border border-neutral-300 focus-visible:outline-main" 
+            type="password" required name="password" id="password"
+        >
+    </div>
+    <div class="flex justify-center">
+        <x-cta-button class="self-center">
+            Connexion
+        </x-cta-button>
+    </div>
+    </form>
+</div>
+
 @endsection
