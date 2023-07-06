@@ -7,7 +7,8 @@
     </h2>
     <div class="flex gap-24">
         <img src="svg/arrow-down.svg" alt="" class="relative top-12">
-        <p class="w-1/3">
+        <p class="w-1/3 animate-fadeIn opacity-0" 
+            style="animation-delay: 1s; animation-fill-mode: forwards;">
             Bonjour ! Je suis Axel Paillaud, développeur web passionné.
             Explorez mon portfolio pour en savoir plus sur mon travail !
         </p>

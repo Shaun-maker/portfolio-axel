@@ -16,11 +16,16 @@ export default {
         slideUp: {
           'from': {transform:'translate(0, 90%)'},
           'to': {transform: 'translate(0, 0)'},
+        },
+        fadeIn: {
+          'from': {opacity: '0'},
+          'to': {opacity: '1'},
         }
       },
       animation: {
       marquee: 'marquee 40s linear infinite',
       splitText: 'slideUp 0.9s',
+      fadeIn: 'fadeIn 1s'
       },
       colors: {
         main: '#871414',
