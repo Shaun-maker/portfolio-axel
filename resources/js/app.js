@@ -3,6 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import './smooth-scroll';
 import './show-hide-header';
+import './parallax';
 
 import Alpine from 'alpinejs';
  
