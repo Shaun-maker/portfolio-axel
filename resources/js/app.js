@@ -5,6 +5,7 @@ import './smooth-scroll';
 import './show-hide-header';
 import './parallax';
 import './line-expand';
+import './split-text';
 
 import Alpine from 'alpinejs';
  
