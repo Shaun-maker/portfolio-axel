@@ -12,7 +12,6 @@ parallax.target.forEach((parallaxElt) => {
     parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
     parallaxElt.defer = parallaxElt.dataset.defer || 0;
     parallaxElt.pos = 0;
-    parallaxElt.request = 0;
     parallaxElt.requestId = null;
 
 });
@@ -28,7 +27,6 @@ window.addEventListener('load', onLoad);
 const onScroll = function() {
     parallax.target.forEach((parallaxElt) => {
         cancelAnimationFrame(parallaxElt.requestId); // Why ?
-        parallaxElt.request++;
         parallaxElt.requestId = requestAnimationFrame(() => {
             updateParallax(parallaxElt);
         })
@@ -45,7 +43,6 @@ function updateParallax(parallaxElt) {
 
     if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
         parallaxElt.pos = scrollY;
-        parallax.parallaxRequest = 0;
         return;
     }
 
