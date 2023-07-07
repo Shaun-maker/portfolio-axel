@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="h-[calc(100vh-130px)] flex justify-center items-center">
-    <x-auth-form>
+    <x-auth-form action="register">
         <div class="flex flex-col gap-2">
             <label for="name">Nom</label>
             <input 
