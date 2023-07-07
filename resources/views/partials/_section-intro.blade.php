@@ -15,5 +15,5 @@
             Explorez mon portfolio pour en savoir plus sur mon travail !
         </p>
     </div>
-    <p class="text-right mt-8 sm:m-0">Dispos : septembre 2023</p>
+    <p class="text-right mt-8 sm:m-0">Dispo. : septembre 2023</p>
 </section>
