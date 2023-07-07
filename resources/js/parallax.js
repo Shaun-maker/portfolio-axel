@@ -1,5 +1,4 @@
 let parallax = {
-    parallaxRequest: 0,
     target: document.querySelectorAll('[data-parallax]'),
 }
 
@@ -13,6 +12,8 @@ parallax.target.forEach((parallaxElt) => {
     parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
     parallaxElt.defer = parallaxElt.dataset.defer || 0;
     parallaxElt.pos = 0;
+    parallaxElt.request = 0;
+    parallaxElt.requestId = null;
 
 });
 
@@ -25,30 +26,35 @@ const onLoad = function() {
 window.addEventListener('load', onLoad);
 
 const onScroll = function() {
-    parallax.parallaxRequest++;
-    requestId = requestAnimationFrame(updateParallax);
+    parallax.target.forEach((parallaxElt) => {
+        cancelAnimationFrame(parallaxElt.requestId); // Why ?
+        parallaxElt.request++;
+        parallaxElt.requestId = requestAnimationFrame(() => {
+            updateParallax(parallaxElt);
+        })
+    });
 }
 
-function updateParallax() {
-    parallax.target.forEach((parallaxElt) => {
+function updateParallax(parallaxElt) {
         
-        let scrollY = window.scrollY * parallaxElt.speed;
+    let scrollY = window.scrollY * parallaxElt.speed;
 
-        if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
-        
-        parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
+    if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
+    
+    parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
 
-        if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
-            parallaxElt.pos = scrollY;
-            parallax.parallaxRequest = 0;
-        }
+    if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
+        parallaxElt.pos = scrollY;
+        parallax.parallaxRequest = 0;
+        return;
+    }
 
-        console.log(scrollY);
+    console.log(scrollY);
 
-        parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
+    parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
 
-    });
+    parallaxElt.animationRequestId = requestAnimationFrame(() =>
+    updateParallax(parallaxElt)
+  );
 
-    requestId = parallax.parallaxRequest > 0 ? 
-    requestAnimationFrame(updateParallax) : null;
 }
