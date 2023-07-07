@@ -2,8 +2,14 @@
 
 <div id="js-line-expand" class="h-0.5 bg-main w-0 transition-all ease-out duration-[2500ms]"></div>
 
+{{-- top-[calc(100vh-750px)] --}}
+
 {{-- Presentation section --}}
-<section class="text-2xl flex px-32 pb-16 bg-light gap-16">
+<section 
+    id="js-presentation"
+    class="text-2xl flex px-32 pb-16 bg-light gap-16 relative 
+    top-[calc(100vh-650px)] transition-all duration-[2000ms] ease-out"
+>
 
     {{-- Bloc 1 : Name and stack --}}
 
@@ -24,11 +30,7 @@
             <picture class="block w-[512px] h-[512px]">
                 <source srcset="images/profile.webp" type="image/webp">
                 <img
-<<<<<<< HEAD
-                    data-parallax data-direction="up" data-speed="0.1"
-=======
                     data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
->>>>>>> bug_parallax_intro_section
                     src="images/profile.jpg" 
                     alt="Axel Paillaud, développeur web"
                     width="512" height="512"
