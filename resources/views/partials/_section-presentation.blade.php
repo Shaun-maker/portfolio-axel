@@ -24,7 +24,11 @@
             <picture class="block w-[512px] h-[512px]">
                 <source srcset="images/profile.webp" type="image/webp">
                 <img
+<<<<<<< HEAD
                     data-parallax data-direction="up" data-speed="0.1"
+=======
+                    data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
+>>>>>>> bug_parallax_intro_section
                     src="images/profile.jpg" 
                     alt="Axel Paillaud, développeur web"
                     width="512" height="512"
