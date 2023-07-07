@@ -1,4 +1,4 @@
-<article class="flex">
+<article class="flex max-w-[1400px]">
     <div class="bg-gray-100 px-24 py-12 basis-5/12 flex justify-center">
         <img 
             src="/images/projects/resize-web-single-image.png" 
