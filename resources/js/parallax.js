@@ -43,6 +43,8 @@ function updateParallax() {
             parallax.parallaxRequest = 0;
         }
 
+        console.log(Math.abs(scrollY - parallaxElt.pos) - 20);
+
         parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
 
     });
