@@ -1,18 +1,30 @@
 {{-- If we are logged in, show edition bar, with logout button --}}
 
 @auth
-<div>
-    <form method="post" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit">Logout</button>
-    </form>
-    @endauth
-</div>
+    <div 
+        class="sticky top-0 left-0 bg-main text-white z-50 flex
+        py-2.5 px-6"
+    >
+        <div class="flex justify-center w-full items-center gap-2">
+            <i class="fa-solid fa-pen-to-square"></i>
+            Mode édition
+        </div>
+        <form method="post" action="{{ route('logout') }}"
+            class="flex justify-center"
+        >
+            @csrf
+            <button type="submit" class="flex justify-end items-center gap-2">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Déconnexion
+            </button>
+        </form>
+    </div>
+@endauth
 
 <header
     id="js-header"
-    class="border-solid border-b-2 border-main flex items-center sticky top-0 left-0 bg-white z-50 
-    translate-all ease-in-out duration-700"
+    class="border-solid border-b-2 border-main flex items-center sticky top-0 left-0 bg-white z-40 
+    translate-all ease-in-out duration-700 @auth top-[44px] @endauth"
 >
     <a 
         href="/" 
