@@ -1,23 +1,19 @@
-let parallax = {
-    target: document.querySelectorAll('[data-parallax]'),
-}
+let parallaxes = document.querySelectorAll('[data-parallax]');
 
 // Set default value if data-attribute is not set
 
-parallax.target.forEach((parallaxElt) => {
+parallaxes.forEach((parallax) => {
 
-    parallaxElt.speed = parseFloat(parallaxElt.dataset.speed) || 0.3;
-    parallaxElt.ease = parseFloat(parallaxElt.dataset.ease) || 0.002;
-    parallaxElt.endY = parseInt(parallaxElt.dataset.endY) || 600;
-    parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
-    parallaxElt.defer = parseInt(parallaxElt.dataset.defer) || 0;
-    parallaxElt.request = null;
-    parallaxElt.pos = 0;
-    parallaxElt.requestId = null;
+    parallax.speed = parseFloat(parallax.dataset.speed) || 0.3;
+    parallax.ease = parseFloat(parallax.dataset.ease) || 0.002;
+    parallax.endY = parseInt(parallax.dataset.endY) || 600;
+    parallax.direction = parallax.dataset.direction === "up" ? "-" : "";
+    parallax.defer = parseInt(parallax.dataset.defer) || 0;
+    parallax.request = null;
+    parallax.pos = 0;
+    parallax.requestId = null;
 
 });
-
-var requestId = null;
 
 const onLoad = function() {
     document.addEventListener('scroll', onScroll);
@@ -26,40 +22,39 @@ const onLoad = function() {
 window.addEventListener('load', onLoad);
 
 const onScroll = function() {
-    parallax.target.forEach((parallaxElt) => {
-        parallaxElt.request++;
-        parallaxElt.requestId = requestAnimationFrame(() => {
-            updateParallax(parallaxElt);
+    parallaxes.forEach((parallax) => {
+        parallax.request++;
+        parallax.requestId = requestAnimationFrame(() => {
+            updateParallax(parallax);
         })
     });
 }
 
-function updateParallax(parallaxElt) {
+function updateParallax(parallax) {
         
-    let scrollY = window.scrollY * parallaxElt.speed;
+    let scrollY = window.scrollY * parallax.speed;
 
-    if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
+    if (window.scrollY > parallax.endY) {
+        scrollY = parallax.endY;
+        parallax.request = 0;
+        return;
+    }
     
-    parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
+    parallax.pos += (scrollY - parallax.pos - parallax.defer) * parallax.ease;
 
-    // console.log(parallax.target[1].pos);
-
-    if (Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer) < 1) {
-        parallaxElt.pos = scrollY - parallaxElt.defer;
-        parallaxElt.request = 0;
+    if (Math.abs((scrollY - parallax.pos) - parallax.defer) < 1) {
+        parallax.pos = scrollY - parallax.defer;
+        parallax.request = 0;
         return;
     }
 
-    if (parallaxElt.speed === 0.4) {
-        //console.log(Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer));
-        console.log("hello");
-    }
+    parallax.style.transform = `translateY(${parallax.direction}${parallax.pos}px)`;
 
-    parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
+    console.log("hello");
 
-    if (parallaxElt.request > 0) {
-        parallaxElt.requestId = requestAnimationFrame(() => {
-            updateParallax(parallaxElt);
+    if (parallax.request > 0) {
+        parallax.requestId = requestAnimationFrame(() => {
+            updateParallax(parallax);
         })
     }
 
