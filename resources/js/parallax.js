@@ -6,11 +6,11 @@ let parallax = {
 
 parallax.target.forEach((parallaxElt) => {
 
-    parallaxElt.speed = parallaxElt.dataset.speed || 0.3;
-    parallaxElt.ease = parallaxElt.dataset.ease || 0.002;
-    parallaxElt.endY = parallaxElt.dataset.endY || 600;
+    parallaxElt.speed = parseInt(parallaxElt.dataset.speed) || 0.3;
+    parallaxElt.ease = parseInt(parallaxElt.dataset.ease) || 0.002;
+    parallaxElt.endY = parseInt(parallaxElt.dataset.endY) || 600;
     parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
-    parallaxElt.defer = parallaxElt.dataset.defer || 0;
+    parallaxElt.defer = parseInt(parallaxElt.dataset.defer) || 0;
     parallaxElt.request = null;
     parallaxElt.pos = 0;
     parallaxElt.requestId = null;
@@ -27,7 +27,6 @@ window.addEventListener('load', onLoad);
 
 const onScroll = function() {
     parallax.target.forEach((parallaxElt) => {
-        cancelAnimationFrame(parallaxElt.requestId); // Why ?
         parallaxElt.request++;
         parallaxElt.requestId = requestAnimationFrame(() => {
             updateParallax(parallaxElt);
@@ -43,13 +42,14 @@ function updateParallax(parallaxElt) {
     
     parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
 
-    if (Math.abs(scrollY - parallaxElt.pos) < 0.05) {
-        parallaxElt.pos = scrollY;
+    if (Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer) < 0.05) {
+        parallaxElt.pos = scrollY - parallaxElt.defer;
         parallaxElt.request = 0;
         return;
     }
 
-    console.log(Math.abs(window.scrollY - parallaxElt.pos));
+    console.log(Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer));
+    //console.log(scrollY);
 
     parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
 
