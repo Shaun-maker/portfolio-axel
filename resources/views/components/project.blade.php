@@ -8,9 +8,9 @@
         >
     </div>
     <div class="w-0.5 bg-main mx-12"></div>
-    <div class="basis-7/12">
-        <h4>resize web gui</h4>
-        <div>
+    <div class="basis-7/12 flex flex-col justify-between">
+        <h4 class="text-3xl uppercase text-center">resize web gui</h4>
+        <div class="flex flex-col gap-4">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
                  sit amet nunc mi. Aliquam a velit eros. Duis volutpat, mi id 
@@ -24,15 +24,15 @@
                 Sed luctus nisi at dapibus sodales. Aliquam erat volutpat.
             </p>
         </div>
-        <div>
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-laravel"></i>
-            <i class="fa-brands fa-php"></i>
-            <i class="fa-brands fa-js"></i>
+        <div class="flex justify-center gap-8">
+            <i class="fa-brands fa-github text-2xl"></i>
+            <i class="fa-brands fa-laravel text-2xl"></i>
+            <i class="fa-brands fa-php text-2xl"></i>
+            <i class="fa-brands fa-js text-2xl"></i>
         </div>
-        <div>
-            <a href="#">Voir le projet</a>
-            <a href="#">Voir le code source</a>
+        <div class="flex justify-evenly">
+            <x-cta-link href="#">Voir le projet</x-cta-link>
+            <x-cta-link href="#" wireframe="true">Voir le code source</x-cta-link>
         </div>
     </div>
 </article>
