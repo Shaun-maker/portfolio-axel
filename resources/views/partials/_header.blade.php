@@ -1,3 +1,14 @@
+{{-- If we are logged in, show edition bar, with logout button --}}
+
+@auth
+<div>
+    <form method="post" action="{{ route('logout') }}">
+        @csrf
+        <button type="submit">Logout</button>
+    </form>
+    @endauth
+</div>
+
 <header
     id="js-header"
     class="border-solid border-b-2 border-main flex items-center sticky top-0 left-0 bg-white z-50 
