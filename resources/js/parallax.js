@@ -43,7 +43,7 @@ function updateParallax(parallaxElt) {
     parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
 
     if (Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer) < 0.05) {
-        parallaxElt.pos = scrollY - parallaxElt.defer;
+        parallaxElt.pos = scrollY + parallaxElt.defer;
         parallaxElt.request = 0;
         return;
     }
