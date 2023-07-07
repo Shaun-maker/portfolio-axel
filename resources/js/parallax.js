@@ -44,7 +44,6 @@ function updateParallax(parallaxElt) {
     if (Math.abs((scrollY - parallaxElt.pos)) < 0.05) {
         parallaxElt.pos = scrollY;
         parallaxElt.request = 0;
-        return;
     }
 
     console.log(Math.abs((scrollY - parallaxElt.pos)));
