@@ -7,7 +7,7 @@
             width="400" height="400"
         >
     </div>
-    <div class="w-0.5 bg-main mx-12"></div>
+    <div class="w-0.5 bg-main mx-10"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
         <h4 class="text-3xl uppercase text-center">resize web gui</h4>
         <div class="flex flex-col gap-4">
