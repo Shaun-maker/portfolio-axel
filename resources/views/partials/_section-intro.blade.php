@@ -14,6 +14,6 @@
             Bonjour ! Je suis Axel Paillaud, développeur web passionné.
             Explorez mon portfolio pour en savoir plus sur mon travail !
         </p>
-        <p>Dispos : septembre 2023</p>
     </div>
+    <p>Dispos : septembre 2023</p>
 </section>
