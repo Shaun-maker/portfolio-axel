@@ -14,10 +14,10 @@
     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col justify-evenly basis-1/3">
-        <p>Axel Paillaud, <span class="whitespace-nowrap">28 ans</span></p>
+        <p>Axel Paillaud, <span class="whitespace-nowrap">28 ans.</span></p>
         <h3>
             Fullstack<br>
-            PHP/Laravel<br>
+            PHP/Laravel,<br>
             Javascript,<br>
             & more
         </h3>
