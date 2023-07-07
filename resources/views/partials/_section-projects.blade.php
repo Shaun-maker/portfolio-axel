@@ -1,4 +1,4 @@
-<section id="projects">
+<section class="px-12">
 
     <x-marquee-project />
 
@@ -8,4 +8,6 @@
     <x-project>
 
     </x-project>
+
+    <div class="h-72"></div>
 </section>

@@ -1,9 +1,14 @@
-<article>
-    <div>
-        <img src="" alt="">
+<article class="flex">
+    <div class="bg-gray-100 px-24 py-12 basis-5/12 flex justify-center">
+        <img 
+            src="/images/projects/resize-web-single-image.png" 
+            alt="lorem-ipsum-dolor-sit-amet"
+            class="opacity-40 object-cover"
+            width="400" height="400"
+        >
     </div>
-    <div></div>
-    <div>
+    <div class="w-0.5 bg-main mx-12"></div>
+    <div class="basis-7/12">
         <h4>resize web gui</h4>
         <div>
             <p>
