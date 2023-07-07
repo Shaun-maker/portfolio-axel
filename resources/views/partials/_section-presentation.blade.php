@@ -7,13 +7,13 @@
 {{-- Presentation section --}}
 <section 
     id="js-presentation"
-    class="text-2xl flex px-32 pb-16 bg-light gap-16 relative 
+    class="text-2xl flex flex-col xl:flex-row px-16 sm:px-32 pb-16 bg-light gap-16 relative 
     top-[calc(100vh-650px)] transition-all duration-[2000ms] ease-out"
 >
 
     {{-- Bloc 1 : Name and stack --}}
 
-    <div class="flex flex-col justify-evenly basis-1/3">
+    <div class="flex flex-col justify-evenly basis-1/3 order-2 xl:order-none">
         <p>Axel Paillaud, <span class="whitespace-nowrap">28 ans.</span></p>
         <h3>
             Fullstack<br>
@@ -25,9 +25,15 @@
 
     {{-- Bloc 2 : Pictures and social media --}}
 
-    <div class="flex basis-1/3 flex-col gap-16">
-        <div class="border-x-2 border-b-2 border-main overflow-hidden" >
-            <picture class="block w-[512px] h-[512px]">
+    <div 
+        class="flex basis-1/3 flex-col gap-16 order-1 xl:order-none items-center
+        "
+    >
+        <div 
+            class="border-x-2 border-b-2 border-main overflow-hidden 
+            sm:w-[512px] sm:h-[512px] w-72 h-72"
+        >
+            <picture class="block">
                 <source srcset="images/profile.webp" type="image/webp">
                 <img
                     data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
@@ -38,7 +44,7 @@
                 >
             </picture>
             </div>
-        <div class="flex justify-evenly">
+        <div class="flex justify-evenly w-full">
             <x-social-media 
                 class="fa-brands fa-github"
                 href="https://github.com/axel-paillaud"
@@ -56,7 +62,10 @@
 
     {{-- Bloc 3 : CTA button and geographic mobility --}}
 
-    <div class="basis-1/3 flex flex-col justify-evenly items-end">
+    <div 
+        class="basis-1/3 flex flex-col-reverse xl:flex-col justify-evenly 
+        items-end order-3 xl:order-none gap-16"
+    >
         <x-cta-button class="self-center">
             voir mes projets
         </x-cta-button>

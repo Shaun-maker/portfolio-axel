@@ -12,7 +12,7 @@
     </i>
     <div 
         class="group-hover:translate-x-3 transition-transform duration-700
-        ease-out"
+        ease-out whitespace-nowrap"
     >
         {{ $slot }}
     </div>
