@@ -67,7 +67,7 @@
         items-end order-3 xl:order-none gap-16"
     >
         <x-cta-button class="self-center">
-            voir mes projets
+            télécharger mon cv
         </x-cta-button>
         <h3 class="max-w-[20rem]">
             Développeur web sur Orléans, Loiret.<br>
