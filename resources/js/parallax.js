@@ -10,7 +10,6 @@ parallax.target.forEach((parallaxElt) => {
     parallaxElt.ease = parseInt(parallaxElt.dataset.ease) || 0.002;
     parallaxElt.endY = parseInt(parallaxElt.dataset.endY) || 600;
     parallaxElt.direction = parallaxElt.dataset.direction === "up" ? "-" : "";
-    parallaxElt.defer = parseInt(parallaxElt.dataset.defer) || 0;
     parallaxElt.request = null;
     parallaxElt.pos = 0;
     parallaxElt.requestId = null;
@@ -40,15 +39,15 @@ function updateParallax(parallaxElt) {
 
     if (scrollY > parallaxElt.endY) scrollY = parallaxElt.endY;
     
-    parallaxElt.pos += (scrollY - parallaxElt.pos - parallaxElt.defer) * parallaxElt.ease;
+    parallaxElt.pos += (scrollY - parallaxElt.pos) * parallaxElt.ease;
 
-    if (Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer) < 0.05) {
-        parallaxElt.pos = scrollY + parallaxElt.defer;
+    if (Math.abs((scrollY - parallaxElt.pos)) < 0.05) {
+        parallaxElt.pos = scrollY;
         parallaxElt.request = 0;
         return;
     }
 
-    console.log(Math.abs((scrollY - parallaxElt.pos) - parallaxElt.defer));
+    console.log(Math.abs((scrollY - parallaxElt.pos)));
     //console.log(scrollY);
 
     parallaxElt.style.transform = `translateY(${parallaxElt.direction}${parallaxElt.pos}px)`
