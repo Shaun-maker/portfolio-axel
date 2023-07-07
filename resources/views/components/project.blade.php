@@ -11,7 +11,7 @@
                  sit amet nunc mi. Aliquam a velit eros. Duis volutpat, mi id 
                  convallis sagittis, erat nibh sollicitudin lorem, sollicitudin 
                  vestibulum purus tortor nec eros. Curabitur cursus pharetra consequat.
-            </p>
+            </p> 
             <p>
                 Fusce hendrerit rutrum dapibus. Suspendisse et luctus neque. 
                 Aliquam sed eleifend mi, non bibendum nisi. Praesent vel finibus ex. 
@@ -26,8 +26,8 @@
             <i class="fa-brands fa-js"></i>
         </div>
         <div>
-            <a>Voir le projet</a>
-            <a>Voir le code source</a>
+            <a href="#">Voir le projet</a>
+            <a href="#">Voir le code source</a>
         </div>
     </div>
 </article>
