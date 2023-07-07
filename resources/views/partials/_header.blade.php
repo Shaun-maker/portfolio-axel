@@ -2,7 +2,7 @@
 
 @auth
     <div 
-        class="sticky top-0 left-0 bg-main text-white z-50 flex
+        class="sticky top-0 left-0 bg-red-950 text-white z-50 flex
         py-2.5 px-6"
     >
         <div class="flex justify-center w-full items-center gap-2">
