@@ -6,7 +6,6 @@ window.addEventListener('load', onLoad);
 
 function splitText() {
     const splitText = document.getElementById("js-split-text");
-    splitText.style.visibility = "visible";
     const splitTextContent = splitText.textContent.trim();
 
     const chars = splitTextContent.split(' ');
@@ -18,8 +17,12 @@ function splitText() {
         const childSpan = document.createElement("span");
 
         parentSpan.classList.add('overflow-hidden');
-        childSpan.classList.add('animate-splitText', 'block');
         childSpan.style.transform = "translate(0, 90%)";
+
+        setTimeout(() => {
+            splitText.style.visibility = "visible";
+            childSpan.classList.add('animate-splitText', 'block');
+        }, 300);
         
         childSpan.style.animationFillMode = "forwards";
         childSpan.style.animationDelay = `${animationDelay}s`;
