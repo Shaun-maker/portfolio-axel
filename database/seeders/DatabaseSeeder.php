@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
             'is_admin' => 1,
             'password' => 'password'
         ]);
+
+        $this->call(CategorySeeder::class);
     }
 }
