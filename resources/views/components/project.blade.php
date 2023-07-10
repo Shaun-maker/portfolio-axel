@@ -1,7 +1,7 @@
 <article class="group flex flex-col lg:flex-row max-w-[1400px] ">
     <div 
         class="bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
-        transition-all duration-300 group-hover:rounded-[32px]"
+        transition-all duration-300 group-hover:rounded-[32px] group-hover:bg-gray-200"
     >
         <img 
             src="/images/projects/resize-web-single-image.png" 
