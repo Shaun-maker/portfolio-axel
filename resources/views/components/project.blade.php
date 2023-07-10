@@ -1,7 +1,8 @@
-<article class="group flex flex-col lg:flex-row max-w-[1400px] ">
-    <div 
-        class="bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
-        transition-all duration-300 group-hover:rounded-[32px] group-hover:bg-gray-200"
+<article class="flex flex-col lg:flex-row max-w-[1400px] ">
+    <a
+        href="#"
+        class="group bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
+        transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
     >
         <img 
             src="/images/projects/resize-web-single-image.png" 
@@ -10,7 +11,7 @@
             group-hover:opacity-50 duration-700 group-hover:scale-105"
             width="400" height="400"
         >
-    </div>
+    </a>
     <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
         <h4 class="sm:text-3xl text-2xl uppercase text-center">resize web gui</h4>
