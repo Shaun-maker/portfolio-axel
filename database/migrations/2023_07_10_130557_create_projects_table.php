@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->timestamps();
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
+            $table->string('name');
+            $table->string('url_image');
+            $table->text('description');
         });
     }
 
