@@ -1,6 +1,6 @@
-<article class="group flex max-w-[1400px]">
+<article class="group flex flex-col lg:flex-row max-w-[1400px] ">
     <div 
-        class="bg-gray-100 px-24 py-12 basis-5/12 flex justify-center 
+        class="bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
         transition-all duration-300 group-hover:rounded-[32px]"
     >
         <img 
@@ -11,9 +11,9 @@
             width="400" height="400"
         >
     </div>
-    <div class="w-[2px] bg-main mx-14"></div>
+    <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
-        <h4 class="text-3xl uppercase text-center">resize web gui</h4>
+        <h4 class="sm:text-3xl text-2xl uppercase text-center">resize web gui</h4>
         <div class="flex flex-col gap-4">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -34,7 +34,7 @@
             <i class="fa-brands fa-php text-2xl"></i>
             <i class="fa-brands fa-js text-2xl"></i>
         </div>
-        <div class="flex justify-evenly">
+        <div class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
             {{-- <x-cta-link href="#">Voir le projet</x-cta-link> --}}
             <x-cta-link-disable>voir le projet</x-cta-link-disable>
             <x-cta-link href="#" wireframe="true">Voir le code source</x-cta-link>

@@ -1,5 +1,5 @@
 @php
-    $classes = 'relative py-5 px-11 rounded-full 
+    $classes = 'relative py-5 px-11 rounded-full justify-center 
     text-base uppercase flex items-center cursor-not-allowed';
 
     if(isset($attributes['wireframe']) && $attributes['wireframe'] == 'true') {

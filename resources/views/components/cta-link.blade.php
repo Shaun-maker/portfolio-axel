@@ -1,5 +1,5 @@
 @php
-    $classes = 'relative py-5 px-11 rounded-full 
+    $classes = 'relative justify-center py-5 px-11 rounded-full 
     text-base uppercase flex items-center group/link';
 
     if(isset($attributes['wireframe']) && $attributes['wireframe'] == 'true') {
