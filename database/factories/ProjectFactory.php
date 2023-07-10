@@ -29,7 +29,7 @@ class ProjectFactory extends Factory
             },
             'title' => fake()->sentence(),
             'url_image' => $urls[array_rand($urls)],
-            'description' => fake()->paragraphs(),
+            'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(3)) . '</p>',
         ];
     }
 }
