@@ -13,11 +13,11 @@
     {{-- Smooth scroll body, fixed height --}}
     <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
 
-        @include('partials._header')
+        {{-- @include('partials._header') --}}
 
         {{-- Smooth scroll viewport, fixed --}}
         {{-- Smooth scroll disable, add fixed position here ! --}}
-        <div class="overflow-hidden w-full h-full inset-0 fixed">
+        <div class="overflow-hidden w-full h-full inset-0">
 
             {{-- Smooth scroll container, absolute --}}
             <div 
