@@ -35,7 +35,8 @@
             <i class="fa-brands fa-js text-2xl"></i>
         </div>
         <div class="flex justify-evenly">
-            <x-cta-link href="#">Voir le projet</x-cta-link>
+            {{-- <x-cta-link href="#">Voir le projet</x-cta-link> --}}
+            <x-cta-link-disable>voir le projet</x-cta-link-disable>
             <x-cta-link href="#" wireframe="true">Voir le code source</x-cta-link>
         </div>
     </div>
