@@ -17,12 +17,18 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
+        $urls = [
+            'images/projects/booki-fakedata.png',
+            'images/projects/elagage41-fakedata.png',
+            'images/projects/resize-web-fakedata.png'
+        ];
+
         return [
-            'category_id' => function() { 
+            'category_id' => function() {
                 return Category::inRandomOrder()->first()->id; 
             },
             'title' => fake()->sentence(),
-            'url_image' => 'images/projects/resize-web-single-image.png',
+            'url_image' => $urls[array_rand($urls)],
             'description' => fake()->paragraphs(),
         ];
     }
