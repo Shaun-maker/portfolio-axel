@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('project_tool', function (Blueprint $table) {
+        Schema::create('project_tool', function (Blueprint $table) {
             $table->foreignId('project_id')->constrained();
             $table->foreignId('tool_id')->constrained();
         });
@@ -22,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('project_tool', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('project_tool');
     }
 };
