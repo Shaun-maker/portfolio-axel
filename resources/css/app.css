@@ -25,3 +25,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .filter-transition {
+        transition: transform 0.7s, color 0.3s;
+    }
+
+    .center-absolute {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
