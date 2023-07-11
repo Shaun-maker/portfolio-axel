@@ -6,7 +6,7 @@ import './show-hide-header';
 import './parallax';
 import './line-expand';
 import './split-text';
-import './slide-up-presentation'
+//import './slide-up-presentation'
 
 import Alpine from 'alpinejs';
  
