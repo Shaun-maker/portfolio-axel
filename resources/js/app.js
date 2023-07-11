@@ -7,6 +7,7 @@ import './parallax';
 import './line-expand';
 import './split-text';
 //import './slide-up-presentation'
+import './filter.js';
 
 import Alpine from 'alpinejs';
  
