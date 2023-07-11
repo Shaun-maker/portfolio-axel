@@ -6,11 +6,21 @@ let filterButtons = document.querySelectorAll('[data-filter-button]');
 
 
 filterButtons.forEach((filterButton) => {
-    let fill = false;
 
     filterButton.addEventListener('click', (e) => {
         filterButtons.forEach((filterButton) => {
-            if (fill) console.log("im fill : " + filterButton);
+            if (filterButton.dataset.fill === "true") {
+                let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
+                let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
+
+                clip.style.clipPath = "polygon(0 0, 19% 100%, 0 100%, 0 0)";
+                setTimeout(() => {
+                    filterButton.style.color = "#871414";
+                }, 200);
+                circle.style.top = "8px";
+        
+                filterButton.dataset.fill = "false";
+            }
         })
     })
 
@@ -19,13 +29,13 @@ filterButtons.forEach((filterButton) => {
         let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
         let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
 
-        if (!fill) {
+        if (filterButton.dataset.fill === "false") {
             clip.style.clipPath = "polygon(100% 0, 100% 100%, 0 100%, 0 0)";
             setTimeout(() => {
                 filterButton.style.color = "white";
                 circle.style.top = "-30px";
             }, 200);
-            fill = true;
+            filterButton.dataset.fill = "true";
         }
 
     })

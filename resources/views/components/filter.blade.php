@@ -9,7 +9,7 @@
 
     {{-- Hide outside clip-path --}}
     <div class="overflow-hidden relative rounded-full z-20">
-        <button data-filter-button
+        <button data-filter-button data-fill="false"
             {{ $attributes->merge(['class' => $classes]) }}
         >
             <i 
