@@ -14,6 +14,11 @@
     </a>
     <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
+        <p>{{ $title }}</p>
+        <p>{{ $urlImg }}</p>
+        {{ $description }}
+        {{ $projectLink }}
+        {{ $sourceLink }}
         <h4 class="sm:text-3xl text-2xl uppercase text-center">resize web gui</h4>
         <div class="flex flex-col gap-4">
             <p>
