@@ -1,0 +1,3 @@
+<div>
+    <x-filter />
+</div>
