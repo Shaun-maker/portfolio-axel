@@ -17,6 +17,7 @@ class Project extends Component
         public string $description,
         public string | null $projectLink,
         public string | null $sourceLink,
+        public $tools
     ) {}
 
     /**

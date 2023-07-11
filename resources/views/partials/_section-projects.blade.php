@@ -13,6 +13,7 @@
             :description="$project->description"
             :projectLink="$project->project_link"
             :sourceLink="$project->source_link"
+            :tools="$project->tools"
         />
 
         @endforeach
