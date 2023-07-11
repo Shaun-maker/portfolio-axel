@@ -1,15 +1,18 @@
+@props(['loop', 'class'])
+
 @php
     $classes = 'relative justify-center py-5 px-11 rounded-full text-base 
     uppercase flex items-center group/link bg-white text-main border-2 
     border-main';
 @endphp
 
+
 {{-- This main div is to hide circle when selected --}}
 <div data-filter class="relative">
 
     {{-- Hide outside clip-path --}}
     <div class="overflow-hidden relative rounded-full z-20">
-        <button data-filter-button data-fill="false"
+        <button data-filter-button data-fill="{{ $loop->first ? 'true' : 'false'}}"
             {{ $attributes->merge(['class' => $classes]) }}
         >
             <i 

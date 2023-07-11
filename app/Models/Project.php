@@ -13,4 +13,8 @@ class Project extends Model
     public function tools() : BelongsToMany {
         return $this->belongsToMany(Tool::class);
     }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }

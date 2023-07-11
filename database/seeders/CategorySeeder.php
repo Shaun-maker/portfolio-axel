@@ -14,8 +14,8 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'projets pro'],
             ['name'=> 'projets perso'],
+            ['name' => 'projets pro'],
             ['name'=> 'projets de formation']
         ];
 
