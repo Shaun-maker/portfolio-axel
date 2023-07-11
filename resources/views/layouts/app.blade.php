@@ -12,7 +12,6 @@
     </head>
     {{-- Smooth scroll body, fixed height --}}
     <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
-
         @include('partials._header')
 
         {{-- Smooth scroll viewport, fixed --}}

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('url_image');
             $table->text('description');
+            $table->string('project_link')->nullable();
+            $table->string('source_link')->nullable();
         });
     }
 

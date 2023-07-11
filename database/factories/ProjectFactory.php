@@ -23,6 +23,9 @@ class ProjectFactory extends Factory
             'images/projects/resize-web-fakedata.png'
         ];
 
+        $project_link = rand(0, 1) ? fake()->url() : null;
+        $source_link = rand(0, 1) ? fake()->url() : null;
+
         return [
             'category_id' => function() {
                 return Category::inRandomOrder()->first()->id; 
@@ -30,6 +33,8 @@ class ProjectFactory extends Factory
             'title' => fake()->sentence(),
             'url_image' => $urls[array_rand($urls)],
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(3)) . '</p>',
+            'project_link' => $project_link,
+            'source_link' => $source_link, 
         ];
     }
 }
