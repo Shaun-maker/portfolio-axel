@@ -25,7 +25,7 @@
         </button>
         <div
             id="js-filter-clip"
-            class=" z-20 bg-main absolute top-0 right-0 bottom-0 -left-6 transition-all duration-500"
+            class=" z-20 bg-main absolute top-0 right-0 bottom-0 -left-8 transition-alls duration-700 ease-in-out"
             style="clip-path: polygon(0 0, 19% 100%, 0 100%, 0 0);"
         >
         </div>
@@ -34,8 +34,8 @@
     {{-- circle animation when filter is selected --}}
     <i 
         id="js-circle"
-        class="fa-solid fa-circle absolute center-absolute z-10 transition-all
-        duration-500"
+        class="fa-solid fa-circle absolute center-absolute top-2 z-10 transition-all
+        duration-500 ease-out text-xs"
     >
     </i>
 </div>

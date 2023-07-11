@@ -20,7 +20,7 @@ testBtn.addEventListener('click', (e) => {
         setTimeout(() => {
             filterBtn.style.color = "#871414";
         }, 200);
-        circle.style.top = "50%";
+        circle.style.top = "8px";
 
         fill = false;
     }

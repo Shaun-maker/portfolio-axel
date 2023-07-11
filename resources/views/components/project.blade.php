@@ -3,7 +3,7 @@
         @if($projectLink)
             href="{{ $projectLink }}"
         @elseif($sourceLink)
-            href="{{ $hsourceLink}}"
+            href="{{ $sourceLink}}"
         @endif
         class="group bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
         transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
