@@ -3,13 +3,13 @@ let filterButtons = document.querySelectorAll('[data-filter-button]');
 filterButtons.forEach((filterButton) => {
 
     if(filterButton.dataset.fill === 'true') {
-        enableBtnFilter(filterButton);
+        fillBtnFilter(filterButton);
     }
 
     filterButton.addEventListener('click', (e) => {
         filterButtons.forEach((filterButton) => {
             if (filterButton.dataset.fill === "true") {
-                disableBtnFilter(filterButton);
+                emptyBtnFilter(filterButton);
             }
         })
     })
@@ -17,19 +17,21 @@ filterButtons.forEach((filterButton) => {
     filterButton.addEventListener('click', () => {
 
         if (filterButton.dataset.fill === "false") {
-            enableBtnFilter(filterButton);
+            fillBtnFilter(filterButton);
         }
 
     })
 
 })
 
-function disableBtnFilter(filterButton)
+function emptyBtnFilter(filterButton)
 {
     let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
     let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
 
     clip.style.clipPath = "polygon(0 0, 19% 100%, 0 100%, 0 0)";
+    filterButton.closest('[data-filter]').style.pointerEvents = 'all';
+
     setTimeout(() => {
         filterButton.style.color = "#871414";
     }, 200);
@@ -38,11 +40,12 @@ function disableBtnFilter(filterButton)
     filterButton.dataset.fill = "false";
 }
 
-function enableBtnFilter(filterButton) {
+function fillBtnFilter(filterButton) {
     let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
     let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
 
     clip.style.clipPath = "polygon(100% 0, 100% 100%, 0 100%, 0 0)";
+    filterButton.closest('[data-filter]').style.pointerEvents = 'none';
     setTimeout(() => {
         filterButton.style.color = "white";
         circle.style.top = "-30px";
