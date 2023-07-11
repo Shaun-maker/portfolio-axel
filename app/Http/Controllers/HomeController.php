@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function __invoke() 
     {
         return view('home', [
-            'projects' => Project::latest()->get(),
+            'projects' => Project::where('category_id', '1')->latest()->get(),
         ]);
     }
 }

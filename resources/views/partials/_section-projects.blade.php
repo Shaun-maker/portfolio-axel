@@ -2,9 +2,7 @@
 
     <x-marquee-project />
 
-    {{-- Filter here, TODO --}}
-
-   <x-category-list />
+    <x-category-list />
 
     <div class="sm:px-12 gap-24 px-6 my-20 flex flex-col justify-center items-center">
         @foreach($projects as $project)
