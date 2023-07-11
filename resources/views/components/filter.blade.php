@@ -4,7 +4,7 @@
     border-main';
 @endphp
 
-<div class="relative px-12">
+<div id="js-parent-clip" class="relative px-12">
     <button id="js-filter-btn"
         {{ $attributes->merge(['class' => $classes]) }}
     >
