@@ -19,15 +19,22 @@
             {!! $description !!}
         </div>
         <div class="flex justify-center gap-8">
-            <i class="fa-brands fa-github text-2xl"></i>
-            <i class="fa-brands fa-laravel text-2xl"></i>
-            <i class="fa-brands fa-php text-2xl"></i>
-            <i class="fa-brands fa-js text-2xl"></i>
+            @foreach ($tools as $tool)
+                <i class="{{ $tool->icon }} text-2xl"></i>
+            @endforeach
         </div>
         <div class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
-            {{-- <x-cta-link href="#">Voir le projet</x-cta-link> --}}
-            <x-cta-link href="{{ $projectLink }}">voir le projet</x-cta-link>
-            <x-cta-link href="{{ $sourceLink }}" wireframe="true">Voir le code source</x-cta-link>
+            @if(!$projectLink)
+                <x-cta-link-disable>voir le projet</x-cta-link>
+            @else
+                <x-cta-link href="{{ $projectLink }}">voir le projet</x-cta-link>
+            @endif
+
+            @if(!$sourceLink)
+                <x-cta-link-disable wireframe="true">Voir le code source</x-cta-link>
+            @else
+                <x-cta-link href="{{ $sourceLink }}" wireframe="true">Voir le code source</x-cta-link>
+            @endif
         </div>
     </div>
 </article>
