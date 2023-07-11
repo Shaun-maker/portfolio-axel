@@ -1,10 +1,40 @@
-let filterClip = document.getElementById('js-filter-clip');
+/* let filterClip = document.getElementById('js-filter-clip');
 let filterBtn = document.getElementById('js-filter-btn');
-let circle = document.getElementById('js-circle');
+let circle = document.getElementById('js-circle'); */
 
-let testBtn = document.getElementById('js-test-btn');
+let filterButtons = document.querySelectorAll('[data-filter-button]');
 
-let fill = false;
+
+filterButtons.forEach((filterButton) => {
+    let fill = false;
+
+    filterButton.addEventListener('click', (e) => {
+        filterButtons.forEach((filterButton) => {
+            if (fill) console.log("im fill : " + filterButton);
+        })
+    })
+
+    filterButton.addEventListener('click', () => {
+
+        let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
+        let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
+
+        if (!fill) {
+            clip.style.clipPath = "polygon(100% 0, 100% 100%, 0 100%, 0 0)";
+            setTimeout(() => {
+                filterButton.style.color = "white";
+                circle.style.top = "-30px";
+            }, 200);
+            fill = true;
+        }
+
+    })
+
+})
+
+/* let testBtn = document.getElementById('js-test-btn'); */
+
+/* let fill = false;
 
 testBtn.addEventListener('click', (e) => {
     if (!fill) {
@@ -29,4 +59,4 @@ testBtn.addEventListener('click', (e) => {
 filterBtn.addEventListener('click', (e) => {
     filterClip.style.clipPath = "polygon(100% 0, 100% 100%, 0 100%, 0 0)";
 
-});
+}); */

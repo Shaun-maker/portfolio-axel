@@ -5,11 +5,11 @@
 @endphp
 
 {{-- This main div is to hide circle when selected --}}
-<div class="relative">
+<div data-filter class="relative">
 
     {{-- Hide outside clip-path --}}
     <div class="overflow-hidden relative rounded-full z-20">
-        <button id="js-filter-btn"
+        <button data-filter-button
             {{ $attributes->merge(['class' => $classes]) }}
         >
             <i 
@@ -24,8 +24,8 @@
             </span>
         </button>
         <div
-            id="js-filter-clip"
-            class=" z-20 bg-main absolute top-0 right-0 bottom-0 -left-8 transition-alls duration-700 ease-in-out"
+            data-clip
+            class=" z-20 bg-main absolute top-0 right-0 bottom-0 -left-10 transition-alls duration-700 ease-in-out"
             style="clip-path: polygon(0 0, 19% 100%, 0 100%, 0 0);"
         >
         </div>
@@ -33,11 +33,9 @@
 
     {{-- circle animation when filter is selected --}}
     <i 
-        id="js-circle"
+        data-circle
         class="fa-solid fa-circle absolute center-absolute top-2 z-10 transition-all
         duration-500 ease-out text-xs"
     >
     </i>
 </div>
-
-<button id='js-test-btn'>Test</button>
