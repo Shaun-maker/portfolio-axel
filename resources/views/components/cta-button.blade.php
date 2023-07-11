@@ -10,10 +10,10 @@
         class="fa-solid fa-circle absolute text-[0] group-hover:text-xs 
         transition-all duration-700 ease-out left-7">
     </i>
-    <div 
+    <span 
         class="group-hover:translate-x-3 transition-transform duration-700
         ease-out whitespace-nowrap"
     >
         {{ $slot }}
-    </div>
+    </span>
 </button>
