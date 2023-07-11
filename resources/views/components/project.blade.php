@@ -14,8 +14,8 @@
     </a>
     <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
-        <p>{{ $title }}</p>
-        <p>{{ $urlImg }}</p>
+        {{ $title }}
+        {{ $urlImg }}
         {{ $description }}
         {{ $projectLink }}
         {{ $sourceLink }}
