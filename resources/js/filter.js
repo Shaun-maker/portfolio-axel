@@ -73,14 +73,16 @@ function fetchAndRefreshProject(event)
             deleteProject(projectContainer);
             //projectContainer.replaceChildren();
             
-            res.data.forEach(projectData => {
-                let newProject = createProject(project, projectData);
-                projectContainer.appendChild(newProject);
-            });
+            setTimeout(() => {
+                res.data.forEach(projectData => {
+                    let newProject = createProject(project, projectData);
+                    projectContainer.appendChild(newProject);
+                });
+            }, 300);
         })
         .catch()
     }
-    
+
 function createProject(originalProjectTemplate, projectData)
 {
     let project = originalProjectTemplate.cloneNode(true);
@@ -136,6 +138,7 @@ function createProject(originalProjectTemplate, projectData)
     if (projectData.source_link) projectLinkCTAContainer.appendChild(wireframeBtn);
     else projectLinkCTAContainer.appendChild(disableWireframeBtn);
 
+    project.classList.add('animate-slideRightIn');
     return project;
 }
 
@@ -218,18 +221,22 @@ function createDisableWireframeBtn()
 function deleteProject(projectContainer)
 {
     let projects = projectContainer.children;
-    let delay = 0.0;
+    let animDelay = 0.0;
+    let removeDelay = 300;
+    let offset = 0.150;
 
     for(let i = 0; i < projects.length; i++) {
         let project =  projects[i];
 
-        project.style.animationDelay = `${delay}s`
+        project.style.animationDelay = `${animDelay}s`;
+        project.classList.remove('animate-slideRightIn');
         project.classList.add('animate-slideLeftOut');
 
         setTimeout(() => {
             project.remove();
-        }, 300)
+        }, removeDelay);
 
-        delay += 0.15;
+        animDelay += offset;
+        removeDelay += offset;
     }
 }
