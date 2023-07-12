@@ -4,11 +4,11 @@
 
     <x-category-list />
 
-    <div class="relative">
+    <div class="relative my-20 h-[6000px]" id="js-project-container">
         <div 
-            id="js-project-container"
-            class="sm:px-12 gap-24 px-6 my-20 flex flex-col justify-center 
-            items-center"
+            data-project-wrapper
+            class="sm:px-12 gap-24 px-6 flex flex-col justify-center 
+            items-center absolute center-absolute w-full"
         >
             @php
                 $animDelay = 0.0;

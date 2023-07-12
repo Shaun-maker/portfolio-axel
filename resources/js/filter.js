@@ -1,5 +1,8 @@
 let filterButtons = document.querySelectorAll('[data-filter-button]');
 
+// Calculate the total height of project, for project container in absolute position
+setHeightToAbsoluteProjectContainer(document.querySelector('[data-project-wrapper]'));
+
 filterButtons.forEach((filterButton) => {
 
     // fill default filter set to true, at the load of the page
@@ -69,21 +72,24 @@ function fetchAndRefreshProject(event)
         })
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
+            let projectWrapper = document.querySelector('[data-project-wrapper]');
+            let newProjectWrapper = projectWrapper.cloneNode();
+
             // This clone node serve as a project template
             let projectTemplate = document.querySelector('[data-project]').cloneNode(true);
-            deleteProject(projectContainer);
+            deleteProject(projectWrapper);
             
             let animDelay = 0.0;
 
-            setTimeout(() => {
-                res.data.forEach(projectData => {
-                    let newProject = createProject(projectTemplate, projectData);
-                    console.log(newProject);
-                    newProject.style.animationDelay = `${animDelay}s`;
-                    animDelay += 0.150;
-                    projectContainer.appendChild(newProject);
-                })
-            }, 300);
+            res.data.forEach(projectData => {
+                let newProject = createProject(projectTemplate, projectData);
+                newProject.style.animationDelay = `${animDelay}s`;
+                animDelay += 0.150;
+                newProjectWrapper.appendChild(newProject);
+            });
+            projectContainer.appendChild(newProjectWrapper);
+            setHeightToAbsoluteProjectContainer(newProjectWrapper);
+            
         })
         .catch()
     }
@@ -227,6 +233,7 @@ function createDisableWireframeBtn()
 function deleteProject(projectContainer)
 {
     let projects = projectContainer.children;
+    let deleteDelay = 500;
 
     for(let i = 0; i < projects.length; i++) {
         let project =  projects[i];
@@ -236,7 +243,20 @@ function deleteProject(projectContainer)
 
         setTimeout(() => {
             project.remove();
-        }, 500);
+        }, deleteDelay);
+
     }
 
+    // Delete the old project wrapper container
+    setTimeout(() => {
+        projectContainer.remove();
+    }, 1000);
+}
+
+function setHeightToAbsoluteProjectContainer(projectWrapper)
+{
+    let height = projectWrapper.offsetHeight;
+
+    let mainProjectContainer = document.getElementById('js-project-container');
+    mainProjectContainer.style.height = height + 'px';
 }
