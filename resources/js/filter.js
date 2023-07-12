@@ -8,7 +8,7 @@ filterButtons.forEach((filterButton) => {
     }
 
     // empty other filter when we click on a filter
-    filterButton.addEventListener('click', (e) => {
+    filterButton.addEventListener('click', () => {
         filterButtons.forEach((filterButton) => {
             if (filterButton.dataset.fill === "true") {
                 emptyBtnFilter(filterButton);
@@ -61,5 +61,15 @@ function fillBtnFilter(filterButton)
 
 function fetchAndRefreshProject(event)
 {
-    console.log(event.target.dataset.categoryId);
+    let categoryId = event.target.dataset.categoryId; 
+    fetch(`/api/projects?category=${categoryId}`)
+        .then((res) => {
+            if (res.ok) return res.json()
+        })
+        .then((res) => {
+            res.data.forEach(project => {
+                console.log(project.title);
+            });
+        })
+        .catch()
 }
