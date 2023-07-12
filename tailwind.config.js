@@ -20,12 +20,22 @@ export default {
         fadeIn: {
           'from': {opacity: '0'},
           'to': {opacity: '1'},
+        },
+        slideLeftOut: {
+          'from': {opacity: 1, transform: 'translateX(0)'},
+          'to': {opacity: 0, transform: 'translateX(-70px)'},
+        },
+        slideRightIn: {
+          'from': {opacity: 0, transform: 'translateX(70px)'},
+          'to': {opacity: 1, transform: 'translateX(0)'},
         }
       },
       animation: {
       marquee: 'marquee 40s linear infinite',
       splitText: 'slideUp 0.9s',
-      fadeIn: 'fadeIn 1s'
+      fadeIn: 'fadeIn 1s',
+      slideLeftOut: 'slideLeftOut 0.5s',
+      slideRightIn: 'slideRightIn 0.5s'
       },
       colors: {
         main: '#871414',
