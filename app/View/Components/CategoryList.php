@@ -24,7 +24,6 @@ class CategoryList extends Component
     {
         return view('components.category-list', [
             'categories' => Category::all(),
-            'hello' => 'hello',
         ]);
     }
 }
