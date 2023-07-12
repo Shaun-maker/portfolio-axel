@@ -69,13 +69,16 @@ function fetchAndRefreshProject(event)
         })
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
-            let project = document.querySelector('[data-project]').cloneNode(true);
+            // This clone node serve as a project template
+            let projectTemplate = document.querySelector('[data-project]').cloneNode(true);
             deleteProject(projectContainer);
-            //projectContainer.replaceChildren();
             
+            let animDelay = 0.0
             setTimeout(() => {
                 res.data.forEach(projectData => {
-                    let newProject = createProject(project, projectData);
+                    let newProject = createProject(projectTemplate, projectData);
+                    newProject.style.animationDelay = `${animDelay}s`;
+                    animDelay += 0.150;
                     projectContainer.appendChild(newProject);
                 });
             }, 300);
@@ -139,6 +142,7 @@ function createProject(originalProjectTemplate, projectData)
     else projectLinkCTAContainer.appendChild(disableWireframeBtn);
 
     project.classList.add('animate-slideRightIn');
+    project.style.animationFillMode = 'forwards';
     return project;
 }
 

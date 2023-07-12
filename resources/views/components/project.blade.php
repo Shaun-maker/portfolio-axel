@@ -1,9 +1,10 @@
-@props(['loop', 'project'])
+@props(['loop', 'project', 'animDelay'])
 
 {{-- All data-project html attribute is for AJAX filter request in filter.js file --}}
 <article
     data-project
     class="flex flex-col lg:flex-row max-w-[1400px]"
+    style="animation-delay: {{ $animDelay }}s"
 >
     <a
         data-project-img-container
