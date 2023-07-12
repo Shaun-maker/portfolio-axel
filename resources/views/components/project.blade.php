@@ -1,4 +1,4 @@
-<article class="flex flex-col lg:flex-row max-w-[1400px] ">
+<article class="flex flex-col lg:flex-row max-w-[1400px]">
     <a
         @if($projectLink)
             href="{{ $projectLink }}"

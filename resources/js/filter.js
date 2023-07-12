@@ -78,32 +78,51 @@ function fetchAndRefreshProject(event)
 
 function createProject(projectData)
 {
+    
+}
+
+/* function createProject(projectData)
+{
     let project = document.createElement('article');
+    project.classList.add(projectClass.project);
+    
     let imgContainer = document.createElement('a');
+    imgContainer.classList.add(projectClass.imgContainer);
+    
     let img = document.createElement('img');
+    img.classList.add(projectClass.img);
+    
     let lineBreak = document.createElement('div');
+    lineBreak.classList.add(projectClass.lineBreak);
+    
     let contentContainer = document.createElement('div');
+    contentContainer.classList.add(projectClass.contentContainer);
+    
     let title = document.createElement('h4');
+    title.classList.add(projectClass.title);
+    
     let content = document.createElement('div');
+    content.classList.add(projectClass.content);
+    
     let toolContainer = document.createElement('div');
+    toolContainer.classList.add(projectClass.toolContainer);
+    
     let ctaContainer = document.createElement('div');
+    ctaContainer.classList.add(projectClass.ctaContainer);
+    
     let fillBtn = document.createElement('a');
+    fillBtn.classList.add(projectClass.fillBtn);
+    
     let wireframeBtn = document.createElement('a');
+    wireframeBtn.classList.add(projectClass.wireframeBtn);
+    
     let disableFillBtn = document.createElement('div');
+    disableFillBtn.classList.add(projectClass.disableFillBtn);
+
     let disableWireframeBtn = document.createElement('div');
+    disableWireframeBtn.classList.add(projectClass.disableFillBtn);
 
     
-    project.classList.add(projectClass.project);
-    imgContainer.classList.add(projectClass.imgContainer);
-    img.classList.add(projectClass.img);
-    lineBreak.classList.add(projectClass.lineBreak);
-    contentContainer.classList.add(projectClass.contentContainer);
-    title.classList.add(projectClass.title);
-    content.classList.add(projectClass.content);
-    toolContainer.classList.add(projectClass.toolContainer);
-    ctaContainer.classList.add(projectClass.ctaContainer);
-    fillBtn.classList.add(projectClass.fillBtn);
-    wireframeBtn.classList.add(projectClass.wireframeBtn);
 }
 
 let projectClass = {
@@ -147,4 +166,14 @@ let projectClass = {
         'text-base', 'uppercase', 'flex', 'items-center', 'group/link', 'bg-white',
         'text-main', 'border-2', 'border-main',
     ],
-}
+    disableFillBtn: [
+        'relative', 'py-5', 'px-11', 'rounded-full', 'justify-center', 
+        'text-base', 'uppercase', 'flex', 'items-center', 'cursor-not-allowed', 
+        'text-white', 'bg-gray-500'
+    ],
+    disableWireframeBtn: [
+        'relative', 'py-5', 'px-11', 'rounded-full', 'justify-center', 'text-base',
+        'uppercase', 'flex', 'items-center', 'cursor-not-allowed', 'bg-white',
+        'text-gray-500', 'border-2', 'border-gray-500'
+    ]
+} */
