@@ -1,5 +1,11 @@
-<article class="flex flex-col lg:flex-row max-w-[1400px]">
+@props(['loop'])
+
+<article
+    data-project
+    class="flex flex-col lg:flex-row max-w-[1400px]"
+>
     <a
+        data-img-container
         @if($projectLink)
             href="{{ $projectLink }}"
         @elseif($sourceLink)

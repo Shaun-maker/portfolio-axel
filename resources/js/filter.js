@@ -78,7 +78,25 @@ function fetchAndRefreshProject(event)
 
 function createProject(projectData)
 {
-    
+    let project = document.querySelector('[data-project]').cloneNode(true);
+
+    let imgContainer = getProjectElement(project, 'data-img-container');
+    if (projectData.project_link) {
+        imgContainer.href = projectData.project_link;
+    }
+    else if (projectData.source_link) {
+        imgContainer.href = projectData.source_link;
+    }
+    else {
+        imgContainer.removeAttribute("href");
+    }
+    console.log(projectData.project_link);
+    console.log(imgContainer);
+}
+
+function getProjectElement(project, element)
+{
+    return project.closest('[data-project]').querySelector(`[${element}]`);
 }
 
 /* function createProject(projectData)
