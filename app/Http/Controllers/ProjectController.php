@@ -11,7 +11,12 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        return ProjectResource::collection(Project::all());
+        $projects = Project::latest();
+
+        if (request('category')) {
+            $projects->where('category_id', request('category'));
+        }
+        return ProjectResource::collection($projects->get());
     }
 
     public function show($id)
