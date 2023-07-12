@@ -50,8 +50,6 @@ function updateParallax(parallax) {
 
     parallax.style.transform = `translateY(${parallax.direction}${parallax.pos}px)`;
 
-    console.log("hello");
-
     if (parallax.request > 0) {
         parallax.requestId = requestAnimationFrame(() => {
             updateParallax(parallax);
