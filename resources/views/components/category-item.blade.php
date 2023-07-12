@@ -19,11 +19,11 @@
         >
             <i 
                 class="fa-solid fa-circle absolute text-[0] group-hover/link:text-xs 
-                transition-all duration-700 ease-out left-7 z-30">
+                transition-all duration-700 ease-out left-7 z-30 pointer-events-none">
             </i>
             <span 
                 class="filter-transition group-hover/link:translate-x-3
-                 ease-out whitespace-nowrap z-30"
+                 ease-out whitespace-nowrap z-30 pointer-events-none"
             >
                 {{ $slot }}
             </span>

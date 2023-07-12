@@ -61,5 +61,5 @@ function fillBtnFilter(filterButton)
 
 function fetchAndRefreshProject(event)
 {
-    console.log(event);
+    console.log(event.target.dataset.categoryId);
 }
