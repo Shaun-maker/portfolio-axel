@@ -61,15 +61,90 @@ function fillBtnFilter(filterButton)
 
 function fetchAndRefreshProject(event)
 {
-    let categoryId = event.target.dataset.categoryId; 
+    let categoryId = event.target.dataset.categoryId;
+
     fetch(`/api/projects?category=${categoryId}`)
         .then((res) => {
             if (res.ok) return res.json()
         })
         .then((res) => {
-            res.data.forEach(project => {
-                console.log(project.title);
+            res.data.forEach(projectData => {
+                console.log(projectData);
+                createProject(projectData);
             });
         })
         .catch()
+}
+
+function createProject(projectData)
+{
+    let project = document.createElement('article');
+    let imgContainer = document.createElement('a');
+    let img = document.createElement('img');
+    let lineBreak = document.createElement('div');
+    let contentContainer = document.createElement('div');
+    let title = document.createElement('h4');
+    let content = document.createElement('div');
+    let toolContainer = document.createElement('div');
+    let ctaContainer = document.createElement('div');
+    let fillBtn = document.createElement('a');
+    let wireframeBtn = document.createElement('a');
+    let disableFillBtn = document.createElement('div');
+    let disableWireframeBtn = document.createElement('div');
+
+    
+    project.classList.add(projectClass.project);
+    imgContainer.classList.add(projectClass.imgContainer);
+    img.classList.add(projectClass.img);
+    lineBreak.classList.add(projectClass.lineBreak);
+    contentContainer.classList.add(projectClass.contentContainer);
+    title.classList.add(projectClass.title);
+    content.classList.add(projectClass.content);
+    toolContainer.classList.add(projectClass.toolContainer);
+    ctaContainer.classList.add(projectClass.ctaContainer);
+    fillBtn.classList.add(projectClass.fillBtn);
+    wireframeBtn.classList.add(projectClass.wireframeBtn);
+}
+
+let projectClass = {
+    project: [
+        'flex', 'flex-col', 'lg:flex-row', '[max-w-1400px]'
+    ],
+    imgContainer: [
+        'group', 'bg-gray-100', 'sm:px-24', 'sm:py-12', 'px-14', 'py-8', 'basis-5/12', 
+        'flex', 'justify-center', 'transition-all', 'duration-300', 
+        'hover:rounded-[32px]', 'hover:bg-gray-200'
+    ],
+    img: [
+        'opacity-40', 'object-cover', 'transition-all', 'group-hover:opacity-50',
+        'duration-700', 'group-hover:scale-105'
+    ],
+    lineBreak: [
+        'lg:w-0.5', 'lg:h-auto', 'h-0.5', 'w-full', 'bg-main', 'my-8', 'lg:my-0',
+        'lg:mx-14'
+    ],
+    contentContainer: [
+        'basis-7/12', 'flex', 'flex-col', 'justify-between', 'gap-10',
+    ],
+    title: [
+        'sm:text-3xl', 'text-2xl', 'uppercase', 'text-center',
+    ],
+    content: [
+        'flex', 'flex-col', 'gap-4',
+    ],
+    toolContainer: [
+        'flex', 'justify-center', 'gap-8'
+    ],
+    ctaContainer: [
+        'flex', 'sm:flex-row', 'flex-col', 'justify-evenly', 'gap-8', 'sm:gap-4'
+    ],
+    fillBtn: [
+        'relative', 'justify-center', 'py-5', 'px-11', 'rounded-full', 
+        'text-base', 'uppercase', 'flex', 'items-center', 'group/link', 'bg-main', 'text-white'
+    ],
+    wireframeBtn: [
+        'relative', 'justify-center', 'py-5', 'px-11', 'rounded-full', 
+        'text-base', 'uppercase', 'flex', 'items-center', 'group/link', 'bg-white',
+        'text-main', 'border-2', 'border-main',
+    ],
 }
