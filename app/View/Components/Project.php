@@ -11,14 +11,8 @@ class Project extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string $title,
-        public string $urlImg,
-        public string $description,
-        public string | null $projectLink,
-        public string | null $sourceLink,
-        public $tools
-    ) {}
+    public function __construct() 
+    {}
 
     /**
      * Get the view / contents that represent the component.
