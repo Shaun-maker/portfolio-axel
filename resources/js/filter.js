@@ -73,15 +73,14 @@ function fetchAndRefreshProject(event)
             let projectTemplate = document.querySelector('[data-project]').cloneNode(true);
             deleteProject(projectContainer);
             
-            let animDelay = 0.0
-            setTimeout(() => {
-                res.data.forEach(projectData => {
-                    let newProject = createProject(projectTemplate, projectData);
-                    newProject.style.animationDelay = `${animDelay}s`;
-                    animDelay += 0.150;
-                    projectContainer.appendChild(newProject);
-                });
-            }, 300);
+            let animDelay = 0.0;
+            res.data.forEach(projectData => {
+                let newProject = createProject(projectTemplate, projectData);
+                console.log(newProject);
+                newProject.style.animationDelay = `${animDelay}s`;
+                animDelay += 0.150;
+                projectContainer.appendChild(newProject);
+            })
         })
         .catch()
     }
@@ -231,10 +230,10 @@ function deleteProject(projectContainer)
 
         project.classList.remove('animate-slideRightIn');
         project.classList.add('animate-slideLeftOut');
-        
+
+        setTimeout(() => {
+            project.remove();
+        }, 500);
     }
 
-    setTimeout(() => {
-        projectContainer.replaceChildren();
-    }, 300);
 }
