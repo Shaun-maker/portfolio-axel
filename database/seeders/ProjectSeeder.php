@@ -21,10 +21,6 @@ class ProjectSeeder extends Seeder
             foreach($tools as $tool) {
                 $project->tools()->attach($tool->id);
             }
-/*             for ($i = 0; $i < 4; $i++) {
-                $tool = Tool::inRandomOrder()->first()->id;
-                $project->tools()->attach($tool);
-            } */
         }
     }
 }

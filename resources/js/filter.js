@@ -2,10 +2,12 @@ let filterButtons = document.querySelectorAll('[data-filter-button]');
 
 filterButtons.forEach((filterButton) => {
 
+    // fill default filter set to true, at the load of the page
     if(filterButton.dataset.fill === 'true') {
         fillBtnFilter(filterButton);
     }
 
+    // empty other filter when we click on a filter
     filterButton.addEventListener('click', (e) => {
         filterButtons.forEach((filterButton) => {
             if (filterButton.dataset.fill === "true") {
