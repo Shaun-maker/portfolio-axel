@@ -1,11 +1,13 @@
 @props(['loop'])
 
+{{-- All data-project html attribute is for AJAX filter request in filter.js file --}}
+
 <article
     data-project
     class="flex flex-col lg:flex-row max-w-[1400px]"
 >
     <a
-        data-img-container
+        data-project-img-container
         @if($projectLink)
             href="{{ $projectLink }}"
         @elseif($sourceLink)
@@ -14,7 +16,8 @@
         class="group bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
         transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
     >
-        <img 
+        <img
+            data-project-img 
             src="{{ $urlImg }}" 
             alt="lorem-ipsum-dolor-sit-amet"
             class="opacity-40 object-cover transition-all 
@@ -24,16 +27,20 @@
     </a>
     <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
     <div class="basis-7/12 flex flex-col justify-between gap-10">
-        <h4 class="sm:text-3xl text-2xl uppercase text-center">{{ $title }}</h4>
-        <div class="flex flex-col gap-4">
+        <h4 
+            data-project-title
+            class="sm:text-3xl text-2xl uppercase text-center">
+            {{ $title }}
+        </h4>
+        <div data-project-description class="flex flex-col gap-4">
             {!! $description !!}
         </div>
-        <div class="flex justify-center gap-8">
+        <div data-project-tools class="flex justify-center gap-8">
             @foreach ($tools as $tool)
                 <i class="{{ $tool->icon }} text-2xl"></i>
             @endforeach
         </div>
-        <div class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
+        <div data-project-link class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
             @if(!$projectLink)
                 <x-cta-link-disable>voir le projet</x-cta-link>
             @else

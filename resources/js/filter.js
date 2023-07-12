@@ -80,7 +80,7 @@ function createProject(projectData)
 {
     let project = document.querySelector('[data-project]').cloneNode(true);
 
-    let imgContainer = getProjectElement(project, 'data-img-container');
+    let imgContainer = getProjectElement(project, 'img-container');
     if (projectData.project_link) {
         imgContainer.href = projectData.project_link;
     }
@@ -90,13 +90,20 @@ function createProject(projectData)
     else {
         imgContainer.removeAttribute("href");
     }
-    console.log(projectData.project_link);
-    console.log(imgContainer);
+
+    let img = getProjectElement(project, 'img');
+    img.src = projectData.url_image;
+    
+    let title = getProjectElement(project, 'title');
+    title.textContent = projectData.title;
+    
+    let tools = getProjectElement(project, 'tools');
+    console.log(tools);
 }
 
 function getProjectElement(project, element)
 {
-    return project.closest('[data-project]').querySelector(`[${element}]`);
+    return project.closest('[data-project]').querySelector(`[data-project-${element}]`);
 }
 
 /* function createProject(projectData)
