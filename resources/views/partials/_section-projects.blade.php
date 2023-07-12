@@ -8,6 +8,7 @@
         @foreach($projects as $project)
 
         <x-project 
+            :$loop
             :title="$project->title"
             :urlImg="$project->url_image"
             :description="$project->description"
