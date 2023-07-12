@@ -74,13 +74,16 @@ function fetchAndRefreshProject(event)
             deleteProject(projectContainer);
             
             let animDelay = 0.0;
-            res.data.forEach(projectData => {
-                let newProject = createProject(projectTemplate, projectData);
-                console.log(newProject);
-                newProject.style.animationDelay = `${animDelay}s`;
-                animDelay += 0.150;
-                projectContainer.appendChild(newProject);
-            })
+
+            setTimeout(() => {
+                res.data.forEach(projectData => {
+                    let newProject = createProject(projectTemplate, projectData);
+                    console.log(newProject);
+                    newProject.style.animationDelay = `${animDelay}s`;
+                    animDelay += 0.150;
+                    projectContainer.appendChild(newProject);
+                })
+            }, 300);
         })
         .catch()
     }
