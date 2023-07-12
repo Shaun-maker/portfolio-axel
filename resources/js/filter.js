@@ -70,7 +70,8 @@ function fetchAndRefreshProject(event)
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
             let project = document.querySelector('[data-project]').cloneNode(true);
-            projectContainer.replaceChildren();
+            deleteProject(projectContainer);
+            //projectContainer.replaceChildren();
             
             res.data.forEach(projectData => {
                 let newProject = createProject(project, projectData);
@@ -212,4 +213,23 @@ function createDisableWireframeBtn()
 
     disableWireframeBtn.appendChild(content);
     return disableWireframeBtn;
+}
+
+function deleteProject(projectContainer)
+{
+    let projects = projectContainer.children;
+    let delay = 0.0;
+
+    for(let i = 0; i < projects.length; i++) {
+        let project =  projects[i];
+
+        project.style.animationDelay = `${delay}s`
+        project.classList.add('animate-slideLeftOut');
+
+        setTimeout(() => {
+            project.remove();
+        }, 300)
+
+        delay += 0.15;
+    }
 }
