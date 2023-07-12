@@ -221,22 +221,16 @@ function createDisableWireframeBtn()
 function deleteProject(projectContainer)
 {
     let projects = projectContainer.children;
-    let animDelay = 0.0;
-    let removeDelay = 300;
-    let offset = 0.150;
 
     for(let i = 0; i < projects.length; i++) {
         let project =  projects[i];
 
-        project.style.animationDelay = `${animDelay}s`;
         project.classList.remove('animate-slideRightIn');
         project.classList.add('animate-slideLeftOut');
-
-        setTimeout(() => {
-            project.remove();
-        }, removeDelay);
-
-        animDelay += offset;
-        removeDelay += offset;
+        
     }
+
+    setTimeout(() => {
+        projectContainer.replaceChildren();
+    }, 300);
 }
