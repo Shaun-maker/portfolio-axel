@@ -69,18 +69,20 @@ function fetchAndRefreshProject(event)
         })
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
+            let project = document.querySelector('[data-project]').cloneNode(true);
+            projectContainer.replaceChildren();
             
             res.data.forEach(projectData => {
-                let newProject = createProject(projectData);
+                let newProject = createProject(project, projectData);
                 projectContainer.appendChild(newProject);
             });
         })
         .catch()
     }
     
-function createProject(projectData)
+function createProject(originalProjectTemplate, projectData)
 {
-    let project = document.querySelector('[data-project]').cloneNode(true);
+    let project = originalProjectTemplate.cloneNode(true);
         
     // Populate link on image. If empty, remove href attribute
     let imgContainer = getProjectElement(project, 'img-container');
@@ -101,6 +103,12 @@ function createProject(projectData)
     // Populate title
     let title = getProjectElement(project, 'title');
     title.textContent = projectData.title;
+
+    // Populate description
+    let description = getProjectElement(project, 'description');
+    description.replaceChildren();
+
+    description.innerHTML = projectData.description;
     
     // Populate tools icons
     let toolContainer = getProjectElement(project, 'tools');
