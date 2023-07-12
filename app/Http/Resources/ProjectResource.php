@@ -27,6 +27,7 @@ class ProjectResource extends JsonResource
             'description' => $this->description,
             'project_link' => $this->project_link,
             'source_link' => $this->source_link,
+            'tools' => $this->tools,
         ];
     }
 }

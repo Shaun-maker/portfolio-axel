@@ -11,7 +11,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::latest();
+        $projects = Project::latest()->with('tools');
 
         if (request('category')) {
             $projects->where('category_id', request('category'));

@@ -10,8 +10,8 @@ class HomeController extends Controller
     public function __invoke() 
     {
         return view('home', [
-            //'projects' => Project::where('category_id', '1')->latest()->get(),
-            'projects' => Project::all()
+            //'projects' => Project::with('tools')->where('category_id', '1')->latest()->get(),
+            'projects' => Project::with('tools')->get()
         ]);
     }
 }
