@@ -16,11 +16,14 @@ filterButtons.forEach((filterButton) => {
         })
     })
 
-    filterButton.addEventListener('click', () => {
+    filterButton.addEventListener('click', (event) => {
 
+        // fill filter button when we click on it
         if (filterButton.dataset.fill === "false") {
             fillBtnFilter(filterButton);
         }
+
+        fetchAndRefreshProject(event);
 
     })
 
@@ -42,7 +45,8 @@ function emptyBtnFilter(filterButton)
     filterButton.dataset.fill = "false";
 }
 
-function fillBtnFilter(filterButton) {
+function fillBtnFilter(filterButton) 
+{
     let clip = filterButton.closest('[data-filter]').querySelector('[data-clip');
     let circle = filterButton.closest('[data-filter]').querySelector('[data-circle]');
 
@@ -53,4 +57,9 @@ function fillBtnFilter(filterButton) {
         circle.style.top = "-30px";
     }, 200);
     filterButton.dataset.fill = "true";
+}
+
+function fetchAndRefreshProject(event)
+{
+    console.log(event);
 }

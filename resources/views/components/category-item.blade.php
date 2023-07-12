@@ -8,11 +8,13 @@
 
 
 {{-- This main div is to hide circle when selected --}}
-<div data-filter data-category-id="{{ $category->id }}" class="relative">
+<div data-filter class="relative">
 
     {{-- Hide outside clip-path --}}
     <div class="overflow-hidden relative rounded-full z-20">
-        <button data-filter-button data-fill="{{ $loop->first ? 'true' : 'false'}}"
+        <button 
+            data-filter-button data-fill="{{ $loop->first ? 'true' : 'false'}}" 
+            data-category-id="{{ $category->id }}"
             {{ $attributes->merge(['class' => $classes]) }}
         >
             <i 
