@@ -5,6 +5,6 @@
     </x-category-item>
     @endforeach
     @auth
-        <x-edit-button class="static" />
+        <x-edit-button data-edit-button="project" class="static" />
     @endauth
 </div>

@@ -4,6 +4,7 @@
 >
     @auth
         <x-edit-button
+            data-edit-button="intro"
             isAbsolute
             class="top-40 right-6 sm:top-44 sm:right-14 lg:top-64 lg:right-24" 
         />

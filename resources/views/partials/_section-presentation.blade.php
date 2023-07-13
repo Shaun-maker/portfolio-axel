@@ -15,6 +15,7 @@
 
     @auth
         <x-edit-button
+            data-edit-button="presentation"
             isAbsolute
             class="text-base top-[296px] sm:top-[521px] horizontal-center"
         />
