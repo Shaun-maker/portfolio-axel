@@ -5,7 +5,7 @@
     <h2 id="js-split-text" 
         class="text-5xl sm:text-8.5xl lg:w-4/5 ml-auto mb-20 flex justify-end gap-5 flex-wrap
          invisible">
-        Développeur web basé à Orléans.
+        Développeur web freelance basé à Orléans.
     </h2>
     <div class="flex gap-24">
         <img src="svg/arrow-down.svg" alt="" class="relative top-12">

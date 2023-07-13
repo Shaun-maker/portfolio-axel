@@ -16,7 +16,7 @@
 
         {{-- Smooth scroll viewport, fixed --}}
         {{-- Smooth scroll disable, add fixed position here ! --}}
-        <div class="overflow-hidden w-full h-full inset-0">
+        <div class="overflow-hidden w-full h-full inset-0 fixed">
 
             {{-- Smooth scroll container, absolute --}}
             <div 
