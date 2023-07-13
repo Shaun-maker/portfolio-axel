@@ -1,5 +1,5 @@
 <x-modals.intro>
-    papa
+    <p>papa</p>
 </x-modals.intro>
 
 <x-modals.presentation>
