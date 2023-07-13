@@ -8,4 +8,8 @@
 
 @include('partials._section-projects')
 
+@auth
+    @include('partials._modals')
+@endauth
+
 @endsection
