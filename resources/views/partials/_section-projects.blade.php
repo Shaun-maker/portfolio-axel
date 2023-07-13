@@ -1,4 +1,4 @@
-<section >
+<section>
 
     <x-marquee-project />
 

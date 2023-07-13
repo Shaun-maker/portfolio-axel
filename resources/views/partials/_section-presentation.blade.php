@@ -13,6 +13,13 @@
      transition-all duration-[2000ms] ease-out"
 >
 
+    @auth
+        <x-edit-button
+            isAbsolute
+            class="text-base top-[296px] sm:top-[521px] horizontal-center"
+        />
+    @endauth
+
     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col justify-evenly basis-1/3 order-2 xl:order-none">
