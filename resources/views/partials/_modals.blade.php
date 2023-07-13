@@ -1,4 +1,4 @@
-<x-modals.intro>
+<x-modals.layout id="js-intro-modal">
     <form class="flex flex-col">
         @csrf
         <label for="intro-title">Titre</label>
@@ -20,7 +20,7 @@
             name="intro-available"
         >
     </form>
-</x-modals.intro>
+</x-modals.layout>
 
 <x-modals.presentation>
     maman
