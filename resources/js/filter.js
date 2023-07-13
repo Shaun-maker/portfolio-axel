@@ -72,12 +72,16 @@ function fetchAndRefreshProject(event)
         })
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
-            let projectWrapper = document.querySelector('[data-project-wrapper]');
-            let newProjectWrapper = projectWrapper.cloneNode();
+            let projectWrappers = document.querySelectorAll('[data-project-wrapper]');
+
+            // We need the last project wrapper, because if the user try to filter
+            // too fast, we can have multiple project wrappers at once
+            let lastProjectWrapper = projectWrappers[projectWrappers.length - 1];
+            let newProjectWrapper = lastProjectWrapper.cloneNode();
 
             // This clone node serve as a project template
             let projectTemplate = document.querySelector('[data-project]').cloneNode(true);
-            deleteProject(projectWrapper);
+            deleteProject(lastProjectWrapper);
             
             let animDelay = 0.0;
 
@@ -88,7 +92,7 @@ function fetchAndRefreshProject(event)
                 newProjectWrapper.appendChild(newProject);
             });
             projectContainer.appendChild(newProjectWrapper);
-            setHeightToAbsoluteProjectContainer(newProjectWrapper);
+            setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
             
         })
         .catch()
@@ -149,7 +153,7 @@ function createProject(originalProjectTemplate, projectData)
     if (projectData.source_link) projectLinkCTAContainer.appendChild(wireframeBtn);
     else projectLinkCTAContainer.appendChild(disableWireframeBtn);
 
-    project.classList.add('animate-slideRightIn');
+    project.classList.add('animate-slideRightIn', 'opacity-0');
     project.style.animationFillMode = 'forwards';
     return project;
 }
@@ -230,9 +234,9 @@ function createDisableWireframeBtn()
     return disableWireframeBtn;
 }
 
-function deleteProject(projectContainer)
+function deleteProject(projectWrapper)
 {
-    let projects = projectContainer.children;
+    let projects = projectWrapper.children;
     let deleteDelay = 500;
 
     for(let i = 0; i < projects.length; i++) {
@@ -249,14 +253,28 @@ function deleteProject(projectContainer)
 
     // Delete the old project wrapper container
     setTimeout(() => {
-        projectContainer.remove();
+        projectWrapper.remove();
     }, 1000);
+
 }
 
-function setHeightToAbsoluteProjectContainer(projectWrapper)
+function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper = null)
 {
     let height = projectWrapper.offsetHeight;
-
     let mainProjectContainer = document.getElementById('js-project-container');
-    mainProjectContainer.style.height = height + 'px';
+
+    if (!oldProjectWrapper) {
+        mainProjectContainer.style.height = height + 'px';
+    }
+    else {
+        let oldHeight = oldProjectWrapper.offsetHeight;
+
+        if (height < oldHeight) {
+            setTimeout(() => {
+                mainProjectContainer.style.height = height + 'px';
+            }, 1000);
+        }
+        else mainProjectContainer.style.height = height + 'px';
+    }
+
 }

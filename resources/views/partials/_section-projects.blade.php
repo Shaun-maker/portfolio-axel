@@ -8,7 +8,7 @@
         <div 
             data-project-wrapper
             class="sm:px-12 gap-24 px-6 flex flex-col justify-center 
-            items-center absolute center-absolute w-full"
+            items-center absolute w-full"
         >
             @php
                 $animDelay = 0.0;
