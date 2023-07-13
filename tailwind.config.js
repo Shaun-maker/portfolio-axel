@@ -23,10 +23,10 @@ export default {
         },
         slideLeftOut: {
           'from': {opacity: 1, transform: 'translateX(0)'},
-          'to': {opacity: 0, transform: 'translateX(-70px)'},
+          'to': {opacity: 0, transform: 'translateX(-130px)'},
         },
         slideRightIn: {
-          'from': {opacity: 0, transform: 'translateX(70px)'},
+          'from': {opacity: 0, transform: 'translateX(130px)'},
           'to': {opacity: 1, transform: 'translateX(0)'},
         }
       },
@@ -34,8 +34,8 @@ export default {
       marquee: 'marquee 40s linear infinite',
       splitText: 'slideUp 0.9s',
       fadeIn: 'fadeIn 1s',
-      slideLeftOut: 'slideLeftOut 0.5s',
-      slideRightIn: 'slideRightIn 0.5s'
+      slideLeftOut: 'slideLeftOut 0.7s',
+      slideRightIn: 'slideRightIn 0.7s',
       },
       colors: {
         main: '#871414',

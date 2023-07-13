@@ -95,7 +95,7 @@ function fetchAndRefreshProject(event)
                 setTimeout(() => {
                     newProject.classList.remove('opacity-0');
                 }, 500);
-                
+
                 animDelay += 0.150;
                 newProjectWrapper.appendChild(newProject);
             });
