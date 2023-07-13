@@ -34,6 +34,10 @@
 
         </div>
 
+        @auth
+            @include('partials._modals')
+        @endauth
+
        @livewireScripts
     </body>
 </html>
