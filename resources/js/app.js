@@ -8,6 +8,7 @@ import './line-expand';
 import './split-text';
 //import './slide-up-presentation'
 import './filter.js';
+import './modal.js';
 
 import Alpine from 'alpinejs';
  
