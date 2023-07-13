@@ -85,7 +85,9 @@ function fetchAndRefreshProject(event)
             
             let animDelay = 0.0;
 
+            // animation delay between each filter request
             setTimeout(() => {
+
                 res.data.forEach(projectData => {
                     let newProject = createProject(projectTemplate, projectData);
                     newProject.style.animationDelay = `${animDelay}s`;
@@ -102,7 +104,8 @@ function fetchAndRefreshProject(event)
                 });
                 projectContainer.appendChild(newProjectWrapper);
                 setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
-            }, 300);
+
+            }, 150);
             
         })
         .catch()
