@@ -146,8 +146,10 @@ function createProject(originalProjectTemplate, projectData)
     toolContainer.replaceChildren();
     projectData.tools.forEach(tool => {
         let icon = document.createElement('i');
-        let iconClass = tool.icon.split(' ');
-        icon.classList.add([...iconClass], 'text-2xl');
+        tool.icon.split(' ').forEach((className) => {
+            icon.classList.add(className);
+          });
+        icon.classList.add('text-2xl');
         toolContainer.appendChild(icon);
     });
 
