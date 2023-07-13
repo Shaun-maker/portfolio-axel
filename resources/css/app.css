@@ -42,4 +42,8 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
+    .modal::backdrop {
+        background: rgba(15, 14, 14, 0.70);
+    }
 }

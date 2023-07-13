@@ -28,7 +28,11 @@ export default {
         slideRightIn: {
           'from': {opacity: 0, transform: 'translateX(130px)'},
           'to': {opacity: 1, transform: 'translateX(0)'},
-        }
+        },
+        zoomIn: {
+          'from': {opacity: 0, scale: '0.9'},
+          'to': {opacity: 1, scale: '1'},
+        },
       },
       animation: {
       marquee: 'marquee 40s linear infinite',
@@ -36,6 +40,7 @@ export default {
       fadeIn: 'fadeIn 1s',
       slideLeftOut: 'slideLeftOut 0.7s',
       slideRightIn: 'slideRightIn 0.7s',
+      zoomIn: 'zoomIn 0.3s'
       },
       colors: {
         main: '#871414',
