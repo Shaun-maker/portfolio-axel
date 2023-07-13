@@ -10,6 +10,6 @@
         ]) --}}
     {{ $attributes->merge(['class' =>  $classes ]) }}
 >
-    <i class="fa-solid fa-pen-to-square"></i>
+    <i class="fa-solid fa-pen-to-square pointer-events-none"></i>
     Modifier
 </button>
