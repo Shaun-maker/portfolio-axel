@@ -3,7 +3,9 @@
         pb-20 sm:pr-12 sm:pl-32 pt-48 pr-4 pl-4"
 >
     @auth
-        <x-edit-button class="top-64 right-24" />
+        <x-edit-button 
+            class="top-40 right-6 sm:top-44 sm:right-14 lg:top-64 lg:right-24" 
+        />
     @endauth
     <h2 id="js-split-text" 
         class="text-5xl sm:text-8.5xl lg:w-4/5 ml-auto mb-20 flex justify-end gap-5 flex-wrap
