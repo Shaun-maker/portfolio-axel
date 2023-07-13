@@ -1,4 +1,4 @@
-<x-modals.layout id="js-intro-modal">
+<x-modal id="js-intro-modal">
     <form class="flex flex-col">
         @csrf
         <label for="intro-title">Titre</label>
@@ -20,12 +20,12 @@
             name="intro-available"
         >
     </form>
-</x-modals.layout>
+</x-modal>
 
-<x-modals.presentation>
+<x-modal id="js-presentation-modal">
     maman
-</x-modals.presentation>
+</x-modal>
 
-<x-modals.project>
+<x-modal id="js-project-modal">
     quentin
-</x-modals.project>
+</x-modal>
