@@ -85,22 +85,24 @@ function fetchAndRefreshProject(event)
             
             let animDelay = 0.0;
 
-            res.data.forEach(projectData => {
-                let newProject = createProject(projectTemplate, projectData);
-                newProject.style.animationDelay = `${animDelay}s`;
-
-                //If we don't remove default opacity, we have a "flash" with
-                // animation-fill: forwards and animation-delay that apply
-                // opacity-0 before the slideLeftOut animation start
-                setTimeout(() => {
-                    newProject.classList.remove('opacity-0');
-                }, 500);
-
-                animDelay += 0.150;
-                newProjectWrapper.appendChild(newProject);
-            });
-            projectContainer.appendChild(newProjectWrapper);
-            setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
+            setTimeout(() => {
+                res.data.forEach(projectData => {
+                    let newProject = createProject(projectTemplate, projectData);
+                    newProject.style.animationDelay = `${animDelay}s`;
+    
+                    //If we don't remove default opacity, we have a "flash" with
+                    // animation-fill: forwards and animation-delay that apply
+                    // opacity-0 before the slideLeftOut animation start
+                    setTimeout(() => {
+                        newProject.classList.remove('opacity-0');
+                    }, 500);
+    
+                    animDelay += 0.150;
+                    newProjectWrapper.appendChild(newProject);
+                });
+                projectContainer.appendChild(newProjectWrapper);
+                setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
+            }, 300);
             
         })
         .catch()
