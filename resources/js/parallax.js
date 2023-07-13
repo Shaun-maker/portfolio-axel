@@ -13,6 +13,8 @@ parallaxes.forEach((parallax) => {
     parallax.pos = 0;
     parallax.requestId = null;
 
+    console.log(parallax.endY);
+
 });
 
 const onLoad = function() {
