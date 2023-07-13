@@ -1,6 +1,6 @@
 <dialog 
     id="{{ $id ?? '' }}"
-    class="modal animate-zoomIn rounded-xl py-16 px-40 fixed"
+    class="modal animate-zoomIn rounded-xl pb-16 pt-12 px-40 fixed"
 >
     <button 
         data-close-modal
