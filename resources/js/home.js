@@ -1,4 +1,4 @@
-// Import this scripts file only into the homepage (exlude login page)
+// Import this scripts file only into the homepage (exclude login page)
 
 import './home/smooth-scroll';
 import './home/show-hide-header';
