@@ -1,5 +1,6 @@
 
 let presentationImg = document.getElementById('presentation-image');
+let projectImg = document.getElementById('project-image');
 
 const onChange = function (event) {
     let thumbnail = event.target.closest('[data-modal]').querySelector('[data-thumbnail-img]');
@@ -8,6 +9,7 @@ const onChange = function (event) {
 }
 
 presentationImg.addEventListener('change', onChange);
+projectImg.addEventListener('change', onChange);
 
 function updateThumbnail(inputFile, thumbnail)
 {
