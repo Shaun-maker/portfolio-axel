@@ -1,7 +1,7 @@
 <div class="text-main flex flex-col items-center">
     <h5 class="uppercase text-center text-5xl mb-16">projets</h5>
     {{-- Grid container --}}
-    <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6">
         {{-- Grid child --}}
         @foreach($projects as $project)
             <x-project-grid-item :$project />
