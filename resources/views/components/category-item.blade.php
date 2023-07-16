@@ -3,12 +3,12 @@
 @php
     $classes = 'relative justify-center py-5 px-11 rounded-full text-base 
     uppercase flex items-center group/link bg-white text-main border-2 
-    border-main';
+    border-main w-[280px] sm:w-auto';
 @endphp
 
 
 {{-- This main div is to hide circle when selected --}}
-<div data-filter class="relative">
+<div data-filter class="relative w-[280px] sm:w-auto">
 
     {{-- Hide outside clip-path --}}
     <div class="overflow-hidden relative rounded-full z-20">
