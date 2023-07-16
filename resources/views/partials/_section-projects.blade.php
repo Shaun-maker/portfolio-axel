@@ -14,7 +14,7 @@
                 $animDelay = 0.0;
             @endphp
 
-            @foreach($projects as $project)
+            @foreach($projects->where('category_id', '1') as $project)
 
             <x-project :$loop :$project :$animDelay />
 
