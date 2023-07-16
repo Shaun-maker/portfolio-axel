@@ -52,12 +52,17 @@
             <option value="3">PROJETS DE FORMATION</option>
         </select>
     </div>
-    {{-- Tools (techno) --}}
+    {{-- Tools (technos) --}}
     <div class="flex flex-col gap-2">
         <label for="project-tools">
             Technos
         </label>
         <div class="flex">
+            <x-tool-dropdown :$tools />
+            <x-tool-dropdown :$tools />
+            <x-tool-dropdown :$tools />
+            <x-tool-dropdown :$tools />
+            <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
         </div>
     </div>
