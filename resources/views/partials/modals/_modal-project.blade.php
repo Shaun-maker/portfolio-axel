@@ -4,7 +4,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {{-- Grid child --}}
         @foreach($projects as $project)
-            <x-project-grid-item />
+            <x-project-grid-item :$project />
         @endforeach
     </div>
     <hr class="w-4/5 my-8 border-main">
