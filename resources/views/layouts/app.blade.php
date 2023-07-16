@@ -35,6 +35,8 @@
         </div>
 
         @auth
+            @vite(['resources/js/update-thumbnail-form.js'])
+            
             @include('partials._modals')
         @endauth
 
