@@ -6,7 +6,7 @@
 
         <title>Laravel</title>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/home.js'])
         @livewireStyles
 
     </head>
@@ -35,7 +35,7 @@
         </div>
 
         @auth
-            @vite(['resources/js/update-thumbnail-form.js'])
+            @vite(['resources/js/auth.js'])
             
             @include('partials._modals')
         @endauth

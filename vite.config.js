@@ -7,7 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                'resources/js/update-thumbnail-form.js'
+                'resources/js/home.js',
+                'resources/js/auth.js'
             ],
             refresh: true,
         }),
