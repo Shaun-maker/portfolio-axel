@@ -23,10 +23,10 @@ export default {
         },
         slideLeftOut: {
           'from': {opacity: 1, transform: 'translateX(0)'},
-          'to': {opacity: 0, transform: 'translateX(-130px)'},
+          'to': {opacity: 0, transform: 'translateX(130px)'},
         },
         slideRightIn: {
-          'from': {opacity: 0, transform: 'translateX(130px)'},
+          'from': {opacity: 0, transform: 'translateX(-130px)'},
           'to': {opacity: 1, transform: 'translateX(0)'},
         },
         zoomIn: {
