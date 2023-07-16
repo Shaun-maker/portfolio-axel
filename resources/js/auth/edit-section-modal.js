@@ -1,4 +1,4 @@
-let editButtons = document.querySelectorAll('[data-edit-button');
+let editSectionButtons = document.querySelectorAll('[data-edit-button');
 let closeButtons = document.querySelectorAll('[data-close-modal]');
 
 let introEditModal = document.getElementById('js-intro-modal');
@@ -25,7 +25,7 @@ const closeModal = function() {
     projectEditModal.close();
 }
 
-editButtons.forEach(button => {
+editSectionButtons.forEach(button => {
     button.addEventListener('click', openModal);
 });
 
