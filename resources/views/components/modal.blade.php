@@ -1,5 +1,6 @@
 <dialog 
     id="{{ $id ?? '' }}"
+    data-modal
     class="modal animate-zoomIn rounded-xl pb-10 px-12
     sm:pb-16 pt-12 sm:px-40 fixed w-full sm:w-fit"
 >

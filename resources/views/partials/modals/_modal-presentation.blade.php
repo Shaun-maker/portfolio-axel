@@ -2,6 +2,7 @@
     @csrf
     <div class="flex flex-col items-center">
         <img 
+            data-thumbnail-img
             src="/images/profile.webp" 
             alt="Photo de profil"
             width="300"
