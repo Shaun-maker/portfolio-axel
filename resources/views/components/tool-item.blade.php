@@ -1,6 +1,6 @@
 <li class=" hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors">
     <button 
-        x-on:click="open = ! open"
+        x-on:click="toolId = '{{ $tool->id}}', open = ! open, toolClass = '{{ $tool->icon }}'"
         data-tools-id="{{ $tool->id }}" 
         type="button"
         >

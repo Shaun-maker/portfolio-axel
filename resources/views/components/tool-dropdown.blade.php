@@ -1,10 +1,10 @@
-<div class="relative" x-data="{ open:false }">
+<div class="relative" x-data="{ open:false, toolId: '', toolClass:'fa-brands fa-github' }">
     <button
         x-on:click="open = ! open"
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
     >
-        <i class="fa-brands fa-github text-xl"></i>
+        <i x-bind:class="toolClass" class="text-xl"></i>
         <i class="fa-solid fa-chevron-down text-xs"></i>
     </button>
     <ul
@@ -16,5 +16,5 @@
             <x-tool-item :$tool />
         @endforeach
     </ul>
-    <input class="hidden">
+    <input class="hidden" x-model="toolId">
 </div>
