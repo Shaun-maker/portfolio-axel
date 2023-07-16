@@ -3,7 +3,8 @@ let closeButtons = document.querySelectorAll('[data-close-modal]');
 
 let introEditModal = document.getElementById('js-intro-modal');
 let presentationEditModal = document.getElementById('js-presentation-modal');
-let projectEditModal = document.getElementById('js-project-modal');
+let projectModal = document.getElementById('js-project-modal');
+let projectEditModal = document.getElementById('js-project-edit-modal');
 
 const openModal = function(event) {
     let editButton = event.target.dataset.editButton;
@@ -15,14 +16,12 @@ const openModal = function(event) {
         presentationEditModal.showModal();
     }
     else if (editButton === "project") {
-        projectEditModal.showModal();
+        projectModal.showModal();
     }
 }
 
-const closeModal = function() {
-    introEditModal.close();
-    presentationEditModal.close();
-    projectEditModal.close();
+const closeModal = function(event) {
+    event.target.closest('[data-modal]').close();
 }
 
 editSectionButtons.forEach(button => {

@@ -9,3 +9,7 @@
 <x-modal id="js-project-modal">
     @include('partials.modals._modal-project')
 </x-modal>
+
+<x-modal id="js-project-edit-modal">
+    @include('partials.modals._modal-edit-project')
+</x-modal>
