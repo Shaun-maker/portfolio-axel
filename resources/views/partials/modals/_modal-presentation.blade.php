@@ -1,4 +1,4 @@
-<form class="hidden flex flex-col text-main gap-8 sm:w-80">
+<form class="flex flex-col text-main gap-8 sm:w-80">
     @csrf
     <div class="flex flex-col items-center">
         <img 

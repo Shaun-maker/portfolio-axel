@@ -1,23 +1,32 @@
-<div class="text-main">
-    <h5 class="uppercase text-center">projets</h5>
+<div class="text-main flex flex-col items-center">
+    <h5 class="uppercase text-center text-5xl mb-16">projets</h5>
     {{-- Grid container --}}
-    <div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {{-- Grid child --}}
-        <div>
-            <img
-                class="relative" 
-                src="" 
-                alt=""
-            >
-            <button class="absolute">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-            <button>
-                <i class="fa-solid fa-pen-to-square"></i>
-                éditer
-            </button>
-        </div>
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
+        <x-project-grid-item />
     </div>
-    <hr>
+    <hr class="w-4/5 my-8 border-main">
     <x-cta-button>ajouter un projet</x-cta-button>
 </div>

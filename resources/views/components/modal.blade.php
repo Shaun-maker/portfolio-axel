@@ -1,4 +1,4 @@
-<dialog open 
+<dialog 
     id="{{ $id ?? '' }}"
     data-modal
     class="modal animate-zoomIn rounded-xl pb-10 px-12
