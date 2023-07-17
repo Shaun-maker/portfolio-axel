@@ -31,5 +31,5 @@
             <x-tool-item :$tool />
         @endforeach
     </ul>
-    <input class="hidden" x-model="toolId">
+    <input class="hidden" x-bind:value="toolId" x-model="toolId">
 </div>
