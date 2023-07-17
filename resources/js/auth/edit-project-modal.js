@@ -56,16 +56,12 @@ function updateEditModal(data)
         if (categories[i].value == data.category_id) categories[i].selected = 'true';
     }
 
-    //console.log(projectForm['select-tools[]'][0].firstElementChild);
     let tools = projectForm['tools[]'];
     let selectTools = projectForm['select-tools[]'];
 
     for (let i = 0; i < data.tools.length; i++) {
-        tools[i].value = data.id;
-        //console.log(selectTools[i].firstElementChild.classList);
-        //selectTools[i].firstElementChild.textContent = data.tools[i].icon;
-        selectTools[i].firstElementChild.innerHTML = data.tools[i].icon;
-        //selectTools[i].firstElementChild.classList.add("fa-brands", "fa-github");
+        // TODO : I can't make this work with Alpine.js code
+        //selectTools[i].firstElementChild.innerHTML = data.tools[i].icon;
     }
 
     projectForm['project-link'].value = data.project_link;

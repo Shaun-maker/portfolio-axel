@@ -21,7 +21,6 @@
                     id = parseInt(toolId);
                     if (tools.includes(id)) tools.splice(tools.indexOf(id), 1);
                     toolId = '', open = ! open, toolClass = ''
-                    console.log(toolClass);
                 "
                 data-tools-id="" 
                 type="button"
