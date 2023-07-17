@@ -11,12 +11,13 @@
         x-show="open" x-transition @click.outside="open = false"
         class="absolute z-20 bg-white flex flex-col gap-2 shadow-md"
     >
-        {{-- This first tool is for empty selection, or select no tool --}}
+        {{-- This first tool is for empty tool --}}
         <li class="w-full">
             <button
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
                 x-on:click="
-                    if (tools.includes(parseInt(toolId))) tools.splice(tools.indexOf(toolId), 1);
+                    id = parseInt(toolId);
+                    if (tools.includes(id)) tools.splice(tools.indexOf(id), 1)
                     toolId = '', open = ! open, toolClass = ''
                 "
                 data-tools-id="" 
