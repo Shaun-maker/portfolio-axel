@@ -59,12 +59,13 @@ function updateEditModal(data)
     //console.log(projectForm['select-tools[]'][0].firstElementChild);
     let tools = projectForm['tools[]'];
     let selectTools = projectForm['select-tools[]'];
-    console.log(Alpine.store('darkMode').toolId);
 
     for (let i = 0; i < data.tools.length; i++) {
-        //tools[i].value = "hello";
         tools[i].value = data.id;
-        selectTools[i].firstElementChild.classList.add("fa-brands", "fa-github");
+        //console.log(selectTools[i].firstElementChild.classList);
+        //selectTools[i].firstElementChild.textContent = data.tools[i].icon;
+        selectTools[i].firstElementChild.innerHTML = `<i class='${data.tools[i].icon}'></i>`
+        //selectTools[i].firstElementChild.classList.add("fa-brands", "fa-github");
     }
 
     projectForm['project-link'].value = data.project_link;

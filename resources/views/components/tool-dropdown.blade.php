@@ -1,12 +1,12 @@
-{{-- <div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }"> --}}
-<div class="relative" x-data="$store.tool">
+<div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
     <button
         name="select-tools[]"
         x-on:click="open = ! open"
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
     >
-        <i x-bind:class="toolClass" class="text-xl w-5 h-5"></i>
+        {{-- <i x-bind:class="toolClass" class="text-xl w-5 h-5"></i> --}}
+        <span x-html="toolClass"></span>
         <i class="fa-solid fa-chevron-down text-xs"></i>
     </button>
     <ul
