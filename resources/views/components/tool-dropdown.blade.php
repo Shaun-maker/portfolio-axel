@@ -1,5 +1,6 @@
 <div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
     <button
+        name="select-tools[]"
         x-on:click="open = ! open"
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
