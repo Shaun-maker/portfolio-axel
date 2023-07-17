@@ -1,4 +1,4 @@
-<form class="flex flex-col text-main gap-8 sm:w-80">
+<form class="flex flex-col text-main gap-8 sm:w-full">
     @csrf
     <div class="flex flex-col items-center">
         <img 
@@ -62,7 +62,7 @@
         <label for="project-tools">
             Technos
         </label>
-        <div x-data="{ tools:[] }" class="flex">
+        <div x-data="{ tools:[] }" class="flex flex-wrap">
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
