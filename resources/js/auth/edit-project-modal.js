@@ -42,6 +42,8 @@ function updateEditModal(data)
     console.log(data);
     console.log(projectForm);
 
+    // TODO : udpate POST link
+
     // Update thumbnail image, reuse of data-thumbnail-img instead of creatind new ID
     projectForm.closest('[data-modal]')
         .querySelector('[data-thumbnail-img]')
