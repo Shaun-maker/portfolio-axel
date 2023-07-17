@@ -33,7 +33,7 @@
             Description
         </label>
         <textarea
-            class="border border-main p-2"
+            class="border border-main p-2 h-72"
             id="project-description"
             name="project-description"
         ></textarea>
