@@ -12,8 +12,9 @@
         class="absolute z-20 bg-white flex flex-col gap-2 shadow-md"
     >
         {{-- This first tool is for empty selection, or select no tool --}}
-        <li class=" hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors">
-            <button 
+        <li class="w-full">
+            <button
+                class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
                 x-on:click="toolId = '', open = ! open, toolClass = 'fa-solid fa-ban'"
                 data-tools-id="" 
                 type="button"
