@@ -19,8 +19,9 @@
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
                 x-on:click="
                     id = parseInt(toolId);
-                    if (tools.includes(id)) tools.splice(tools.indexOf(id), 1)
+                    if (tools.includes(id)) tools.splice(tools.indexOf(id), 1);
                     toolId = '', open = ! open, toolClass = ''
+                    console.log(toolClass);
                 "
                 data-tools-id="" 
                 type="button"
