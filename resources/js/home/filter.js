@@ -145,12 +145,10 @@ function createProject(originalProjectTemplate, projectData)
     let toolContainer = getProjectElement(project, 'tools');
     toolContainer.replaceChildren();
     projectData.tools.forEach(tool => {
-        let icon = document.createElement('i');
-        tool.icon.split(' ').forEach((className) => {
-            icon.classList.add(className);
-          });
-        icon.classList.add('text-2xl');
-        toolContainer.appendChild(icon);
+        let span = document.createElement('span');
+        span.innerHTML = tool.icon;
+        span.classList.add('text-2xl');
+        toolContainer.appendChild(span);
     });
 
     // Populate link CTA 'see project' and 'see source code'

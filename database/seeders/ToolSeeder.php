@@ -14,12 +14,12 @@ class ToolSeeder extends Seeder
     public function run(): void
     {
         $icons = [
-            ['name' => 'GitHub',            'icon' => 'fa-brands fa-github'],
-            ['name' => 'Laravel',           'icon' =>'fa-brands fa-laravel'],
-            ['name' => 'JavaScript',        'icon' => 'fa-brands fa-js'],
-            ['name' => 'PHP',               'icon' => 'fa-brands fa-php'],
-            ['name' => 'Python',            'icon' => 'fa-brands fa-python'],
-            ['name' => 'React',             'icon' => 'fa-brands fa-react'],
+            ['name' => 'GitHub',            'icon' => "<i class='fa-brands fa-github'></i>"],
+            ['name' => 'Laravel',           'icon' => "<i class='fa-brands fa-laravel'></i>"],
+            ['name' => 'JavaScript',        'icon' => "<i class='fa-brands fa-js'></i>"],
+            ['name' => 'PHP',               'icon' => "<i class='fa-brands fa-php'></i>"],
+            ['name' => 'Python',            'icon' => "<i class='fa-brands fa-python'></i>"],
+            ['name' => 'React',             'icon' => "<i class='fa-brands fa-react'></i>"],
         ];
 
         Tool::insert($icons);

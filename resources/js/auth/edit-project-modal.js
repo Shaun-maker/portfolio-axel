@@ -64,7 +64,7 @@ function updateEditModal(data)
         tools[i].value = data.id;
         //console.log(selectTools[i].firstElementChild.classList);
         //selectTools[i].firstElementChild.textContent = data.tools[i].icon;
-        selectTools[i].firstElementChild.innerHTML = `<i class='${data.tools[i].icon}'></i>`
+        selectTools[i].firstElementChild.innerHTML = data.tools[i].icon;
         //selectTools[i].firstElementChild.classList.add("fa-brands", "fa-github");
     }
 

@@ -11,7 +11,7 @@
             else if (tools.includes({{ $tool->id }})) ''
             else {
                 toolId = '{{ $tool->id }}'
-                toolClass = '{{ $tool->icon }}'
+                toolClass = `{{ $tool->icon }}`
                 tools.push({{ $tool->id }})
             }
             open = ! open
@@ -19,7 +19,9 @@
         data-tools-id="{{ $tool->id }}" 
         type="button"
         >
-        <i class="{{ $tool->icon }} text-xl mr-1.5"></i>
+        <span class="text-xl mr-1.5">
+            {!! $tool->icon !!}
+        </span>
         {{ $tool->name }}
     </button>
 </li>

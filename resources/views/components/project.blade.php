@@ -37,7 +37,9 @@
         </div>
         <div data-project-tools class="flex justify-center gap-8">
             @foreach ($project->tools as $tool)
-                <i class="{{ $tool->icon }} text-2xl"></i>
+            <span class="text-2xl">
+                {!! $tool->icon !!}
+            </span>
             @endforeach
         </div>
         <div data-project-link class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
