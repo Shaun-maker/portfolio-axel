@@ -1,4 +1,5 @@
-<div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
+{{-- <div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }"> --}}
+<div class="relative" x-data="$store.tool">
     <button
         name="select-tools[]"
         x-on:click="open = ! open"

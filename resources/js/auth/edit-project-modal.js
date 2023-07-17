@@ -59,7 +59,7 @@ function updateEditModal(data)
     //console.log(projectForm['select-tools[]'][0].firstElementChild);
     let tools = projectForm['tools[]'];
     let selectTools = projectForm['select-tools[]'];
-    console.log(Alpine.toolClass);
+    console.log(Alpine.store('darkMode').toolId);
 
     for (let i = 0; i < data.tools.length; i++) {
         //tools[i].value = "hello";
