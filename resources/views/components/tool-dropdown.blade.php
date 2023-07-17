@@ -15,7 +15,10 @@
         <li class="w-full">
             <button
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
-                x-on:click="toolId = '', open = ! open, toolClass = ''"
+                x-on:click="
+                    if (tools.includes(parseInt(toolId))) tools.splice(tools.indexOf(toolId), 1);
+                    toolId = '', open = ! open, toolClass = ''
+                "
                 data-tools-id="" 
                 type="button"
                 >

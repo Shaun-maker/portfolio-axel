@@ -57,13 +57,14 @@
         <label for="project-tools">
             Technos
         </label>
-        <div class="flex">
+        <div x-data="{ tools:[] }" class="flex">
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
+            <span x-text="tools"></span>
         </div>
     </div>
     <div class="flex flex-col gap-2">
