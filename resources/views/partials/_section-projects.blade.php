@@ -2,7 +2,7 @@
 
     <x-marquee-project />
 
-    <x-category-list />
+    <x-category-list :$categories />
 
     <div class="relative my-20 h-[6000px]" id="js-project-container">
         <div 

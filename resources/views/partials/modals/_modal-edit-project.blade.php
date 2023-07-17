@@ -43,13 +43,18 @@
             Catégorie
         </label>
         <select 
-            class="border border-main p-2 bg-white" 
+            class="border border-main p-2 bg-white uppercase" 
             name="project-category" 
             id="project-category"
         >
-            <option value="1">PROJETS PERSO</option>
-            <option value="2">PROJETS PRO</option>
-            <option value="3">PROJETS DE FORMATION</option>
+            @foreach($categories as $category)
+                <option
+                    selected="{{ $loop->first ? 'true' : 'false' }}" 
+                    value="{{ $category->id }}"
+                >
+                    {{ $category->name }}
+                </option>
+            @endforeach
         </select>
     </div>
     {{-- Tools (technos) --}}
