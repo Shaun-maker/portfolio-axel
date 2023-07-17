@@ -3,7 +3,7 @@ let closeButtons = document.querySelectorAll('[data-close-modal]');
 
 let introEditModal = document.getElementById('js-intro-modal');
 let presentationEditModal = document.getElementById('js-presentation-modal');
-let projectModal = document.getElementById('js-project-modal');
+let projectModal = document.getElementById('js-project-list-modal');
 let projectEditModal = document.getElementById('js-project-edit-modal');
 
 const openModal = function(event) {

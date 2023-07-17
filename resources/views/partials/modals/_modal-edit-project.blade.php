@@ -1,4 +1,4 @@
-<form class="flex flex-col text-main gap-8 sm:w-full">
+<form id="js-project-form" class="flex flex-col text-main gap-8 sm:w-full">
     @csrf
     <div class="flex flex-col items-center">
         <img 
@@ -49,7 +49,6 @@
         >
             @foreach($categories as $category)
                 <option
-                    selected="{{ $loop->first ? 'true' : 'false' }}" 
                     value="{{ $category->id }}"
                 >
                     {{ $category->name }}

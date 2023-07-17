@@ -6,10 +6,10 @@
     @include('partials.modals._modal-presentation')
 </x-modal>
 
-<x-modal id="js-project-modal">
+<x-modal id="js-project-list-modal">
     @include('partials.modals._modal-project')
 </x-modal>
 
-<x-modal id="js-project-edit-modal">
+<x-modal id="js-project-modal">
     @include('partials.modals._modal-edit-project')
 </x-modal>
