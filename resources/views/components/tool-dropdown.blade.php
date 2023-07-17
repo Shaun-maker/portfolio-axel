@@ -9,7 +9,7 @@
     </button>
     <ul
         x-show="open" x-transition @click.outside="open = false"
-        class="absolute z-20 bg-white flex flex-col gap-2 shadow-md"
+        class="absolute z-20 bg-white flex flex-col gap-2 shadow-md max-h-72 overflow-scroll"
     >
         {{-- This first tool is for empty tool --}}
         <li class="w-full">
