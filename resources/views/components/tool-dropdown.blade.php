@@ -1,10 +1,10 @@
-<div class="relative" x-data="{ open:false, toolId: '', toolClass:'fa-solid fa-ban' }">
+<div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
     <button
         x-on:click="open = ! open"
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
     >
-        <i x-bind:class="toolClass" class="text-xl"></i>
+        <i x-bind:class="toolClass" class="text-xl w-5 h-5"></i>
         <i class="fa-solid fa-chevron-down text-xs"></i>
     </button>
     <ul
@@ -15,7 +15,7 @@
         <li class="w-full">
             <button
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
-                x-on:click="toolId = '', open = ! open, toolClass = 'fa-solid fa-ban'"
+                x-on:click="toolId = '', open = ! open, toolClass = ''"
                 data-tools-id="" 
                 type="button"
                 >
