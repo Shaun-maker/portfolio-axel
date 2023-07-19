@@ -47,7 +47,10 @@ class ProfileController extends Controller
 
             $imageProcessor = new ImageProcessor(new Imagick($path));
 
-            $imageProcessor->resizeImage($path, 800, 0)->cloneImage()->destroy();
+            $imageProcessor
+                ->resizeImage($path, 800, 0)
+                //->cloneImage()
+                ->convertImage('webp');
 
             dd($imageProcessor->convertImage("e", "sdf"));
 

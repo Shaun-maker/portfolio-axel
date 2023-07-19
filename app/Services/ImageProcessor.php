@@ -23,12 +23,18 @@ class ImageProcessor
     public function convertImage(string $format)
     {
         // TODO
-        return "You want to convert image ?";
+        $this->imagick->clone();
+        $this->imagick->setImageformat($format);
+        $this->imagick->writeImage('images/profiles/test.webp');
+        return $this;
     }
 
     public function cloneImage()
     {
-        return $this->imagick->clone();
+        $this->imagick->clone();
+        $this->imagick->setImageformat("webp");
+        $this->imagick->writeImage('images/profiles/test.webp');
+        return $this;
     }
 
     public function destroy()
