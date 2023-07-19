@@ -7,7 +7,7 @@
     <div class="flex flex-col items-center">
         <img 
             data-thumbnail-img
-            src="/images/profile.webp" 
+            src="{{ $profile->url_image_webp }}" 
             alt="Photo de profil"
             width="300"
             height="300"
