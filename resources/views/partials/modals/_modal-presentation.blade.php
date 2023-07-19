@@ -1,5 +1,6 @@
 <form 
     method="post" action="/profile/presentation"
+    enctype="multipart/form-data"
     class="flex flex-col text-main gap-8 sm:w-80"
 >
     @method('put')

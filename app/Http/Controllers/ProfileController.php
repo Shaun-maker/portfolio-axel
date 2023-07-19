@@ -36,6 +36,12 @@ class ProfileController extends Controller
             'presentation-location' => ['required']
         ]);
 
+        //dd($request->file('presentation-image')); OK
+
+        if ($request->hasFile('presentation-image')) {
+            dd($request->file('presentation-image'));
+        };
+
         $profile = Profile::first();
 
         $profile->update([
