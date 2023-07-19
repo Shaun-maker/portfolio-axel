@@ -31,18 +31,20 @@ class ProfileController extends Controller
 
     public function update_presentation(Request $request): RedirectResponse
     {
+        $profile = Profile::first();
+
         $attributes = $request->validate([
             'presentation-stack' => ['required'],
             'presentation-location' => ['required']
         ]);
 
-        //dd($request->file('presentation-image')); OK
-
-        if ($request->hasFile('presentation-image')) {
-            dd($request->file('presentation-image'));
+        if ($request->hasFile('presentation-image') && 
+            $request->file('presentation-image')->isValid()
+        ) {
+            $path = $request->file('presentation-image')->store('images/profiles');
+            $profile->update(['url_image_jpg' => $path]);
         };
 
-        $profile = Profile::first();
 
         $profile->update([
             'stack' => $attributes['presentation-stack'],
@@ -52,5 +54,3 @@ class ProfileController extends Controller
         return redirect('/')->with('success', 'La section présentation a bien été modifiée.');
     }
 }
-
-/* Bonjour ! Je suis Axel Paillaud, développeur web passionné. Explorez mon portfolio pour en savoir plus sur mon travail ! */

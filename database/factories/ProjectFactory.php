@@ -18,9 +18,9 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         $urls = [
-            'images/projects/booki-fakedata.png',
-            'images/projects/elagage41-fakedata.png',
-            'images/projects/resize-web-fakedata.png'
+            '/images/projects/booki-fakedata.png',
+            '/images/projects/elagage41-fakedata.png',
+            '/images/projects/resize-web-fakedata.png'
         ];
 
         $project_link = rand(0, 1) ? fake()->url() : null;

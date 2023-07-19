@@ -16,7 +16,7 @@
         {{ $profile->title }}
     </h2>
     <div class="flex gap-24">
-        <img src="svg/arrow-down.svg" alt="" class="relative top-12">
+        <img src="images/svg/arrow-down.svg" alt="" class="relative top-12">
         <p class="sm:w-1/3 animate-fadeIn opacity-0" 
             style="animation-delay: 1s; animation-fill-mode: forwards;"
         >
