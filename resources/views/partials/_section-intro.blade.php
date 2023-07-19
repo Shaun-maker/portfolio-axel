@@ -23,5 +23,5 @@
             {{ $profile->description }}
         </p>
     </div>
-    <p class="text-right mt-8 sm:m-0">Dispo. : septembre 2023</p>
+    <p class="text-right mt-8 sm:m-0">Dispo. : {!! $profile->available !!}</p>
 </section>

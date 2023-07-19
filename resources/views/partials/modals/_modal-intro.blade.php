@@ -1,4 +1,5 @@
-<form class="flex flex-col text-main gap-8 sm:w-96">
+<form class="flex flex-col text-main gap-8 sm:w-96" method="post" action="/profile">
+    @method('put')
     @csrf
     <div class="flex flex-col gap-2">
         <label for="intro-title">
