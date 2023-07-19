@@ -24,12 +24,9 @@
     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col justify-evenly basis-1/3 order-2 xl:order-none">
-        <p>Axel Paillaud, <span class="whitespace-nowrap">28 ans.</span></p>
+        <p>Axel Paillaud, <span class="whitespace-nowrap">29 ans.</span></p>
         <h3>
-            Fullstack<br>
-            PHP/Laravel,<br>
-            Javascript,<br>
-            & more
+            {!! $profile->stack !!}
         </h3>
     </div>
 
@@ -80,9 +77,7 @@
             télécharger mon cv
         </x-cta-button>
         <h3 class="max-w-[20rem]">
-            Développeur web sur Orléans, Loiret.<br>
-            Mobile sur Tours, Blois, Paris.<br>
-            Ouvert au full remote.
+            {!! $profile->location !!}
         </h3>
     </div>
 </section>

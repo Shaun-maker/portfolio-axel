@@ -1,4 +1,4 @@
-<form class="flex flex-col text-main gap-8 sm:w-80">
+<form class="flex flex-col text-main gap-8 sm:w-96">
     @csrf
     <div class="flex flex-col gap-2">
         <label for="intro-title">
@@ -8,6 +8,7 @@
             class="border border-main p-2"
             id="intro-title" 
             name="intro-title"
+            value="{{ $profile->title }}"
         >
     </div>
     <div class="flex flex-col gap-2">
@@ -15,10 +16,10 @@
             Description
         </label>
         <textarea
-            class="border border-main p-2"
+            class="border border-main p-2 h-32"
             id="intro-description"
             name="intro-description"
-        ></textarea>
+        >{{ $profile->description }}</textarea>
     </div>
     <div class="flex flex-col gap-2">
         <label for="intro-available">
@@ -28,6 +29,7 @@
             class="border border-main p-2"
             id="intro-available"
             name="intro-available"
+            value="{{ $profile->available }}"
         >
     </div>
     <div class="flex justify-center">

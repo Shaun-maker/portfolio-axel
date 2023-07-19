@@ -2,7 +2,7 @@
     id="{{ $id ?? '' }}"
     data-modal
     class="modal animate-zoomIn rounded-xl pb-10 px-12
-    sm:pb-12 pt-12 sm:px-24 lg:pb-16 lg:px-40 fixed lg:max-w-screen-lg w-fit"
+    sm:pb-12 pt-12 sm:px-24 lg:pb-16 lg:px-40 fixed lg:max-w-screen-lg w-full sm:w-fit"
 >
     <button 
         data-close-modal
