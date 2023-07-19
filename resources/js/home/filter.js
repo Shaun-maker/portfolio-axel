@@ -1,7 +1,17 @@
+let body = document.body;
 let filterButtons = document.querySelectorAll('[data-filter-button]');
 
 // Calculate the total height of project, for project container in absolute position
 setHeightToAbsoluteProjectContainer(document.querySelector('[data-project-wrapper]'));
+
+// Because projectWrapper is in absolute position, we have to compute height of
+// main projectContainer on resize
+window.addEventListener('resize', () => {
+    let lastWrapper = getLastWrapper();
+    let height = lastWrapper.offsetHeight;
+
+    setHeightProjectContainer(height);
+})
 
 filterButtons.forEach((filterButton) => {
 
@@ -72,11 +82,8 @@ function fetchAndRefreshProject(event)
         })
         .then((res) => {
             let projectContainer = document.getElementById('js-project-container');
-            let projectWrappers = document.querySelectorAll('[data-project-wrapper]');
 
-            // We need the last project wrapper, because if the user try to filter
-            // too fast, we can have multiple project wrappers at once
-            let lastProjectWrapper = projectWrappers[projectWrappers.length - 1];
+            let lastProjectWrapper = getLastWrapper();
             let newProjectWrapper = lastProjectWrapper.cloneNode();
 
             // This clone node serve as a project template
@@ -106,10 +113,20 @@ function fetchAndRefreshProject(event)
                 setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
 
             }, 150);
-            
+
+            setBodyHeight();
         })
         .catch()
     }
+
+function getLastWrapper()
+{
+    let projectWrappers = document.querySelectorAll('[data-project-wrapper]');
+
+    // We need the last project wrapper, because if the user try to filter
+    // too fast, we can have multiple project wrappers at once
+    return projectWrappers[projectWrappers.length - 1];
+}
 
 function createProject(originalProjectTemplate, projectData)
 {
@@ -264,6 +281,7 @@ function deleteProject(projectWrapper)
 
     }
 
+    // Is it work ?
     // Delete the old project wrapper container
     setTimeout(() => {
         projectWrapper.remove();
@@ -271,23 +289,36 @@ function deleteProject(projectWrapper)
 
 }
 
+function setHeightProjectContainer(height)
+{
+    let mainProjectContainer = document.getElementById('js-project-container');
+    mainProjectContainer.style.height = height + 'px';
+}
+
 function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper = null)
 {
     let height = projectWrapper.offsetHeight;
-    let mainProjectContainer = document.getElementById('js-project-container');
 
     if (!oldProjectWrapper) {
-        mainProjectContainer.style.height = height + 'px';
+        setHeightProjectContainer(height);
     }
     else {
         let oldHeight = oldProjectWrapper.offsetHeight;
 
         if (height < oldHeight) {
             setTimeout(() => {
-                mainProjectContainer.style.height = height + 'px';
+                setHeightProjectContainer(height);
             }, 1000);
         }
-        else mainProjectContainer.style.height = height + 'px';
+        else setHeightProjectContainer(height);
     }
 
+}
+
+function setBodyHeight()
+{
+    setTimeout(() => {
+        let height = document.getElementById('js-smooth-scroll').clientHeight;
+        body.style.height = height + "px";
+    }, 1500)
 }
