@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'name' => 'Axel Test',
             'email' => 'axel@example.com',
-            'is_admin' => 1,
             'password' => 'password'
         ]);
 
+        $this->call(ProfileSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(ToolSeeder::class);
         $this->call(ProjectSeeder::class);
