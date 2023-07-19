@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Profile;
+use App\Services\ImageProcessor;
+use Imagick;
 
 class ProfileController extends Controller
 {
@@ -42,6 +44,13 @@ class ProfileController extends Controller
             $request->file('presentation-image')->isValid()
         ) {
             $path = $request->file('presentation-image')->store('images/profiles');
+
+            $imageProcessor = new ImageProcessor(new Imagick($path));
+
+            $imageProcessor->resizeImage($path, 800, 0)->cloneImage()->destroy();
+
+            dd($imageProcessor->convertImage("e", "sdf"));
+
             $profile->update(['url_image_jpg' => $path]);
         };
 
