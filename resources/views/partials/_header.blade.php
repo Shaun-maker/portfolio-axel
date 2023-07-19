@@ -3,7 +3,7 @@
 @auth
     <div 
         class="sticky top-0 left-0 bg-red-950 text-white z-50 flex
-        py-2.5 px-6"
+        py-2.5 px-6 justify-between"
     >
         <div class="flex justify-center w-full items-center gap-2">
             <i class="fa-solid fa-pen-to-square"></i>
@@ -13,11 +13,13 @@
             class="flex justify-center"
         >
             @csrf
-            <button type="submit" class="flex justify-end items-center gap-2">
+            <button type="submit" class="flex items-center gap-2">
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Déconnexion
             </button>
         </form>
+        <x-flash-success />
+        <x-flash-error />
     </div>
 @endauth
 
