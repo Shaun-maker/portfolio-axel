@@ -26,17 +26,17 @@
             class="border border-main p-2"
             id="presentation-stack" 
             name="presentation-stack"
-        ></textarea>
+        >{{ $profile->stack }}</textarea>
     </div>
     <div class="flex flex-col gap-2">
         <label for="presentation-localisation">
             Localisation
         </label>
         <textarea
-            class="border border-main p-2"
+            class="border border-main p-2 h-24"
             id="presentation-localisation"
             name="presentation-localisation"
-        ></textarea>
+        >{{ $profile->location }}</textarea>
     </div>
     <div class="flex justify-center">
         <x-cta-button class="mt-4 normal-case">Valider les modifications</x-cta-button>
