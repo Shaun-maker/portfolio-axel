@@ -8,7 +8,7 @@ use App\Models\Profile;
 
 class ProfileController extends Controller
 {
-    public function update(Request $request): RedirectResponse
+    public function update_intro(Request $request): RedirectResponse
     {
         $attributes = $request->validate([
             'intro-title' => ['max:255', 'required'],
@@ -27,6 +27,23 @@ class ProfileController extends Controller
         ]);
 
         return redirect('/')->with('success', 'L\'introduction a bien été modifiée.');
+    }
+
+    public function update_presentation(Request $request): RedirectResponse
+    {
+        $attributes = $request->validate([
+            'presentation-stack' => ['required'],
+            'presentation-location' => ['required']
+        ]);
+
+        $profile = Profile::first();
+
+        $profile->update([
+            'stack' => $attributes['presentation-stack'],
+            'location' => $attributes['presentation-location'],
+        ]);
+
+        return redirect('/')->with('success', 'La section présentation a bien été modifiée.');
     }
 }
 

@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('title');
-            $table->string('url_image');
+            $table->string('url_image_webp');
+            $table->string('url_image_jpg');
             $table->text('description');
             $table->string('available');
             $table->text('stack');

@@ -1,4 +1,8 @@
-<form class="flex flex-col text-main gap-8 sm:w-80">
+<form 
+    method="post" action="/profile/presentation"
+    class="flex flex-col text-main gap-8 sm:w-80"
+>
+    @method('put')
     @csrf
     <div class="flex flex-col items-center">
         <img 
@@ -34,8 +38,8 @@
         </label>
         <textarea
             class="border border-main p-2 h-24"
-            id="presentation-localisation"
-            name="presentation-localisation"
+            id="presentation-location"
+            name="presentation-location"
         >{{ $profile->location }}</textarea>
     </div>
     <div class="flex justify-center">

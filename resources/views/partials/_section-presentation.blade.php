@@ -41,10 +41,10 @@
             sm:w-[512px] sm:h-[512px] w-72 h-72"
         >
             <picture class="block">
-                <source srcset="images/profile.webp" type="image/webp">
+                <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
                 <img
                     data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
-                    src="images/profile.jpg" 
+                    src="{{ $profile->url_image_jpg }}" 
                     alt="Axel Paillaud, développeur web"
                     width="512" height="512"
                     class="block object-cover relative"
