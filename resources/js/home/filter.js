@@ -114,7 +114,6 @@ function fetchAndRefreshProject(event)
 
             }, 150);
 
-            setBodyHeight();
         })
         .catch()
     }
@@ -295,30 +294,34 @@ function setHeightProjectContainer(height)
     mainProjectContainer.style.height = height + 'px';
 }
 
+function setHeightProjectContainerAndBody(height)
+{
+    setHeightProjectContainer(height);
+    setHeightBody();
+}
+
 function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper = null)
 {
     let height = projectWrapper.offsetHeight;
 
     if (!oldProjectWrapper) {
-        setHeightProjectContainer(height);
+        setHeightProjectContainerAndBody(height)
     }
     else {
         let oldHeight = oldProjectWrapper.offsetHeight;
 
         if (height < oldHeight) {
             setTimeout(() => {
-                setHeightProjectContainer(height);
+                setHeightProjectContainerAndBody(height)
             }, 1000);
         }
-        else setHeightProjectContainer(height);
+        else setHeightProjectContainerAndBody(height)
     }
 
 }
 
-function setBodyHeight()
+function setHeightBody()
 {
-    setTimeout(() => {
-        let height = document.getElementById('js-smooth-scroll').clientHeight;
-        body.style.height = height + "px";
-    }, 1500)
+    let height = document.getElementById('js-smooth-scroll').clientHeight;
+    body.style.height = height + "px";
 }
