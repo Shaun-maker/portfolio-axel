@@ -1,3 +1,4 @@
+import tooltips from './tooltip.js';
 let body = document.body;
 let filterButtons = document.querySelectorAll('[data-filter-button]');
 
@@ -110,6 +111,7 @@ function fetchAndRefreshProject(event)
                     newProjectWrapper.appendChild(newProject);
                 });
                 projectContainer.appendChild(newProjectWrapper);
+                tooltips();
                 setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
 
             }, 150);
@@ -162,6 +164,7 @@ function createProject(originalProjectTemplate, projectData)
     toolContainer.replaceChildren();
     projectData.tools.forEach(tool => {
         let span = document.createElement('span');
+        span.dataset.tippyContent = tool.name;
         span.innerHTML = tool.icon;
         span.classList.add('text-2xl');
         toolContainer.appendChild(span);
