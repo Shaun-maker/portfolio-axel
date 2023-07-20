@@ -1,5 +1,5 @@
 @if(session()->has('success'))
     <x-flash>
-        <p class="text-lime-900">{{ session('success') }}</p>
+        <p class="text-white">{{ session('success') }}</p>
     </x-flash>
 @endif
