@@ -23,4 +23,11 @@ class ProjectController extends Controller
     {
         return new ProjectResource(Project::findOrFail($id));
     }
+
+    public function delete($id)
+    {
+        $project = Project::find($id);
+        $project->delete();
+        return redirect('/')->with('success', 'The project ' . $project->title . ' has been deleted.');
+    }
 }
