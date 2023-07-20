@@ -1,25 +1,11 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
 /* @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans'); */
 
-@font-face{
-    font-family:ibm plex sans;
-    font-style:normal;
-    font-weight: 400;
-    src:url(../fonts/IBMPlexSans-Regular.ttf);
-}
+@import url('./font.css');
+@import url('./tooltip.css');
 
-@font-face{
-    font-family:ibm plex sans;
-    font-style:normal;
-    font-weight: 600;
-    src:url(../fonts/IBMPlexSans-SemiBold.ttf);
-}
-
-@font-face{
-    font-family:ibm plex sans;
-    font-style:normal;
-    font-weight: 700;
-    src:url(../fonts/IBMPlexSans-Bold.ttf);
+:root {
+    --main-color: #871414;
 }
 
 @tailwind base;

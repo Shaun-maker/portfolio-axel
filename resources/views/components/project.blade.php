@@ -37,7 +37,7 @@
         </div>
         <div data-project-tools class="flex justify-center gap-8">
             @foreach ($project->tools as $tool)
-            <span class="text-2xl">
+            <span data-tippy-content="{{ $tool->name }}" class="text-2xl">
                 {!! $tool->icon !!}
             </span>
             @endforeach
