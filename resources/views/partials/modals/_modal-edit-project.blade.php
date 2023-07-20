@@ -1,7 +1,9 @@
 <form 
+    enctype="multipart/form-data"
     method="post"
     id="js-project-form" 
-    class="flex flex-col text-main gap-8 sm:w-full">
+    class="flex flex-col text-main gap-8 sm:w-full"
+>
     @csrf
     <div class="flex flex-col items-center">
         <img 

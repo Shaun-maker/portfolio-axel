@@ -26,6 +26,7 @@ class ProjectController extends Controller
 
     public function update($id)
     {
+        dd(request());
         return "hello, world";
     }
 
