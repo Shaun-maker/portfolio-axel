@@ -4,8 +4,8 @@ const EASE_SLOW = 0.003;
 const EASE_SPEED = 0.020;
 
 let scrollPosition = {
-    project: 1440,
-    contact: 1920,
+    project: 1508,
+    contact: 9999,
 }
 
 let scroller = {
