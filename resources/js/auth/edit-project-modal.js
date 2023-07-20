@@ -42,7 +42,15 @@ function updateEditModal(data)
     console.log(data);
     console.log(projectForm);
 
-    // TODO : udpate POST link
+    projectForm.setAttribute('action', `/project/${data.id}`);
+
+    // We have to update POST method to PUT
+    let input = document.createElement('input');
+    input.type = "hidden";
+    input.name = "_method";
+    input.value = "put";
+
+    projectForm.appendChild(input);
 
     // Update thumbnail image, reuse of data-thumbnail-img instead of creatind new ID
     projectForm.closest('[data-modal]')

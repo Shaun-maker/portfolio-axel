@@ -24,6 +24,11 @@ class ProjectController extends Controller
         return new ProjectResource(Project::findOrFail($id));
     }
 
+    public function update($id)
+    {
+        return "hello, world";
+    }
+
     public function delete($id)
     {
         $project = Project::find($id);

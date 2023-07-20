@@ -10,4 +10,5 @@ Route::get('/', HomeController::class);
 Route::put('/profile/intro', [ProfileController::class, 'update_intro'])->middleware('auth');
 Route::put('/profile/presentation', [ProfileController::class, 'update_presentation'])->middleware('auth');
 
-Route::delete('/projects/{id}', [ProjectController::class, 'delete'])->middleware('auth');
+Route::put('/project/{id}', [ProjectController::class, 'update'])->middleware('auth');
+Route::delete('/project/{id}', [ProjectController::class, 'delete'])->middleware('auth');

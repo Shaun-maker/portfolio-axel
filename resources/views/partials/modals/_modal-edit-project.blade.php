@@ -1,4 +1,7 @@
-<form id="js-project-form" class="flex flex-col text-main gap-8 sm:w-full">
+<form 
+    method="post"
+    id="js-project-form" 
+    class="flex flex-col text-main gap-8 sm:w-full">
     @csrf
     <div class="flex flex-col items-center">
         <img 
