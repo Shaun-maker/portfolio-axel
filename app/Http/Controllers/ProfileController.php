@@ -45,16 +45,18 @@ class ProfileController extends Controller
         ) {
             $path = $request->file('presentation-image')->store('images/profiles');
 
-            $imageProcessor = new ImageProcessor(new Imagick($path));
+            $imageProcessor = new ImageProcessor(new Imagick($path), $path);
 
-            $imageProcessor
-                ->resizeImage($path, 800, 0)
-                //->cloneImage()
-                ->convertImage('webp');
+            $cloneImagePath = $imageProcessor
+                ->resizeImage(0, 800)
+                ->convertImage('webp')
+                ->cloneImage()
+                ->destroy();
 
-            dd($imageProcessor->convertImage("e", "sdf"));
+            dd();
 
             $profile->update(['url_image_jpg' => $path]);
+            $profile->update(['url_image_webp' => $cloneImagePath]);
         };
 
 

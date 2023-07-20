@@ -6,39 +6,57 @@ use Imagick;
 
 class ImageProcessor
 {
-    protected $imagick;
+    protected Imagick $imagick;
+    protected string $path;
+    protected string $extension;
+    protected array $exifs;
 
-    public function __construct(Imagick $imagick)
+    public function __construct(Imagick $imagick, string $path)
     {
         $this->imagick = $imagick;
+        $this->path = $path;
+        $this->extension = pathinfo($path,  PATHINFO_EXTENSION);
+        $this->exifs = $imagick->getImageProperties('exif:*');
     }
 
-    public function resizeImage($path, int $height, int $width)
+    public function resizeImage(int $height, int $width)
     {
         $this->imagick->resizeImage($height, $width, imagick::FILTER_LANCZOS, 0.5);
-        $this->imagick->writeImage($path);
+        $this->writeImage($this->path);
         return $this;
     }
 
     public function convertImage(string $format)
     {
-        // TODO
-        $this->imagick->clone();
         $this->imagick->setImageformat($format);
+        $this->imagick->setImageProperty('Exif:Make', 'Imagick');
+        foreach ($this->exifs as $key => $value) {
+            $this->imagick->setImageProperty($key, $value);
+        }
         $this->imagick->writeImage('images/profiles/test.webp');
+        $this->extension = $format;
+        return $this;
+    }
+
+    public function writeImage()
+    {
+        $this->imagick->writeImage($this->path);
         return $this;
     }
 
     public function cloneImage()
     {
-        $this->imagick->clone();
-        $this->imagick->setImageformat("webp");
-        $this->imagick->writeImage('images/profiles/test.webp');
+        $uuid = \Illuminate\Support\Str::uuid();
+        $filename = $uuid . '.' . $this->extension;
+        $newPath = dirname($this->path) . '/' . $filename;
+        $this->imagick->writeImage($newPath);
+        $this->path = $newPath;
         return $this;
     }
 
     public function destroy()
     {
         $this->imagick->destroy();
+        return $this->path;
     }
 }
