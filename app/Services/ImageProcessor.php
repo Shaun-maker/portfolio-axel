@@ -9,14 +9,13 @@ class ImageProcessor
     protected Imagick $imagick;
     protected string $path;
     protected string $extension;
-    protected array $exifs;
 
     public function __construct(Imagick $imagick, string $path)
     {
         $this->imagick = $imagick;
         $this->path = $path;
         $this->extension = pathinfo($path,  PATHINFO_EXTENSION);
-        $this->exifs = $imagick->getImageProperties('exif:*');
+        $this->imagick->setImageCompressionQuality(80);
     }
 
     public function resizeImage(int $height, int $width)
@@ -29,12 +28,29 @@ class ImageProcessor
     public function convertImage(string $format)
     {
         $this->imagick->setImageformat($format);
-        $this->imagick->setImageProperty('Exif:Make', 'Imagick');
-        foreach ($this->exifs as $key => $value) {
-            $this->imagick->setImageProperty($key, $value);
-        }
-        $this->imagick->writeImage('images/profiles/test.webp');
         $this->extension = $format;
+        return $this;
+    }
+
+    public function autoRotateImage()
+    {
+        $orientation = $this->imagick->getImageOrientation();
+        
+        switch($orientation) {
+            case imagick::ORIENTATION_BOTTOMRIGHT: 
+                $this->imagick->rotateimage("#000", 180); // rotate 180 degrees
+                break;
+
+            case imagick::ORIENTATION_RIGHTTOP:
+                $this->imagick->rotateimage("#000", 90); // rotate 90 degrees CW
+                break;
+
+            case imagick::ORIENTATION_LEFTBOTTOM: 
+                $this->imagick->rotateimage("#000", -90); // rotate 90 degrees CCW
+                break;
+        }
+
+        $this->imagick->setImageOrientation(imagick::ORIENTATION_TOPLEFT);
         return $this;
     }
 

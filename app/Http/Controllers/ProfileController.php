@@ -50,10 +50,9 @@ class ProfileController extends Controller
             $cloneImagePath = $imageProcessor
                 ->resizeImage(0, 800)
                 ->convertImage('webp')
+                ->autoRotateImage()
                 ->cloneImage()
                 ->destroy();
-
-            dd();
 
             $profile->update(['url_image_jpg' => $path]);
             $profile->update(['url_image_webp' => $cloneImagePath]);
