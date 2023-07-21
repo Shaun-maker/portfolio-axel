@@ -19,7 +19,7 @@ class ProjectController extends Controller
         return ProjectResource::collection($projects->get());
     }
 
-    public function show($id)
+    public function edit($id)
     {
         return new ProjectResource(Project::findOrFail($id));
     }
