@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ToolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/project/{id}', [ProjectController::class, 'edit']);
 Route::get('/projects', [ProjectController::class, 'index']);
 
-Route::get('/tools', [ProjectController::class, 'index']);
+Route::get('/tools', [ToolController::class, 'index']);

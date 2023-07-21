@@ -13,7 +13,7 @@ class ToolController extends Controller
      */
     public function index()
     {
-        //
+        return ToolResource::collection(Tool::all());
     }
 
     /**
@@ -43,9 +43,9 @@ class ToolController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit()
     {
-        return ToolResource::collection(Tool::all());
+
     }
 
     /**
