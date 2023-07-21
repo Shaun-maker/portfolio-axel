@@ -41,10 +41,18 @@ export default() => ({
         let toolId = parseInt(event.target.dataset.toolId);
         let tool = this.allTools.find(tool => tool.id === toolId);
         
-        console.log(this.project.tools.length);
+        let index = event.target.closest('[data-dropdown]').dataset.index;
+
         if (this.project.tools.length < 6) {
-            this.project.tools.push(tool);
-            this.filterTool();
+
+            if (this.project.tools[index]) {
+                this.project.tools[index] = tool;
+                this.filterTool();
+            }
+            else {
+                this.project.tools.push(tool);
+                this.filterTool();
+            }
         }
     },
 

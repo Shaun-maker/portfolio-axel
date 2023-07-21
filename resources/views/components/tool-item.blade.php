@@ -4,7 +4,7 @@
         x-on:click="open = ! open, getTool($event)"
         x-bind:data-tool-id="tool.id"
         type="button"
-        >
+    >
         <span x-html="tool.icon" class="text-xl mr-1.5 pointer-events-none">
         </span>
         <span x-text="tool.name" class="pointer-events-none"></span>

@@ -73,8 +73,8 @@
             Technos
         </label>
         <div class="flex flex-wrap">
-            @for ($i = 0; $i < 6; $i++)
-                <x-tool-dropdown :$tools :$i />
+            @for ($index = 0; $index < 6; $index++)
+                <x-tool-dropdown :$tools :$index />
             @endfor
         </div>
     </div>

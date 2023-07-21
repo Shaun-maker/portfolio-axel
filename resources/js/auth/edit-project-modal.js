@@ -38,9 +38,6 @@ editProjectButtons.forEach(button => {
     button.addEventListener('click', onEditClick);
 })
 
-
-
-
 function updateEditModal(data)
 {
     console.log(data);
