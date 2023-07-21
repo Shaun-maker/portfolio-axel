@@ -7,9 +7,10 @@ export default() => ({
 
     project: {},
 
-    async getProject() {
-        let res = await (await fetch('/api/project/2')).json();
+    async getProject(event) {
+        let id = event.target.dataset.editProject;
+        let res = await (await fetch(`/api/project/${id}`)).json();
         this.project = res.data;
-        console.log(this.project);
+        this.openModal();
     },
 })

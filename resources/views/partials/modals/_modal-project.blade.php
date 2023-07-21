@@ -2,7 +2,6 @@
     <h5 class="uppercase text-center text-5xl mb-16">projets</h5>
     {{-- Grid container --}}
     <div 
-        x-data="getProject"
         class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6"
     >
         {{-- Grid child --}}

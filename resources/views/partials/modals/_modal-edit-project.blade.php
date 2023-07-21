@@ -8,7 +8,8 @@
     <div class="flex flex-col items-center">
         <img 
             data-thumbnail-img
-            src="/images/projects/resize-web-fakedata.png" 
+            src="/images/projects/resize-web-fakedata.png"
+            x-bind:src="project.url_image" 
             alt="Photo de profil"
             width="300"
             height="300"
@@ -31,6 +32,7 @@
             class="border border-main p-2"
             id="project-title" 
             name="project-title"
+            x-bind:value="project.title"
         >
     </div>
     <div class="flex flex-col gap-2">
@@ -41,6 +43,7 @@
             class="border border-main p-2 h-72"
             id="project-description"
             name="project-description"
+            x-text="project.description"
         ></textarea>
     </div>
     <div class="flex flex-col gap-2">
@@ -48,6 +51,7 @@
             Catégorie
         </label>
         <select 
+            x-model="project.category_id"
             class="border border-main p-2 bg-white uppercase" 
             name="project-category" 
             id="project-category"
