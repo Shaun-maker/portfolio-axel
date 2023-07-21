@@ -5,7 +5,6 @@
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
     >
-        {{-- <i x-bind:class="toolClass" class="text-xl w-5 h-5"></i> --}}
         <span x-html="toolClass" class="text-xl w-5 h-5"></span>
         <i class="fa-solid fa-chevron-down text-xs"></i>
     </button>
@@ -33,5 +32,5 @@
             <x-tool-item :$tool />
         @endforeach
     </ul>
-    <input class="hidden" name="tools[]" x-bind:value="toolId" x-model="toolId">
+    <input class="hidden" name="tools[]" x-bind:value="toolId">
 </div>

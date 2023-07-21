@@ -8,16 +8,6 @@ const onAddProjectClick = function() {
     openAddModal();
 }
 
-/*
-const onEditClick = function(event) {
-    let projectId = event.target.dataset.editProject;
-    openEditModal(projectId);
-}
-
-editProjectButtons.forEach(button => {
-    button.addEventListener('click', onEditClick);
-})
-
 addProjectButton.addEventListener('click', onAddProjectClick);
 
 function openAddModal () 
@@ -37,6 +27,19 @@ function openEditModal (projectId)
         })
         .catch()
 }
+
+/*
+const onEditClick = function(event) {
+    let projectId = event.target.dataset.editProject;
+    openEditModal(projectId);
+}
+
+editProjectButtons.forEach(button => {
+    button.addEventListener('click', onEditClick);
+})
+
+
+
 
 function updateEditModal(data)
 {

@@ -7,6 +7,8 @@ export default() => ({
 
     project: {},
 
+    tools: [],
+
     async getProject(event) {
         let id = event.target.dataset.editProject;
         let res = await (await fetch(`/api/project/${id}`)).json();

@@ -70,7 +70,7 @@
         <label for="project-tools">
             Technos
         </label>
-        <div x-data="{ tools:[] }" class="flex flex-wrap">
+        <div class="flex flex-wrap">
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
             <x-tool-dropdown :$tools />
@@ -87,6 +87,7 @@
             class="border border-main p-2"
             id="project-link" 
             name="project-link"
+            x-bind:value="project.project_link"
         >
     </div>
     <div class="flex flex-col gap-2">
@@ -97,6 +98,7 @@
             class="border border-main p-2"
             id="project-source" 
             name="project-source"
+            x-bind:value="project.source_link"
         >
     </div>
     <div class="flex justify-center">
