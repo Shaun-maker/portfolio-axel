@@ -5,13 +5,13 @@ export default() => ({
         editProjectModal.showModal();
     },
 
-    project: {},
-
-    tools: [],
+    project: {
+        tools: [],
+    },
 
     async getProject(event) {
-        let id = event.target.dataset.editProject;
-        let res = await (await fetch(`/api/project/${id}`)).json();
+        let projectId = event.target.dataset.editProject;
+        let res = await (await fetch(`/api/project/${projectId}`)).json();
         this.project = res.data;
         this.openModal();
     },

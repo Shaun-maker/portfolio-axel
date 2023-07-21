@@ -1,11 +1,14 @@
 <div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
     <button
-        name="select-tools[]"
         x-on:click="open = ! open"
         type="button" 
         class="flex items-center gap-1.5 p-4 pb-2"
     >
-        <span x-html="toolClass" class="text-xl w-5 h-5"></span>
+    <span class="text-xl w-5 h-5">
+        <template x-if="project.tools[{{ $i }}]">
+            <span x-html="project.tools[{{ $i }}].icon"></span>
+        </template>
+    </span>
         <i class="fa-solid fa-chevron-down text-xs"></i>
     </button>
     <ul
@@ -16,12 +19,7 @@
         <li class="w-full">
             <button
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
-                x-on:click="
-                    id = parseInt(toolId);
-                    if (tools.includes(id)) tools.splice(tools.indexOf(id), 1);
-                    toolId = '', open = ! open, toolClass = ''
-                "
-                data-tools-id="" 
+                x-on:click="open = ! open, project.tools.splice({{ $i}}, 1), console.log(project)"
                 type="button"
                 >
                 <i class="fa-solid fa-ban text-xl mr-1.5"></i>
@@ -29,8 +27,10 @@
             </button>
         </li>
         @foreach($tools as $tool)
-            <x-tool-item :$tool />
+            <x-tool-item :$i :$tool />
         @endforeach
     </ul>
-    <input class="hidden" name="tools[]" x-bind:value="toolId">
+    <template x-if="project.tools[{{ $i }}]">
+        <input class="hidden" name="tools[]" x-bind:value="project.tools[{{ $i }}].id">
+    </template>
 </div>

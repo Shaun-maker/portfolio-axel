@@ -3,8 +3,10 @@
     method="post"
     id="js-project-form" 
     class="flex flex-col text-main gap-8 sm:w-full"
+    x-bind:action="`project/${project.id}`"
 >
     @csrf
+    @method('put')
     <div class="flex flex-col items-center">
         <img 
             data-thumbnail-img
@@ -71,12 +73,9 @@
             Technos
         </label>
         <div class="flex flex-wrap">
-            <x-tool-dropdown :$tools />
-            <x-tool-dropdown :$tools />
-            <x-tool-dropdown :$tools />
-            <x-tool-dropdown :$tools />
-            <x-tool-dropdown :$tools />
-            <x-tool-dropdown :$tools />
+            @for ($i = 0; $i < 6; $i++)
+                <x-tool-dropdown :$tools :$i />
+            @endfor
         </div>
     </div>
     <div class="flex flex-col gap-2">
