@@ -7,7 +7,7 @@
 </x-modal>
 
 {{-- This div is for alpine directive : fetch project, then populate modal form --}}
-<div x-data="getProject">
+<div x-data="getProject" x-init="getTools()">
     <x-modal id="js-project-list-modal">
         @include('partials.modals._modal-project')
     </x-modal>

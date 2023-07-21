@@ -6,11 +6,11 @@
             If the tool selected is already present in another input, do nothing
             Else, we can select this tool 
         --}}
-        x-on:click="open = ! open"
+        x-on:click="open = ! open, getTool($event)"
         data-tool-id="{{ $tool->id }}" 
         type="button"
         >
-        <span class="text-xl mr-1.5">
+        <span class="text-xl mr-1.5 pointer-events-none">
             {!! $tool->icon !!}
         </span>
         {{ $tool->name }}

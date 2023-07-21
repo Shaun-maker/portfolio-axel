@@ -17,9 +17,21 @@ export default() => ({
         let projectRes = await (await fetch(`/api/project/${projectId}`)).json();
         this.project = projectRes.data;
 
-        let toolRes = await (await fetch(`/api/tools`)).json();
-        this.tools = toolRes.data;
-        console.log(toolRes);
         this.openModal();
     },
+
+    async getTools() {
+        let toolRes = await (await fetch(`/api/tools`)).json();
+        this.tools = toolRes.data;
+    },
+
+    getTool(event) {
+        let toolId = parseInt(event.target.dataset.toolId);
+
+        let tool = this.tools.find(tool => tool.id === toolId);
+
+        console.log(tool);
+        
+        this.project.tools.push(tool);
+    }
 })
