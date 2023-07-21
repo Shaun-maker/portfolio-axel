@@ -1,5 +1,13 @@
 let editProjectModal = document.getElementById('js-project-modal');
 
+function emptyProject(project) {
+    project.tools = [];
+    project.title = "";
+    project.description = "";
+    project.project_link = "";
+    project.source_link = "";
+}
+
 export default() => ({
     openModal() {
         editProjectModal.showModal();
@@ -13,6 +21,12 @@ export default() => ({
 
     filteredTools: {},
 
+    addProject() {
+        emptyProject(this.project);
+        this.project.isProject = null;
+        this.openModal();
+    },
+
     async getProject(event) {
         let projectId = event.target.dataset.editProject;
 
@@ -20,6 +34,8 @@ export default() => ({
         this.project = projectRes.data;
 
         this.filterTool();
+
+        this.project.isProject = true;
 
         this.openModal();
     },

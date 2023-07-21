@@ -10,5 +10,5 @@
         @endforeach
     </div>
     <hr class="w-4/5 my-8 border-main">
-    <x-cta-button id="js-add-project">ajouter un projet</x-cta-button>
+    <x-cta-button x-on:click="addProject()">ajouter un projet</x-cta-button>
 </div>
