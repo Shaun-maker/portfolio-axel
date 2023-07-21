@@ -8,6 +8,7 @@ const onAddProjectClick = function() {
     openAddModal();
 }
 
+/*
 const onEditClick = function(event) {
     let projectId = event.target.dataset.editProject;
     openEditModal(projectId);
@@ -77,3 +78,4 @@ function updateEditModal(data)
     projectForm['project-link'].value = data.project_link;
     projectForm['project-source'].value = data.source_link;
 }
+*/

@@ -16,6 +16,7 @@
             </button>
         </form>
         <button
+            @click="getProject"
             data-edit-project="{{ $project->id }}" 
             class="mt-1 whitespace-nowrap h-1/6"
         >
