@@ -20,6 +20,7 @@ class ToolSeeder extends Seeder
             ['name' => 'PHP',               'icon' => "<i class='fa-brands fa-php'></i>"],
             ['name' => 'Python',            'icon' => "<i class='fa-brands fa-python'></i>"],
             ['name' => 'React',             'icon' => "<i class='fa-brands fa-react'></i>"],
+            ['name' => 'WordPress',             'icon' => "<i class='fa-brands fa-wordpress'></i>"],
         ];
 
         Tool::insert($icons);

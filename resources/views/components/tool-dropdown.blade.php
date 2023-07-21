@@ -1,4 +1,4 @@
-<div class="relative" x-data="{ open:false, toolId: '', toolClass:'' }">
+<div class="relative" x-data="{ open:false }">
     <button
         x-on:click="open = ! open"
         type="button" 
@@ -19,16 +19,16 @@
         <li class="w-full">
             <button
                 class="hover:bg-light whitespace-nowrap w-full py-2 px-4 transition-colors text-left"
-                x-on:click="open = ! open, project.tools.splice({{ $i}}, 1), console.log(project)"
+                x-on:click="open = ! open, emptyTool({{ $i }})"
                 type="button"
                 >
                 <i class="fa-solid fa-ban text-xl mr-1.5"></i>
                 Empty
             </button>
         </li>
-        @foreach($tools as $tool)
-            <x-tool-item :$i :$tool />
-        @endforeach
+        <template x-for="tool in filteredTools">
+            <x-tool-item />
+        </template>
     </ul>
     <template x-if="project.tools[{{ $i }}]">
         <input class="hidden" name="tools[]" x-bind:value="project.tools[{{ $i }}].id">
