@@ -14,7 +14,7 @@
             data-thumbnail-img
             {{-- TODO : if no images (create project), take default image --}}
             src="/images/projects/resize-web-fakedata.png"
-            x-bind:src="project.url_image" 
+            x-bind:src="project.isProject ? project.url_image : '/images/svg/picture-svgrepo.svg'" 
             alt="Photo de profil"
             width="300"
             height="300"
