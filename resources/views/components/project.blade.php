@@ -42,7 +42,12 @@
         <div data-project-description class="flex flex-col gap-4">
             {!! $project->description !!}
         </div>
-        <div data-project-tools class="flex justify-center gap-8">
+        {{-- Start time and End time --}}
+        <div class="text-sm">
+            <p class="inline">Début : <span data-project-begin-date> sept. 2023</span></p>
+            <p class="inline ml-4">Fin : <span data-project-end-date> jan. 2024</span></p>
+        </div>
+        <div data-project-tools class="flex justify-center gap-8  mb-4">
             @foreach ($project->tools as $tool)
             <span data-tippy-content="{{ $tool->name }}" class="text-2xl">
                 {!! $tool->icon !!}
