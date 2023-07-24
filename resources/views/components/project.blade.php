@@ -43,10 +43,12 @@
             {!! $project->description !!}
         </div>
         {{-- Start time and End time --}}
-        <div class="text-sm">
-            <p class="inline">Début : <span data-project-begin-date> sept. 2023</span></p>
-            <p class="inline ml-4">Fin : <span data-project-end-date> jan. 2024</span></p>
-        </div>
+        @if($project->start_date || $project->end_date)
+            <div class="text-sm">
+                <p class="inline">Début : <span data-project-begin-date>{{ $project->start_date }}</span></p>
+                <p class="inline ml-4">Fin : <span data-project-end-date>{{ $project->end_date }}</span></p>
+            </div>
+        @endif
         <div data-project-tools class="flex justify-center gap-8  mb-4">
             @foreach ($project->tools as $tool)
             <span data-tippy-content="{{ $tool->name }}" class="text-2xl">
@@ -54,20 +56,24 @@
             </span>
             @endforeach
         </div>
-        @if($project->project_link || $project->source_link)
-            <div data-project-link class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
-                @if(!$project->project_link)
-                    <x-cta-link-disable>voir le projet</x-cta-link>
-                @else
-                    <x-cta-link href="{{ $project->project_link }}">voir le projet</x-cta-link>
-                @endif
+        <div 
+            data-project-link 
+            class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4
+            @if(!$project->project_link && !$project->source_link) 
+                hidden 
+            @endif"
+        >
+            @if(!$project->project_link)
+                <x-cta-link-disable>voir le projet</x-cta-link>
+            @else
+                <x-cta-link href="{{ $project->project_link }}">voir le projet</x-cta-link>
+            @endif
 
-                @if(!$project->source_link)
-                    <x-cta-link-disable wireframe="true">Voir le code source</x-cta-link>
-                @else
-                    <x-cta-link href="{{ $project->source_link }}" wireframe="true">Voir le code source</x-cta-link>
-                @endif
-            </div>
-        @endif
+            @if(!$project->source_link)
+                <x-cta-link-disable wireframe="true">Voir le code source</x-cta-link>
+            @else
+                <x-cta-link href="{{ $project->source_link }}" wireframe="true">Voir le code source</x-cta-link>
+            @endif
+        </div>
     </div>
 </article>
