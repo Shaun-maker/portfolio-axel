@@ -20,7 +20,7 @@ class ProfileSeeder extends Seeder
             'created_at'    => now(),
             'updated_at'    => now(),
             'description'   => 'Bonjour ! Je suis Axel Paillaud, développeur web passionné. Explorez mon portfolio pour en savoir plus sur mon travail !',
-            'available'     => 'septembre 2023',
+            'available'     => fake()->datetime(),
             'stack'         => 'Fullstack<br>PHP/Laravel,<br>Javascript,<br>& more',
             'location'      => 'Développeur web sur Orléans, Loiret.<br>Mobile sur Tours, Blois, Paris.<br>Ouvert au full remote.',
         ];

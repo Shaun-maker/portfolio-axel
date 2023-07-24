@@ -27,10 +27,11 @@
             Disponibilité
         </label>
         <input
+            type="date"
             class="border border-main p-2"
             id="intro-available"
             name="intro[available]"
-            value="{{ $profile->available }}"
+            value="{{ $profile->available->format('Y-m-d') }}"
         >
     </div>
     <div class="flex justify-center">

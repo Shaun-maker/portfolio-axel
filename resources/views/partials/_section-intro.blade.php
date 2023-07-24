@@ -23,5 +23,5 @@
             {{ $profile->description }}
         </p>
     </div>
-    <p class="text-right mt-8 sm:m-0">Dispo. : {!! $profile->available !!}</p>
+    <p class="text-right mt-8 sm:m-0">Dispo. : {{ $profile->available->translatedFormat('M Y') }}</p>
 </section>

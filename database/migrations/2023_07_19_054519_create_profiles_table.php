@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('url_image');
             $table->string('url_image_webp');
             $table->text('description');
-            $table->string('available');
+            $table->timestamp('available');
             $table->text('stack');
             $table->text('location');
             $table->string('phone')->nullable();

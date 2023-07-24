@@ -15,7 +15,7 @@ class ProfileController extends Controller
         $attributes = $request->validate([
             'intro.title' => ['max:255', 'required'],
             'intro.description' => ['required'],
-            'intro.available' => ['max:255', 'required']
+            'intro.available' => ['required']
         ]);
 
         $profile = Profile::first();

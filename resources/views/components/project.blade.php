@@ -49,7 +49,7 @@
                     <time datetime="{{ $project->start_date->format('Y-m-d') }}" 
                         data-project-start-date
                     >
-                        {{ $project->start_date->locale('fr_FR')->translatedFormat('M Y') }}
+                        {{ $project->start_date->translatedFormat('M Y') }}
                     </time>
                 </p>
                 <p class="inline ml-4">Fin : 
@@ -57,7 +57,7 @@
                         <time datetime="{{ $project->end_date->format('Y-m-d') }}" 
                             data-project-end-date
                         >
-                            {{ $project->end_date->locale('fr_FR')->translatedFormat('M Y') }}
+                            {{ $project->end_date->translatedFormat('M Y') }}
                         </time>
                     @else
                         <span data-project-end-date>En cours</span>
