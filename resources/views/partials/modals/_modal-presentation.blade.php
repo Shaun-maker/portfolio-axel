@@ -19,7 +19,7 @@
             class="cursor-pointer border bg-white text-main border-2 border-main
             py-4 px-8 rounded-full text-base"
         >
-            <input id="presentation-image" name="presentation-image" type="file" accept="image/*" class="hidden">
+            <input id="presentation-image" name="presentation[image]" type="file" accept="image/*" class="hidden">
             Modifier la photo
         </label>
     </div>
@@ -30,7 +30,7 @@
         <textarea 
             class="border border-main p-2"
             id="presentation-stack" 
-            name="presentation-stack"
+            name="presentation[stack]"
         >{{ $profile->stack }}</textarea>
     </div>
     <div class="flex flex-col gap-2">
@@ -40,7 +40,7 @@
         <textarea
             class="border border-main p-2 h-24"
             id="presentation-location"
-            name="presentation-location"
+            name="presentation[location]"
         >{{ $profile->location }}</textarea>
     </div>
     <div class="flex justify-center">

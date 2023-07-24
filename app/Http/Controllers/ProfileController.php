@@ -32,14 +32,14 @@ class ProfileController extends Controller
         $profile = Profile::first();
 
         $attributes = $request->validate([
-            'presentation-stack' => ['required'],
-            'presentation-location' => ['required']
+            'presentation.stack' => ['required'],
+            'presentation.location' => ['required']
         ]);
 
-        if ($request->hasFile('presentation-image') && 
-            $request->file('presentation-image')->isValid()
+        if ($request->hasFile('presentation.image') && 
+            $request->file('presentation.image')->isValid()
         ) {
-            $path = $request->file('presentation-image')->store('images/profiles');
+            $path = $request->file('presentation.image')->store('images/profiles');
 
             $imageProcessor = new ImageProcessor(new Imagick($path), $path);
 
@@ -55,10 +55,7 @@ class ProfileController extends Controller
         };
 
 
-        $profile->update([
-            'stack' => $attributes['presentation-stack'],
-            'location' => $attributes['presentation-location'],
-        ]);
+        $profile->update($attributes['presentation']);
 
         return redirect('/')->with('success', 'La section présentation a bien été modifiée.');
     }
