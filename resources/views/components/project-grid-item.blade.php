@@ -1,11 +1,14 @@
     <div class="relative w-full h-full">
-        <img
+        <picture>
+            <source srcset="{{ $project->url_image_webp }}" type="image/webp">
+            <img
             class="object-cover h-5/6 w-full aspect-square"
             height="160"
             width="128"
             src="{{ $project->url_image }}" 
             alt=""
         >
+        </picture>
         <form method="post" action="/project/{{ $project->id }}">
             @csrf
             @method('delete')
