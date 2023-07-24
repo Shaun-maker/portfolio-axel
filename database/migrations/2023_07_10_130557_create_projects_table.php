@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('category_id');
             $table->timestamps(6);
-            $table->timestamp('start_date', 6)->nullable();
+            $table->timestamp('start_date', 6);
             $table->timestamp('end_date', 6)->nullable();
             $table->string('title');
             $table->string('url_image');

@@ -53,11 +53,15 @@
                     </time>
                 </p>
                 <p class="inline ml-4">Fin : 
-                    <time datetime="{{ $project->end_date->format('Y-m-d') }}" 
-                        data-project-end-date
-                    >
-                        {{ $project->end_date->locale('fr_FR')->translatedFormat('M Y') }}
-                    </time>
+                    @if($project->end_date)
+                        <time datetime="{{ $project->end_date->format('Y-m-d') }}" 
+                            data-project-end-date
+                        >
+                            {{ $project->end_date->locale('fr_FR')->translatedFormat('M Y') }}
+                        </time>
+                    @else
+                        <span data-project-end-date>En cours</span>
+                    @endif
                 </p>
             </div>
         @endif

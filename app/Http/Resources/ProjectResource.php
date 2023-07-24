@@ -17,10 +17,16 @@ class ProjectResource extends JsonResource
     {
         //return parent::toArray($request);
         $french_truncated_start_date = $this->start_date->locale('fr_FR')->translatedFormat('M Y');
-        $french_truncated_end_date = $this->end_date->locale('fr_FR')->translatedFormat('M Y');
-
         $only_date_start = $this->start_date->format('Y-m-d');
-        $only_date_end = $this->end_date->format('Y-m-d');
+
+        if ($this->end_date) {
+            $french_truncated_end_date = $this->end_date->locale('fr_FR')->translatedFormat('M Y');
+            $only_date_end = $this->end_date->format('Y-m-d');
+        }
+        else {
+            $french_truncated_end_date = "";
+            $only_date_end = "";
+        }
 
         return [
             'id' => $this->id,

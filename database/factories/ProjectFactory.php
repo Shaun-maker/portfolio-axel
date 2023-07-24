@@ -25,6 +25,8 @@ class ProjectFactory extends Factory
 
         $project_link = rand(0, 1) ? fake()->url() : null;
         $source_link = rand(0, 1) ? fake()->url() : null;
+        
+        $end_date = rand(0, 1) ? fake()->datetime() : null;
 
         return [
             'category_id' => function() {
@@ -35,7 +37,7 @@ class ProjectFactory extends Factory
             'url_image_webp' => $url,
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(3)) . '</p>',
             'start_date' => fake()->datetime(),
-            'end_date' => fake()->datetime(),
+            'end_date' => $end_date,
             'project_link' => $project_link,
             'source_link' => $source_link, 
         ];
