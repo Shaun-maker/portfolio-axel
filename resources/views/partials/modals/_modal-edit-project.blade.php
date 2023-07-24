@@ -3,7 +3,7 @@
     method="post"
     id="js-project-form" 
     class="flex flex-col text-main gap-8 sm:w-full"
-    x-bind:action="project.isProject ? `project/${project.id}` : `projects`"
+    x-bind:action="project.isProject ? `project/${project.id}` : `project`"
 >
     @csrf
     <template x-if="project.isProject">

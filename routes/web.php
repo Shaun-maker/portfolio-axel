@@ -12,3 +12,4 @@ Route::put('/profile/presentation', [ProfileController::class, 'update_presentat
 
 Route::put('/project/{id}', [ProjectController::class, 'update'])->middleware('auth');
 Route::delete('/project/{id}', [ProjectController::class, 'delete'])->middleware('auth');
+Route::post('/project', [ProjectController::class, 'store'])->middleware('auth');

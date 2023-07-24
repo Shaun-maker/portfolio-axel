@@ -65,9 +65,46 @@ class ProjectController extends Controller
         return redirect('/')->with('success', 'The project ' . $project->title . ' has been updated.');
     }
 
-    public function store()
+    public function store(Request $request) : RedirectResponse
     {
         // TODO : create project
+
+        $attributes = $request->validate([
+            'project.title' => ['required', 'min:3', 'max:255'],
+            'project.description' => ['required'],
+            'project.category_id' => ['required'],
+            'project.start_date' => ['required'],
+            'tools' => ['min:1', 'required'],
+            'project.project_link' => ['max:255'],
+            'project.source_link' => ['max:255']
+        ]);
+
+        $image = $request->validate([
+            'project.image' => ['required'],
+        ]);
+
+        $path = $image['project']['image']->store('images/projects');
+
+        $imageProcessor = new ImageProcessor(new Imagick($path), $path);
+
+        $cloneImagePath = $imageProcessor
+            ->resizeImage(0, 640)
+            ->convertImage('webp')
+            ->autoRotateImage()
+            ->cloneImage()
+            ->destroy();
+
+        $project = new Project;
+
+        $id = $project->create([...$attributes['project'],
+        'url_image' => $path,
+        'url_image_webp' => $cloneImagePath,
+        ])->id;
+
+        $project = Project::findOrFail($id);
+        $project->tools()->sync($attributes['tools']);
+
+        return redirect('/')->with('success', 'The project ' . $attributes['project']['title'] . ' has been added.');
     }
 
     public function delete($id)
