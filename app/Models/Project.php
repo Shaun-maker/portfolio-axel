@@ -12,6 +12,16 @@ class Project extends Model
 
     protected $guarded = [];
 
+        /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'start_date' => 'datetime',
+        'end_date' => 'datetime',
+    ];
+
     public function tools() : BelongsToMany {
         return $this->belongsToMany(Tool::class);
     }

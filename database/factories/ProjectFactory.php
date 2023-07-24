@@ -34,6 +34,8 @@ class ProjectFactory extends Factory
             'url_image' => $url = $urls[array_rand($urls)],
             'url_image_webp' => $url,
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(3)) . '</p>',
+            'start_date' => fake()->datetime(),
+            'end_date' => fake()->datetime(),
             'project_link' => $project_link,
             'source_link' => $source_link, 
         ];

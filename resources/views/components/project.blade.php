@@ -45,8 +45,16 @@
         {{-- Start time and End time --}}
         @if($project->start_date || $project->end_date)
             <div class="text-sm">
-                <p class="inline">Début : <span data-project-begin-date>{{ $project->start_date }}</span></p>
-                <p class="inline ml-4">Fin : <span data-project-end-date>{{ $project->end_date }}</span></p>
+                <p class="inline">Début : 
+                    <time data-project-begin-date>
+                        {{ $project->start_date->locale('fr_FR')->translatedFormat('M Y') }}
+                    </time>
+                </p>
+                <p class="inline ml-4">Fin : 
+                    <time data-project-end-date>
+                        {{ $project->end_date->locale('fr_FR')->translatedFormat('M Y') }}
+                    </time>
+                </p>
             </div>
         @endif
         <div data-project-tools class="flex justify-center gap-8  mb-4">

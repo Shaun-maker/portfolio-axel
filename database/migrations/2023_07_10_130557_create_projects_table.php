@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('category_id');
-            $table->timestamps();
-            $table->timestamp('start_date')->nullable();
-            $table->timestamp('end_date')->nullable();
+            $table->timestamps(6);
+            $table->timestamp('start_date', 6)->nullable();
+            $table->timestamp('end_date', 6)->nullable();
             $table->string('title');
             $table->string('url_image');
             $table->string('url_image_webp');

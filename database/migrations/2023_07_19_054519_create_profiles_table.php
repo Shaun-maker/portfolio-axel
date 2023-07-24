@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->timestamps(6);
             $table->string('title');
             $table->string('url_image');
             $table->string('url_image_webp');
