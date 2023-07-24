@@ -7,6 +7,8 @@ use App\Http\Resources\ProjectResource;
 use App\Http\Resources\ProjectCollection;
 use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
+use App\Services\ImageProcessor;
+use Imagick;
 
 class ProjectController extends Controller
 {
@@ -41,6 +43,22 @@ class ProjectController extends Controller
         $project->update($attributes['project']);
 
         $project->tools()->sync($attributes['tools']);
+
+        if ($request->hasFile('project.image') && $request->file('project.image')->isValid()) {
+            $path = $request->file('project.image')->store('images/projects');
+
+            $imageProcessor = new ImageProcessor(new Imagick($path), $path);
+
+            $cloneImagePath = $imageProcessor
+                ->resizeImage(0, 640)
+                ->convertImage('webp')
+                ->autoRotateImage()
+                ->cloneImage()
+                ->destroy();
+
+            $project->update(['url_image' => $path]);
+            $project->update(['url_image_webp' => $cloneImagePath]);
+        }
 
         return redirect('/')->with('success', 'The project ' . $project->title . ' has been updated.');
     }

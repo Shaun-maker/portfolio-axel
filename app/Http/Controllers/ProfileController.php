@@ -54,7 +54,7 @@ class ProfileController extends Controller
                 ->cloneImage()
                 ->destroy();
 
-            $profile->update(['url_image_jpg' => $path]);
+            $profile->update(['url_image' => $path]);
             $profile->update(['url_image_webp' => $cloneImagePath]);
         };
 

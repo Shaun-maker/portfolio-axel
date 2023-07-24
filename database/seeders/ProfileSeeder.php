@@ -16,7 +16,7 @@ class ProfileSeeder extends Seeder
         $profile = [
             'title'         => 'Développeur web freelance basé à Orléans.',
             'url_image_webp'     => '/images/profiles/profile.webp',
-            'url_image_jpg'     => '/images/profiles/profile.jpg',
+            'url_image'     => '/images/profiles/profile.jpg',
             'created_at'    => now(),
             'updated_at'    => now(),
             'description'   => 'Bonjour ! Je suis Axel Paillaud, développeur web passionné. Explorez mon portfolio pour en savoir plus sur mon travail !',

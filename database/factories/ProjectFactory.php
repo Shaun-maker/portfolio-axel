@@ -31,7 +31,8 @@ class ProjectFactory extends Factory
                 return Category::inRandomOrder()->first()->id; 
             },
             'title' => fake()->sentence(),
-            'url_image' => $urls[array_rand($urls)],
+            'url_image' => $url = $urls[array_rand($urls)],
+            'url_image_webp' => $url,
             'description' => '<p>' . implode('</p><p>', $this->faker->paragraphs(3)) . '</p>',
             'project_link' => $project_link,
             'source_link' => $source_link, 

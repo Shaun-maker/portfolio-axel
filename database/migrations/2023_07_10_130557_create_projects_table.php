@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamp('end_date')->nullable();
             $table->string('title');
             $table->string('url_image');
+            $table->string('url_image_webp');
             $table->text('description');
             $table->string('project_link')->nullable();
             $table->string('source_link')->nullable();
