@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function __invoke() 
     {
         return view('home', [
-            'projects'      => Project::with('tools')->get(),
+            'projects'      => Project::latest('start_date')->with('tools')->get(),
             'categories'    => Category::all(),
             'profile'       => Profile::first(),
         ]);
