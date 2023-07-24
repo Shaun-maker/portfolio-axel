@@ -1,5 +1,5 @@
     <div class="relative w-full h-full">
-        <picture>
+        <picture data-tippy-content="{{ $project->title }}">
             <source srcset="{{ $project->url_image_webp }}" type="image/webp">
             <img
             class="object-cover h-5/6 w-full aspect-square"
