@@ -179,13 +179,19 @@ function createProject(originalProjectTemplate, projectData)
     let disableWireframeBtn = createDisableWireframeBtn();
 
     let projectLinkCTAContainer = getProjectElement(project, 'link');
-    projectLinkCTAContainer.replaceChildren();
 
-    if (projectData.project_link) projectLinkCTAContainer.appendChild(fillBtn);
-    else projectLinkCTAContainer.appendChild(disableFillBtn);
+    if(projectData.project_link || projectData.source_link) {
+        projectLinkCTAContainer.replaceChildren();
 
-    if (projectData.source_link) projectLinkCTAContainer.appendChild(wireframeBtn);
-    else projectLinkCTAContainer.appendChild(disableWireframeBtn);
+        if (projectData.project_link) projectLinkCTAContainer.appendChild(fillBtn);
+        else projectLinkCTAContainer.appendChild(disableFillBtn);
+    
+        if (projectData.source_link) projectLinkCTAContainer.appendChild(wireframeBtn);
+        else projectLinkCTAContainer.appendChild(disableWireframeBtn);
+    }
+    else {
+        projectLinkCTAContainer.remove();
+    }
 
     project.classList.add('animate-slideRightIn', 'opacity-0');
     project.style.animationFillMode = 'forwards';

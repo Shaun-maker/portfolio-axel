@@ -49,18 +49,20 @@
             </span>
             @endforeach
         </div>
-        <div data-project-link class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
-            @if(!$project->project_link)
-                <x-cta-link-disable>voir le projet</x-cta-link>
-            @else
-                <x-cta-link href="{{ $project->project_link }}">voir le projet</x-cta-link>
-            @endif
+        @if($project->project_link || $project->source_link)
+            <div data-project-link class="flex sm:flex-row flex-col justify-evenly gap-8 sm:gap-4">
+                @if(!$project->project_link)
+                    <x-cta-link-disable>voir le projet</x-cta-link>
+                @else
+                    <x-cta-link href="{{ $project->project_link }}">voir le projet</x-cta-link>
+                @endif
 
-            @if(!$project->source_link)
-                <x-cta-link-disable wireframe="true">Voir le code source</x-cta-link>
-            @else
-                <x-cta-link href="{{ $project->source_link }}" wireframe="true">Voir le code source</x-cta-link>
-            @endif
-        </div>
+                @if(!$project->source_link)
+                    <x-cta-link-disable wireframe="true">Voir le code source</x-cta-link>
+                @else
+                    <x-cta-link href="{{ $project->source_link }}" wireframe="true">Voir le code source</x-cta-link>
+                @endif
+            </div>
+        @endif
     </div>
 </article>
