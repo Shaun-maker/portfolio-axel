@@ -1,6 +1,5 @@
 .tippy-box[data-theme~='main'] {
     background-color: var(--main-color);
-    z-index: 150;
 }
 
 .tippy-box[data-theme~='main'][data-placement^='top'] > .tippy-arrow::before {
