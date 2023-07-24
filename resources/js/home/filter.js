@@ -146,7 +146,9 @@ function createProject(originalProjectTemplate, projectData)
     }
 
     // Populate image url
+    let imgWebp = getProjectElement(project, 'img-webp');
     let img = getProjectElement(project, 'img');
+    imgWebp.srcset = projectData.url_image_webp;
     img.src = projectData.url_image;
     
     // Populate title

@@ -24,6 +24,7 @@ class ProjectResource extends JsonResource
             'end_date' => $this->end_date,
             'title' => $this->title,
             'url_image' => $this->url_image,
+            'url_image_webp' => $this->url_image_webp,
             'description' => $this->description,
             'project_link' => $this->project_link,
             'source_link' => $this->source_link,

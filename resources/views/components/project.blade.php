@@ -17,15 +17,19 @@
         transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
     >
         <picture>
-            <source srcset="{{ $project->url_image_webp }}" type="image/webp">
+            <source 
+                srcset="{{ $project->url_image_webp }}" 
+                type="image/webp" 
+                data-project-img-webp
+            >
             <img
-            data-project-img 
-            src="{{ $project->url_image }}" 
-            alt="lorem-ipsum-dolor-sit-amet"
-            class="opacity-40 object-cover transition-all w-full h-full
-            group-hover:opacity-50 duration-700 group-hover:scale-105"
-            width="400" height="400"
-        >
+                data-project-img
+                src="{{ $project->url_image }}" 
+                alt="lorem-ipsum-dolor-sit-amet"
+                class="opacity-40 object-cover transition-all w-full h-full
+                group-hover:opacity-50 duration-700 group-hover:scale-105"
+                width="400" height="400"
+            >
         </picture>
     </a>
     <div class="lg:w-0.5 lg:h-auto h-0.5 w-full bg-main my-8 lg:my-0 lg:mx-14"></div>
