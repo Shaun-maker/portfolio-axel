@@ -8,7 +8,7 @@
         <input 
             class="border border-main p-2"
             id="intro-title" 
-            name="intro-title"
+            name="intro[title]"
             value="{{ $profile->title }}"
         >
     </div>
@@ -19,7 +19,7 @@
         <textarea
             class="border border-main p-2 h-32"
             id="intro-description"
-            name="intro-description"
+            name="intro[description]"
         >{{ $profile->description }}</textarea>
     </div>
     <div class="flex flex-col gap-2">
@@ -29,7 +29,7 @@
         <input
             class="border border-main p-2"
             id="intro-available"
-            name="intro-available"
+            name="intro[available]"
             value="{{ $profile->available }}"
         >
     </div>

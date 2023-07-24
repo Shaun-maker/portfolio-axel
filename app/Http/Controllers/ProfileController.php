@@ -13,20 +13,16 @@ class ProfileController extends Controller
     public function update_intro(Request $request): RedirectResponse
     {
         $attributes = $request->validate([
-            'intro-title' => ['max:255', 'required'],
-            'intro-description' => ['required'],
-            'intro-available' => ['max:255', 'required']
+            'intro.title' => ['max:255', 'required'],
+            'intro.description' => ['required'],
+            'intro.available' => ['max:255', 'required']
         ]);
 
         $profile = Profile::first();
 
-        // We have to associate column name with form input, because form input
-        // doesn't have the same name, to avoid conflict with others forms on the page
-        $profile->update([
-            'title' => $attributes['intro-title'],
-            'description' => $attributes['intro-description'],
-            'available' => $attributes['intro-available']
-        ]);
+        //dd($request['intro']['title']);
+
+        $profile->update($attributes['intro']);
 
         return redirect('/')->with('success', 'L\'introduction a bien été modifiée.');
     }
