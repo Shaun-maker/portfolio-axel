@@ -33,14 +33,14 @@ class ProjectController extends Controller
             'project.title' => [ 'min:3', 'max:255', 'required'],
             'project.description' => ['required'],
             'project.category_id' => ['required'],
-            'project.link' => ['max:255'],
-            'project.source' => ['max:255'],
+            'project.project_link' => ['max:255'],
+            'project.source_link' => ['max:255'],
             'tools' => ['max:6']
         ]);
 
         $project->update($attributes['project']);
 
-        dd(request());
+        return redirect('/')->with('success', 'The project ' . $project->title . ' has been updated.');
     }
 
     public function store()
