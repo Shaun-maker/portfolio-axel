@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\ProjectResource;
 use App\Http\Resources\ProjectCollection;
 use App\Models\Project;
+use Illuminate\Http\RedirectResponse;
 
 class ProjectController extends Controller
 {
@@ -24,10 +25,24 @@ class ProjectController extends Controller
         return new ProjectResource(Project::findOrFail($id));
     }
 
-    public function update($id)
+    public function update($id, Request $request): RedirectResponse
     {
+        //dd($request->all());
+
+        $attributes = $request->validate([
+            'project.title' => [ 'min:3', 'max:255', 'required'],
+            'project.description' => ['required'],
+            'project.category' => ['required'],
+            'project.link' => ['max:255'],
+            'project.source' => ['max:255'],
+        ]);
+
         dd(request());
-        return "hello, world";
+    }
+
+    public function store()
+    {
+        // TODO : create project
     }
 
     public function delete($id)
