@@ -78,7 +78,7 @@
         </label>
         <div class="flex flex-wrap" id="project-tools">
             @for ($index = 0; $index < 6; $index++)
-                <x-tool-dropdown :$tools :$index />
+                <x-tool-dropdown :$index />
             @endfor
         </div>
     </div>

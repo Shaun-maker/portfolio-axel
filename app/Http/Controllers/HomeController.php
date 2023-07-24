@@ -14,7 +14,6 @@ class HomeController extends Controller
     {
         return view('home', [
             'projects'      => Project::with('tools')->get(),
-            'tools'         => Tool::all(),
             'categories'    => Category::all(),
             'profile'       => Profile::first(),
         ]);
