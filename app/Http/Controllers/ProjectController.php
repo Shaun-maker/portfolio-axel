@@ -27,15 +27,18 @@ class ProjectController extends Controller
 
     public function update($id, Request $request): RedirectResponse
     {
-        //dd($request->all());
+        $project = Project::findOrFail($id);
 
         $attributes = $request->validate([
             'project.title' => [ 'min:3', 'max:255', 'required'],
             'project.description' => ['required'],
-            'project.category' => ['required'],
+            'project.category_id' => ['required'],
             'project.link' => ['max:255'],
             'project.source' => ['max:255'],
+            'tools' => ['max:6']
         ]);
+
+        $project->update($attributes['project']);
 
         dd(request());
     }

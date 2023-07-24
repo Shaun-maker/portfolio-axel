@@ -59,7 +59,7 @@
         <select 
             x-model="project.category_id"
             class="border border-main p-2 bg-white uppercase" 
-            name="project[category]" 
+            name="project[category_id]" 
             id="project-category"
         >
             @foreach($categories as $category)
@@ -90,7 +90,7 @@
         <input 
             class="border border-main p-2"
             id="project_link" 
-            name="project[link]"
+            name="project[project_link]"
             x-bind:value="project.project_link"
         >
     </div>
@@ -101,7 +101,7 @@
         <input 
             class="border border-main p-2"
             id="project-source" 
-            name="project[source]"
+            name="project[source_link]"
             x-bind:value="project.source_link"
         >
     </div>

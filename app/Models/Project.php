@@ -10,6 +10,8 @@ class Project extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function tools() : BelongsToMany {
         return $this->belongsToMany(Tool::class);
     }
