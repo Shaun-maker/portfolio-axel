@@ -93,6 +93,8 @@ function fetchAndRefreshProject(event)
             
             let animDelay = 0.0;
 
+            console.log(res.data);
+
             // animation delay between each filter request
             setTimeout(() => {
 
@@ -171,6 +173,13 @@ function createProject(originalProjectTemplate, projectData)
         span.classList.add('text-2xl');
         toolContainer.appendChild(span);
     });
+
+    // Populate date
+    let startDate = getProjectElement(project, 'start-date');
+    let endDate = getProjectElement(project, 'end-date');
+
+    startDate.innerHTML = projectData.start_date;
+    endDate.innerHTML = projectData.end_date;
 
     // Populate link CTA 'see project' and 'see source code'
     let fillBtn = createFillBtn();
@@ -329,7 +338,6 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
         }
         else {
             setHeightProjectContainerAndBody(height);
-            console.log("hello");
         }
     }
 

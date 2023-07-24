@@ -46,7 +46,7 @@
         @if($project->start_date || $project->end_date)
             <div class="text-sm">
                 <p class="inline">Début : 
-                    <time data-project-begin-date>
+                    <time data-project-start-date>
                         {{ $project->start_date->locale('fr_FR')->translatedFormat('M Y') }}
                     </time>
                 </p>
