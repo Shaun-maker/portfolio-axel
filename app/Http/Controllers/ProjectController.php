@@ -37,6 +37,8 @@ class ProjectController extends Controller
             'project.category_id' => ['required'],
             'project.project_link' => ['max:255'],
             'project.source_link' => ['max:255'],
+            'project.start_date' => ['required'],
+            'project.end_date' => [''],
             'tools' => ['max:6']
         ]);
 

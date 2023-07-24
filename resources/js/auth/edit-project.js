@@ -6,6 +6,8 @@ function emptyProject(project) {
     project.description = "";
     project.project_link = "";
     project.source_link = "";
+    project.only_date_start = "";
+    project.only_date_end = "";
 }
 
 export default() => ({

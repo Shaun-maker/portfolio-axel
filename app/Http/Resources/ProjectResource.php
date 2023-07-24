@@ -16,16 +16,23 @@ class ProjectResource extends JsonResource
     public function toArray(Request $request): array
     {
         //return parent::toArray($request);
-        $start_date = $this->start_date->locale('fr_FR')->translatedFormat('M Y');
-        $end_date = $this->end_date->locale('fr_FR')->translatedFormat('M Y');
+        $french_truncated_start_date = $this->start_date->locale('fr_FR')->translatedFormat('M Y');
+        $french_truncated_end_date = $this->end_date->locale('fr_FR')->translatedFormat('M Y');
+
+        $only_date_start = $this->start_date->format('Y-m-d');
+        $only_date_end = $this->end_date->format('Y-m-d');
 
         return [
             'id' => $this->id,
             'category_id' => $this->category_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'start_date' => $start_date,
-            'end_date' => $end_date,
+            'start_date' => $french_truncated_start_date,
+            'french_truncated_start_date' => $french_truncated_start_date,
+            'french_truncated_end_date' => $french_truncated_end_date,
+            'end_date' => $this->end_date,
+            'only_date_start' => $only_date_start,
+            'only_date_end' => $only_date_end,
             'title' => $this->title,
             'url_image' => $this->url_image,
             'url_image_webp' => $this->url_image_webp,

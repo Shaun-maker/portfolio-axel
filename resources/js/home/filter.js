@@ -93,8 +93,6 @@ function fetchAndRefreshProject(event)
             
             let animDelay = 0.0;
 
-            console.log(res.data);
-
             // animation delay between each filter request
             setTimeout(() => {
 
@@ -178,8 +176,8 @@ function createProject(originalProjectTemplate, projectData)
     let startDate = getProjectElement(project, 'start-date');
     let endDate = getProjectElement(project, 'end-date');
 
-    startDate.innerHTML = projectData.start_date;
-    endDate.innerHTML = projectData.end_date;
+    startDate.innerHTML = projectData.french_truncated_start_date;
+    endDate.innerHTML = projectData.french_truncated_end_date;
 
     // Populate link CTA 'see project' and 'see source code'
     let fillBtn = createFillBtn();

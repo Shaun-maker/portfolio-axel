@@ -12,7 +12,6 @@
     <div class="flex flex-col items-center">
         <img 
             data-thumbnail-img
-            {{-- TODO : if no images (create project), take default image --}}
             src="/images/projects/resize-web-fakedata.png"
             x-bind:src="project.isProject ? project.url_image : '/images/svg/picture-svgrepo.svg'" 
             alt="Photo de profil"
@@ -25,7 +24,13 @@
             class="cursor-pointer border bg-white text-main border-2 border-main
             py-4 px-8 rounded-full text-base"
         >
-            <input id="project-image" name="project[image]" type="file" accept="image/*" class="hidden">
+            <input 
+                id="project-image" 
+                name="project[image]" 
+                type="file" 
+                accept="image/*" 
+                class="hidden" 
+            >
             Modifier l'image
         </label>
     </div>
@@ -38,6 +43,7 @@
             id="project-title" 
             name="project[title]"
             x-bind:value="project.title"
+            required
         >
     </div>
     <div class="flex flex-col gap-2">
@@ -49,6 +55,7 @@
             id="project-description"
             name="project[description]"
             x-text="project.description"
+            required
         ></textarea>
     </div>
     {{-- Category --}}
@@ -61,6 +68,7 @@
             class="border border-main p-2 bg-white uppercase" 
             name="project[category_id]" 
             id="project-category"
+            required
         >
             @foreach($categories as $category)
                 <option
@@ -70,6 +78,31 @@
                 </option>
             @endforeach
         </select>
+    </div>
+    {{-- Start date, End date --}}
+    <div class="flex flex-col gap-2">
+        <label for="project-start-date">
+            Date de début
+        </label>
+        <input 
+            type="date"
+            class="border border-main p-2"
+            id="project-start-date"
+            name="project[start_date]"
+            x-bind:value="project.only_date_start"
+        >
+    </div>
+    <div class="flex flex-col gap-2">
+        <label for="project-end-date">
+            Date de fin
+        </label>
+        <input 
+            type="date"
+            class="border border-main p-2"
+            id="project-start-date"
+            name="project[end_date]"
+            x-bind:value='project.only_date_end'
+        >
     </div>
     {{-- Tools (technos) --}}
     <div class="flex flex-col gap-2">
