@@ -40,6 +40,8 @@ class ProjectController extends Controller
 
         $project->update($attributes['project']);
 
+        $project->tools()->sync($attributes['tools']);
+
         return redirect('/')->with('success', 'The project ' . $project->title . ' has been updated.');
     }
 
