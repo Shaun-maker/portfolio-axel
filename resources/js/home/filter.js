@@ -320,7 +320,10 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
                 setHeightProjectContainerAndBody(height)
             }, 1000);
         }
-        else setHeightProjectContainerAndBody(height)
+        else {
+            setHeightProjectContainerAndBody(height);
+            console.log("hello");
+        }
     }
 
 }
