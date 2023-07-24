@@ -59,16 +59,13 @@ export default() => ({
         
         let index = event.target.closest('[data-dropdown]').dataset.index;
 
-        if (this.project.tools.length < 6) {
-
-            if (this.project.tools[index]) {
-                this.project.tools[index] = tool;
-                this.filterTool();
-            }
-            else {
-                this.project.tools.push(tool);
-                this.filterTool();
-            }
+        if (this.project.tools[index]) {
+            this.project.tools[index] = tool;
+            this.filterTool();
+        }
+        else if (this.project.tools.length < 6) {
+            this.project.tools.push(tool);
+            this.filterTool();
         }
     },
 
