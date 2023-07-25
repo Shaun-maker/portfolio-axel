@@ -7,7 +7,6 @@
         <title>{{ config('app.name', 'Axelweb') }}</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/home.js'])
-        @livewireStyles
 
     </head>
     {{-- Smooth scroll body, fixed height --}}
@@ -40,6 +39,5 @@
             @include('partials._modals')
         @endauth
 
-       @livewireScripts
     </body>
 </html>
