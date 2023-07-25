@@ -151,10 +151,16 @@ function createProject(project, projectData)
     if(projectData.project_link || projectData.source_link) {
         projectLinkCTAContainer.replaceChildren();
 
-        if (projectData.project_link) projectLinkCTAContainer.appendChild(fillBtn);
+        if (projectData.project_link) {
+            projectLinkCTAContainer.appendChild(fillBtn);
+            fillBtn.setAttribute('href', projectData.project_link);
+        } 
         else projectLinkCTAContainer.appendChild(disableFillBtn);
     
-        if (projectData.source_link) projectLinkCTAContainer.appendChild(wireframeBtn);
+        if (projectData.source_link) {
+            projectLinkCTAContainer.appendChild(wireframeBtn);
+            wireframeBtn.setAttribute('href', projectData.source_link);
+        } 
         else projectLinkCTAContainer.appendChild(disableWireframeBtn);
     }
     else {
