@@ -1,14 +1,14 @@
 @php
-    $classes = "relative uppercase 
+    $classes = "relative uppercase cursor-pointer
     after:absolute after:w-full after:h-px after:bg-main
     after:left-0 after:translate-y-6 after:opacity-0 
     after:transition-all after:duration-300
     hover:after:opacity-100 hover:after:translate-y-[1.30rem]";
 @endphp
 
-<button
-{{ $attributes->merge(['class' => $classes ]) }}
-data-navlink="{{ $data ?? ''}}"
+<a
+    {{ $attributes->merge(['class' => $classes ]) }}
+    data-navlink="{{ $data ?? ''}}"
 >
     {{ $slot }}
-</button>
+</a>

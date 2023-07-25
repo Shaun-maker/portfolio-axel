@@ -1,7 +1,10 @@
 let body = document.body;
+let navlink = document.querySelectorAll('[data-navlink]');
 
 const EASE_SLOW = 0.003;
 const EASE_SPEED = 0.020;
+
+const DESKTOP_SCREEN_SIZE = 1280;
 
 let scrollPosition = {
     project: 1508,
@@ -67,37 +70,56 @@ const onResize = function() {
 
 /* Smooth scroll for anchor tag on Navmenu */
 
-document.querySelectorAll('[data-navlink]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        let target = e.target.dataset.navlink;
-
-        // We want to increase scroll speed only for anchor tag, and set it to
-        // default slow ease after.
-        scroller.ease = EASE_SPEED;
-        setTimeout(() => {
-            scroller.ease = EASE_SLOW;
-        }, 2000);
-
-        scroller.scrollRequest++;
-
-        // Hide header when scroll down to target
-        document.getElementById('js-header').style.transform = "translate(0, -100%)"
-        
-        requestId = requestAnimationFrame(updateScroller);
-
-        window.scrollTo({
-            top: scrollPosition[target],
+if (window.screen.width > DESKTOP_SCREEN_SIZE) {
+    navlink.forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            let target = e.target.dataset.navlink;
+    
+            // We want to increase scroll speed only for anchor tag, and set it to
+            // default slow ease after.
+            scroller.ease = EASE_SPEED;
+            setTimeout(() => {
+                scroller.ease = EASE_SLOW;
+            }, 2000);
+    
+            scroller.scrollRequest++;
+    
+            // Hide header when scroll down to target
+            document.getElementById('js-header').style.transform = "translate(0, -100%)"
+            
+            requestId = requestAnimationFrame(updateScroller);
+    
+            window.scrollTo({
+                top: scrollPosition[target],
+            });
         });
     });
-  });
+}
+
 
 /* We want to disable smooth-scroll for mobile device, has it make the website laggy */
 function mobileDevice()
 {
-    if (window.screen.width < 1280) {
+    if (window.screen.width < DESKTOP_SCREEN_SIZE) {
         document.getElementById('js-viewport').classList.remove('fixed');
+
+        navlink.forEach(anchor => {
+            anchor.setAttribute('href', '#' + anchor.dataset.navlink);
+/*             anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                let target = e.target.dataset.navlink;
+        
+                console.log(target);
+
+                window.scrollTo({
+                    top: scrollPosition[target],
+                });
+            }); */
+        });
+
         return true;
     }
 }
