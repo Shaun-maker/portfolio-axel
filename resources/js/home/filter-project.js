@@ -154,12 +154,14 @@ function createProject(project, projectData)
         if (projectData.project_link) {
             projectLinkCTAContainer.appendChild(fillBtn);
             fillBtn.setAttribute('href', projectData.project_link);
+            fillBtn.setAttribute('target', '_blank');
         } 
         else projectLinkCTAContainer.appendChild(disableFillBtn);
     
         if (projectData.source_link) {
             projectLinkCTAContainer.appendChild(wireframeBtn);
             wireframeBtn.setAttribute('href', projectData.source_link);
+            fillBtn.setAttribute('target', '_blank');
         } 
         else projectLinkCTAContainer.appendChild(disableWireframeBtn);
     }

@@ -12,6 +12,7 @@
 
 <a
     {{ $attributes->merge(['class' => $classes]) }}
+    target="_blank"
 >
     <i 
         class="fa-solid fa-circle absolute text-[0] group-hover/link:text-xs 
