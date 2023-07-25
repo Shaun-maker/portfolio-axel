@@ -9,7 +9,7 @@
 {{-- top-[calc(100vh-650px)] --}}
 <section 
     id="js-presentation"
-    class="text-xl flex flex-col xl:flex-row px-16 sm:px-32 pb-16 bg-light gap-16 relative 
+    class="flex flex-col xl:flex-row px-16 sm:px-32 pb-16 bg-light gap-16 relative 
      transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)]"
 >
 
@@ -24,7 +24,12 @@
     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col justify-evenly basis-1/3 order-2 xl:order-none">
-        <p>Axel Paillaud, <span class="whitespace-nowrap">29 ans.</span></p>
+        <div>
+            <p class="mb-4">Axel Paillaud, <span class="whitespace-nowrap">29 ans.</span></p>
+            <h3>
+                {!! $profile->location !!}
+            </h3>
+        </div>
         <h3>
             {!! $profile->stack !!}
         </h3>
@@ -73,11 +78,21 @@
         class="basis-1/3 flex flex-col-reverse xl:flex-col justify-evenly 
         items-end order-3 xl:order-none gap-16"
     >
-        <x-cta-button class="self-center">
+        <x-cta-button class="self-start">
             télécharger mon cv
         </x-cta-button>
-        <h3 class="max-w-[20rem]">
-            {!! $profile->location !!}
-        </h3>
+        <div class="text-base">
+            <p class="mb-4">
+                Un an d'expérience pro dans une agence web
+            </p>
+            <p class="mb-4">
+                Formation OpenClassrooms Développeur web :<br>
+                BAC + 2 RNCP
+            </p>
+            <p>
+                HarvardX Introduction to computer science :<br>
+                MOOC de 220h sur les bases de la programmation, avec le langage C
+            </p>
+        </div>
     </div>
 </section>
