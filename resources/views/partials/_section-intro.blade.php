@@ -1,6 +1,6 @@
 <section data-parallax data-speed="0.4" data-end-Y="800"
     class="relative -z-10 lg:pb-24 lg:pr-24 lg:pl-60 lg:pt-72 border-main
-        pb-20 sm:pr-12 sm:pl-32 pt-48 pr-4 pl-4"
+        pb-20 sm:pr-12 sm:pl-32 pt-12 pr-4 pl-4"
 >
     @auth
         <x-edit-button
