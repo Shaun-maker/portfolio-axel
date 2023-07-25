@@ -197,7 +197,6 @@ function createProject(project, projectData)
     let projectLinkCTAContainer = getProjectElement(project, 'link');
 
     if(projectData.project_link || projectData.source_link) {
-        projectLinkCTAContainer.classList.remove('hidden');
         projectLinkCTAContainer.replaceChildren();
 
         if (projectData.project_link) projectLinkCTAContainer.appendChild(fillBtn);
@@ -207,7 +206,7 @@ function createProject(project, projectData)
         else projectLinkCTAContainer.appendChild(disableWireframeBtn);
     }
     else {
-        projectLinkCTAContainer.classList.add('hidden');
+        projectLinkCTAContainer.remove();
     }
 
     project.classList.add('animate-slideRightIn', 'opacity-0');
