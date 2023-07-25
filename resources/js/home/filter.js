@@ -184,9 +184,13 @@ function createProject(project, projectData)
     let endDate = getProjectElement(project, 'end-date');
 
     startDate.innerHTML = projectData.french_truncated_start_date;
+    startDate.setAttribute('datetime', projectData.only_date_start);
 
     if (!projectData.end_date) endDate.innerHtml = " En cours";
-    else endDate.innerHTML = projectData.french_truncated_end_date;
+    else {
+        endDate.innerHTML = projectData.french_truncated_end_date;
+        endDate.setAttribute('datetime', projectData.only_date_end)
+    }
     
     // Populate link CTA 'see project' and 'see source code'
     let fillBtn = createFillBtn();
