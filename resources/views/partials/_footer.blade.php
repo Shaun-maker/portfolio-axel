@@ -34,7 +34,10 @@
             >
                 LinkedIn
             </x-social-media>
-            <x-social-media class="fa-regular fa-file">
+            <x-social-media 
+                class="fa-regular fa-file"
+                href="/assets/cv/AxelPaillaud.pdf"
+            >
                 CV
             </x-social-media>
             <x-social-media 

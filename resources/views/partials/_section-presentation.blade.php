@@ -78,9 +78,9 @@
         class="basis-1/3 flex flex-col-reverse xl:flex-col justify-evenly 
         items-end order-3 xl:order-none gap-16"
     >
-        <x-cta-button class="self-start">
+        <x-cta-link class="self-start" href="/assets/cv/AxelPaillaud.pdf">
             télécharger mon cv
-        </x-cta-button>
+        </x-cta-link>
         <div class="text-base">
             <p class="mb-4">
                 Un an d'expérience pro dans une agence web
