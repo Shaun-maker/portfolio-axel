@@ -14,7 +14,7 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        Project::factory(10)->create();
+        Project::factory(14)->create();
 
         foreach(Project::all() as $project) {
             $tools = Tool::inRandomOrder()->take(rand(3, 5))->get();
