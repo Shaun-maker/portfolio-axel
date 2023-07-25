@@ -23,7 +23,7 @@
 
     {{-- Bloc 1 : Name and stack --}}
 
-    <div class="flex flex-col justify-evenly basis-1/3 order-2 xl:order-none">
+    <div class="flex flex-col gap-8 justify-evenly basis-1/3 order-2 xl:order-none">
         <div>
             <p class="mb-4">Axel Paillaud, <span class="whitespace-nowrap">29 ans.</span></p>
             <h3>
