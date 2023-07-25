@@ -22,11 +22,12 @@ var requestId = null;
 window.addEventListener('load', onLoad);
 
 function onLoad() {
-    updateScroller();
-    window.focus();
-    document.addEventListener('scroll', onScroll);
-    window.addEventListener('resize', onResize);
-
+    if (!mobileDevice()) {
+        updateScroller();
+        window.focus();
+        document.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', onResize);
+    }
 }
 
 function updateScroller() {
@@ -91,3 +92,12 @@ document.querySelectorAll('[data-navlink]').forEach(anchor => {
         });
     });
   });
+
+/* We want to disable smooth-scroll for mobile device, has it make the website laggy */
+function mobileDevice()
+{
+    if (window.screen.width < 1280) {
+        document.getElementById('js-viewport').classList.remove('fixed');
+        return true;
+    }
+}

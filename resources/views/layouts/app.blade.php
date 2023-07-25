@@ -15,8 +15,8 @@
         @include('partials._header')
 
         {{-- Smooth scroll viewport, fixed --}}
-        {{-- Smooth scroll disable, add fixed position here ! --}}
-        <div class="overflow-hidden w-full h-full inset-0 fixed">
+        {{-- To disable smooth scroll, remove fixed position here ! --}}
+        <div id="js-viewport" class="overflow-hidden w-full h-full inset-0 fixed">
 
             {{-- Smooth scroll container, absolute --}}
             <div 
