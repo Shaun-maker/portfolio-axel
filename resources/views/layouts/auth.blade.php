@@ -7,7 +7,6 @@
         <title>Axelweb - Authentification</title>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @livewireStyles
 
     </head>
 
@@ -19,6 +18,5 @@
             @yield('content')
         </main>
 
-       @livewireScripts
     </body>
 </html>
