@@ -1,4 +1,6 @@
 import tooltips from './tooltip.js';
+import projectTemplateRaw from '../../static/project-template.html?raw';
+
 let body = document.body;
 let filterButtons = document.querySelectorAll('[data-filter-button]');
 
@@ -86,9 +88,7 @@ function fetchAndRefreshProject(event)
 
             let lastProjectWrapper = getLastWrapper();
             let newProjectWrapper = lastProjectWrapper.cloneNode();
-
-            // This clone node serve as a project template
-            let projectTemplate = document.querySelector('[data-project]').cloneNode(true);
+            
             deleteProject(lastProjectWrapper);
             
             let animDelay = 0.0;
@@ -97,6 +97,7 @@ function fetchAndRefreshProject(event)
             setTimeout(() => {
 
                 res.data.forEach(projectData => {
+                    let projectTemplate = getDOMTemplateProject();
                     let newProject = createProject(projectTemplate, projectData);
                     newProject.style.animationDelay = `${animDelay}s`;
     
@@ -129,9 +130,15 @@ function getLastWrapper()
     return projectWrappers[projectWrappers.length - 1];
 }
 
-function createProject(originalProjectTemplate, projectData)
+function getDOMTemplateProject()
 {
-    let project = originalProjectTemplate.cloneNode(true);
+    let div = document.createElement('div');
+    div.innerHTML = projectTemplateRaw;
+    return div.querySelector('[data-project]');
+}
+
+function createProject(project, projectData)
+{
         
     // Populate link on image. If empty, remove href attribute
     let imgContainer = getProjectElement(project, 'img-container');
