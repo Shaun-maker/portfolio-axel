@@ -186,7 +186,7 @@ function createProject(project, projectData)
     startDate.innerHTML = projectData.french_truncated_start_date;
     startDate.setAttribute('datetime', projectData.only_date_start);
 
-    if (!projectData.end_date) endDate.innerHtml = " En cours";
+    if (projectData.end_date === null) endDate.textContent = " En cours";
     else {
         endDate.innerHTML = projectData.french_truncated_end_date;
         endDate.setAttribute('datetime', projectData.only_date_end)
