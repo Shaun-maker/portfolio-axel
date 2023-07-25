@@ -25,8 +25,8 @@
 
 <header
     id="js-header"
-    class="border-solid border-b-2 border-main flex items-center sticky top-0 left-0 bg-white z-40 
-    translate-all ease-in-out duration-700 @auth top-[44px] @endauth"
+    class="border-solid border-b-2 border-main flex items-center fixed w-full  
+    top-0 left-0 bg-white z-40 translate-all ease-in-out duration-700 @auth top-[44px] @endauth"
 >
     <a 
         href="/" 
