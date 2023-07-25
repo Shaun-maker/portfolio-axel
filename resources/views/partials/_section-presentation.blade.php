@@ -9,7 +9,7 @@
 {{-- top-[calc(100vh-650px)] --}}
 <section 
     id="js-presentation"
-    class="flex flex-col xl:flex-row px-16 sm:px-32 pb-16 bg-light gap-16 relative 
+    class="flex flex-col xl:flex-row px-10 sm:px-32 pb-16 bg-light gap-8 relative 
      transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)]"
 >
 
