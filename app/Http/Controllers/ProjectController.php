@@ -67,13 +67,13 @@ class ProjectController extends Controller
 
     public function store(Request $request) : RedirectResponse
     {
-        // TODO : create project
 
         $attributes = $request->validate([
             'project.title' => ['required', 'min:3', 'max:255'],
             'project.description' => ['required'],
             'project.category_id' => ['required'],
             'project.start_date' => ['required'],
+            'project.end_date' => [''],
             'tools' => ['min:1', 'required'],
             'project.project_link' => ['max:255'],
             'project.source_link' => ['max:255']
