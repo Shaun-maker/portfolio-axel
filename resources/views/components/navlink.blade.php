@@ -8,7 +8,6 @@
 
 <a
     {{ $attributes->merge(['class' => $classes ]) }}
-    data-navlink="{{ $data ?? ''}}"
 >
     {{ $slot }}
 </a>

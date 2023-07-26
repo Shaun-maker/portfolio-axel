@@ -39,8 +39,8 @@
         <nav 
             class="basis-2/3 flex justify-end max-w-5xl sm:gap-16 gap-8 sm:mr-8 mr-4"
         >
-            <x-navlink data="project">projets</x-navlink>
-            <x-navlink data=contact>contact</x-navlink>
+            <x-navlink data-navlink="project">projets</x-navlink>
+            <x-navlink data-navlink="contact">contact</x-navlink>
         </nav>
     @endif
 </header>
