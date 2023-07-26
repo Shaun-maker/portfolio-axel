@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta 
             name="description" 
-            content="Portfolio Axel Paillaud : développeur web freelance basé à Orléans, spécialisé Laravel"
+            content="Portfolio Axel Paillaud : développeur web freelance basé à Orléans, spécialisé Laravel, JavaScript, bases en React.js"
         > 
 
         <title>{{ config('app.name', 'Axelweb') }}</title>
