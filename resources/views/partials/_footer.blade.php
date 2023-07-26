@@ -22,7 +22,7 @@
             contactez-moi
         </p>
         <a 
-            href="mailto:contact@axelweb.fr?subject=Contact depuis Portfolio !"
+            href="mailto:contact@axelweb.fr?subject=Contact%20depuis%20Portfolio%20!"
             class="sm:text-2xl text-xl"
         >
             contact@axelweb.fr
