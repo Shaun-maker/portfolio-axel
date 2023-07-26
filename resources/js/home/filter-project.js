@@ -299,7 +299,7 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
         if (height < oldHeight) {
             setTimeout(() => {
                 setHeightProjectContainerAndBody(height)
-            }, 1000);
+            }, 2000);
         }
         else {
             setHeightProjectContainerAndBody(height);

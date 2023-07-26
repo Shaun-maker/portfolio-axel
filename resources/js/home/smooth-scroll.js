@@ -107,17 +107,6 @@ function mobileDevice()
 
         navlink.forEach(anchor => {
             anchor.setAttribute('href', '#' + anchor.dataset.navlink);
-/*             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                let target = e.target.dataset.navlink;
-        
-                console.log(target);
-
-                window.scrollTo({
-                    top: scrollPosition[target],
-                });
-            }); */
         });
 
         return true;

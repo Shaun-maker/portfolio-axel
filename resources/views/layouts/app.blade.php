@@ -19,7 +19,7 @@
 
             {{-- Smooth scroll container, absolute --}}
             <div 
-                id="js-smooth-scroll" 
+                id="js-smooth-scroll"
                 class="relative overflow-hidden"
             >
 
