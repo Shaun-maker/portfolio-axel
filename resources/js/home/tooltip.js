@@ -6,11 +6,13 @@ import 'tippy.js/animations/shift-away-subtle.css'
 // otherwise, the tooltip appear under the modal
 const dialog = document.getElementById('js-project-list-modal');
 
-tippy('[data-tippy-content]', {
-    animation: 'shift-away-subtle',
-    theme: 'main',
-    appendTo: dialog,
-});
+if (dialog) {
+    tippy('[data-tippy-content]', {
+        animation: 'shift-away-subtle',
+        theme: 'main',
+        appendTo: dialog,
+    });
+}
 
 export default function tippyInit()
 {
