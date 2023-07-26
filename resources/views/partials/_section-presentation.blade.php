@@ -49,7 +49,7 @@
                 <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
                 <img
                     data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
-                    src="{{ $profile->url_image_jpg }}" 
+                    src="{{ $profile->url_image }}" 
                     alt="Axel Paillaud, développeur web"
                     width="512" height="512"
                     class="block object-cover relative"
