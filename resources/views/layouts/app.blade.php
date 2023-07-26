@@ -3,6 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta 
+            name="description" 
+            content="Portfolio Axel Paillaud : développeur web freelance basé à Orléans, spécialisé Laravel"
+        > 
 
         <title>{{ config('app.name', 'Axelweb') }}</title>
 
