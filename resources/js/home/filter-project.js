@@ -4,6 +4,10 @@ import projectTemplateRaw from '../../static/project-template.html?raw';
 let body = document.body;
 let filterButtons = document.querySelectorAll('[data-filter-button]');
 
+const PERSONAL_PROJECT = 1;
+const PROFESSIONNAL_PROJECT = 2;
+const TRAINING_PROJECT = 3;
+
 // Calculate the total height of project, for project container in absolute position
 setHeightToAbsoluteProjectContainer(document.querySelector('[data-project-wrapper]'));
 
@@ -45,8 +49,12 @@ function fetchAndRefreshProject(event)
             setTimeout(() => {
 
                 res.data.forEach(projectData => {
+
                     let projectTemplate = getDOMTemplateProject();
                     let newProject = createProject(projectTemplate, projectData);
+
+                    // set rel='nofollow' for professionnal project
+                    setRelAttribute(newProject, categoryId);
                     newProject.style.animationDelay = `${animDelay}s`;
     
                     //If we don't remove default opacity, we have a "flash" with
@@ -86,8 +94,7 @@ function getDOMTemplateProject()
 }
 
 function createProject(project, projectData)
-{
-        
+{ 
     // Populate link on image. If empty, remove href attribute
     let imgContainer = getProjectElement(project, 'img-container');
     if (projectData.project_link) {
@@ -177,6 +184,16 @@ function createProject(project, projectData)
 function getProjectElement(project, element)
 {
     return project.closest('[data-project]').querySelector(`[data-project-${element}]`);
+}
+
+function setRelAttribute(project, categoryId) {
+    if (categoryId == PROFESSIONNAL_PROJECT) {
+        let links = project.querySelectorAll('a');
+
+        links.forEach(link => {
+            link.setAttribute('rel', 'external nofollow');
+        });
+    }
 }
 
 function createFillBtn()
