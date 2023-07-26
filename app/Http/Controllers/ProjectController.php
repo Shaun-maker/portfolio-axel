@@ -19,6 +19,7 @@ class ProjectController extends Controller
         if (request('category')) {
             $projects->where('category_id', request('category'));
         }
+        
         return ProjectResource::collection($projects->get());
     }
 
