@@ -5,6 +5,7 @@
     style="animation-delay: {{ $animDelay }}s"
 >
     <a
+        target="_blank"
         @if($project->project_link)
             href="{{ $project->project_link }}"
         @elseif($project->source_link)
