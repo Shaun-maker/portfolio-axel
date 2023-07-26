@@ -1,0 +1,6 @@
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^axelweb\.fr\,addon\-axelweb\.fr_wuya7606\.odns\.fr$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.axelweb\.fr\,addon\-axelweb\.fr_wuya7606\.odns\.fr$
+RewriteRule ^/?$ "http\:\/\/https\:\/\/" [R=301,L]
+

@@ -14,7 +14,7 @@
         class="group bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
         transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
     >
-        <picture class="">
+        <picture class="w-full h-full">
             <source 
                 srcset="{{ $project->url_image_webp }}" 
                 type="image/webp" 
