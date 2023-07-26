@@ -4,7 +4,7 @@
 
     <x-category-list :$categories />
 
-    <div class="relative my-20 transition-all duration-700" id="js-project-container">
+    <div class="relative my-20" id="js-project-container">
         <div 
             data-project-wrapper
             class="sm:px-12 gap-24 px-6 flex flex-col justify-center 
