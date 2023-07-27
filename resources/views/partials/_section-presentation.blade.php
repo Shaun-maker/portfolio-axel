@@ -83,15 +83,15 @@
         </x-cta-link>
         <div class="text-base">
             <p class="mb-4">
-                Un an d'expérience pro dans une agence web
+                Un an d'expérience pro dans une agence web.
             </p>
             <p class="mb-4">
                 Formation OpenClassrooms Développeur web :<br>
                 BAC + 2 RNCP
             </p>
             <p>
-                HarvardX Introduction to computer science :<br>
-                MOOC de 220h sur les bases de la programmation, avec le langage C
+                HarvardX CS50 Introduction to computer science :<br>
+                MOOC de 220h sur les bases de la programmation avec le langage C.
             </p>
         </div>
     </div>
