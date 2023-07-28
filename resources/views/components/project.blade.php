@@ -14,7 +14,7 @@
         class="group bg-gray-100 sm:px-24 sm:py-12 px-14 py-8 basis-5/12 flex justify-center 
         transition-all duration-300 hover:rounded-[32px] hover:bg-gray-200"
     >
-        <picture class="w-full h-full">
+        <picture class="w-full h-full flex justify-center items-center">
             <source 
                 srcset="{{ $project->url_image_webp }}" 
                 type="image/webp" 
@@ -22,9 +22,9 @@
             <img
                 src="{{ $project->url_image }}" 
                 alt="lorem-ipsum-dolor-sit-amet"
-                class="opacity-40 object-cover transition-all w-full h-full
+                class="opacity-40 object-cover transition-all w-[640px] h-[400px]
                 group-hover:opacity-50 duration-700 group-hover:scale-105"
-                width="400" height="400"
+                width="640" height="400"
             >
         </picture>
     </a>
