@@ -5,7 +5,7 @@
 @import url('./tooltip.css');
 
 :root {
-    --main-color: #871414;
+    --main-color: #8f0f0f;
 }
 
 @tailwind base;

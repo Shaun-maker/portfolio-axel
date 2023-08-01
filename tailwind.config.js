@@ -43,7 +43,7 @@ export default {
       zoomIn: 'zoomIn 0.3s'
       },
       colors: {
-        main: '#871414',
+        main: '#8f0f0f',
         light: '#f3e5e0',
       },
       fontSize: {
