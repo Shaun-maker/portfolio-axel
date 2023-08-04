@@ -83,7 +83,7 @@
         </x-cta-link>
         <div class="text-base">
             <p class="mb-4">
-                Un an d'expérience pro dans une agence web.
+                Un an d'expérience pro chez l'agence web Orléanaise Processx.
             </p>
             <p class="mb-4">
                 Formation OpenClassrooms Développeur web :<br>
