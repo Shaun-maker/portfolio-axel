@@ -31,5 +31,5 @@ function splitText() {
         childSpan.textContent = char;
         parentSpan.append(childSpan);
         splitText.append(parentSpan);
-});
+    });
 }

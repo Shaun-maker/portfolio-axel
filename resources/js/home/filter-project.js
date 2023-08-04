@@ -306,7 +306,6 @@ function setHeightProjectContainerAndBody(height)
 function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper = null)
 {
     let height = projectWrapper.offsetHeight;
-    console.log('height : ' + height);
 
     if (!oldProjectWrapper) {
         setHeightProjectContainerAndBody(height)
