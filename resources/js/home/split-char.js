@@ -9,6 +9,7 @@ window.addEventListener('load', onLoad);
 function splitChar(textDomElement) {
     const text = textDomElement.textContent.trim();
     const chars = text.split('');
+    console.log(chars);
 
     const lettersDomElement = initLetters(chars);
 
@@ -24,6 +25,7 @@ function initLetters(chars) {
     let animationDelay = 0;
 
     chars.forEach((char) => {
+        if (char === ' ') char = '&nbsp';
         const parentSpan = document.createElement('span');
         const childSpan = document.createElement('span');
 
@@ -32,7 +34,7 @@ function initLetters(chars) {
         childSpan.style.transform = "translate(0, 90%)";
         childSpan.style.animationFillMode = "forwards";
         childSpan.style.animationDelay = `${animationDelay}s`;
-        childSpan.textContent = char;
+        childSpan.innerHTML = char;
 
         parentSpan.append(childSpan);
 
