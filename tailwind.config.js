@@ -37,6 +37,7 @@ export default {
       animation: {
       marquee: 'marquee 40s linear infinite',
       splitText: 'slideUp 0.9s',
+      splitChar: 'slideUp 0.6s',
       fadeIn: 'fadeIn 1s',
       slideLeftOut: 'slideLeftOut 0.7s',
       slideRightIn: 'slideRightIn 0.7s',
