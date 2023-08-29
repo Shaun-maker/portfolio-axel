@@ -9,7 +9,6 @@ window.addEventListener('load', onLoad);
 function splitChar(textDomElement) {
     const text = textDomElement.textContent.trim();
     const chars = text.split('');
-    console.log(chars);
 
     const lettersDomElement = initLetters(chars);
 
