@@ -1,6 +1,8 @@
 let textDomElement = document.getElementById('js-split-char');
 textDomElement.style.visibility = "hidden";
 
+const DESKTOP_SCREEN_SIZE = 1280;
+
 const onLoad = function() {
     let lettersDomElement = splitChar(textDomElement);
 
@@ -17,8 +19,12 @@ const onLoad = function() {
     });
 }
 
+// If device != desktop, root have to be set on default viewport instead of
+// smooth-scroll fixed position viewport
+let root = DESKTOP_SCREEN_SIZE > 1280 ? document.getElementById('js-viewport') : null;
+
 let options = {
-    root: document.getElementById('js-viewport'),
+    root: root,
     rootMargin: "0px",
     threshold: 1.0,
 };
