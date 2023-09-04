@@ -311,10 +311,8 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
         setHeightProjectContainerAndBody(height)
     }
     else {
-        setTimeout(() => {
-            let height = projectWrapper.offsetHeight;
-            setHeightProjectContainerAndBody(height);
-        }, 500);
+        let height = projectWrapper.offsetHeight;
+        setHeightProjectContainerAndBody(height);
     }
 }
 
