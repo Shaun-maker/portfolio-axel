@@ -69,7 +69,7 @@ function fetchAndRefreshProject(event)
                 });
                 projectContainer.appendChild(newProjectWrapper);
                 tooltips();
-                setHeightToAbsoluteProjectContainer(projectContainer, lastProjectWrapper);
+                setHeightToAbsoluteProjectContainer(newProjectWrapper, lastProjectWrapper);
 
             }, 150);
 
@@ -314,6 +314,7 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
         let oldHeight = oldProjectWrapper.offsetHeight;
 
         if (height < oldHeight) {
+            console.log('before timeout height : ' + height);
             setTimeout(() => {
                 let height = projectWrapper.offsetHeight;
                 console.log('settimeout height : ' + height);
