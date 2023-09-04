@@ -289,7 +289,7 @@ function deleteProject(projectWrapper)
     // Delete the old project wrapper container
     setTimeout(() => {
         projectWrapper.remove();
-    }, 1000);
+    }, 500);
 
 }
 
