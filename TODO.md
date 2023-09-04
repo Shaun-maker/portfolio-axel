@@ -1,0 +1,2 @@
+- [ ] Overlap project issue : When we try to filter project really fast, deleteWrapper() function does not delete all wrapper project. We need a fallback function to ensure all wrappers are deleted before inserting a new one.
+- [ ] Add more project, reduce text length in portfolio project
