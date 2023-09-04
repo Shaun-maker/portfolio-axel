@@ -74,7 +74,9 @@ function fetchAndRefreshProject(event)
             }, 150);
 
         })
-        .catch()
+        .catch((error) => {
+            console.log(error);
+        })
     }
 
 function getLastWrapper()
