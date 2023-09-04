@@ -319,7 +319,7 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
                 let height = projectWrapper.offsetHeight;
                 console.log('settimeout height : ' + height);
                 setHeightProjectContainerAndBody(height)
-            }, 2000);
+            }, 500);
         }
         else {
             // We want to take some time to let project appear, then calculate the height
