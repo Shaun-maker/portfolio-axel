@@ -6,7 +6,7 @@ export default {
     "./resources/**/*.js",
     //"./resources/**/*.vue",
   ],
-  theme: { 
+  theme: {
     extend: {
       keyframes: {
         marquee: {
@@ -44,8 +44,8 @@ export default {
       zoomIn: 'zoomIn 0.3s'
       },
       colors: {
-        main: '#8f0f0f',
-        light: '#f3e5e0',
+        main: '#1d4130',
+        light: '#f2faf4',
       },
       fontSize: {
         '8.5xl': ['5.25rem', '1.15'],
