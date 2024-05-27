@@ -1,4 +1,5 @@
 {
+    "name": "Axelweb",
     "private": true,
     "type": "module",
     "scripts": {
