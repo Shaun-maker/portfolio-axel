@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="scroll-smooth" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,34 +13,19 @@
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/home.js'])
 
     </head>
-    {{-- Smooth scroll body, fixed height --}}
-    <body class="antialiased text-main">
+    <body class="antialiased text-main relative">
         @include('partials._header')
 
-        {{-- Smooth scroll viewport, fixed --}}
-        {{-- To disable smooth scroll, remove fixed position here ! --}}
-        <div id="js-viewport" class="">
+        <main class="relative z-0">
+            @yield('content')
+        </main>
 
-            {{-- Smooth scroll container, absolute --}}
-            <div
-                id="js-smooth-scroll"
-                class="relative overflow-hidden"
-            >
-
-                <main class="relative z-0">
-                    @yield('content')
-                </main>
-
-                @include('partials._footer')
-
-            </div>
-
-        </div>
+        @include('partials._footer')
 
         @auth
-            @vite(['resources/js/auth.js'])
+        @vite(['resources/js/auth.js'])
 
-            @include('partials._modals')
+        @include('partials._modals')
         @endauth
 
     </body>
