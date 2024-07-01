@@ -14,12 +14,12 @@
 
     </head>
     {{-- Smooth scroll body, fixed height --}}
-    <body class="antialiased text-main overflow-x-hidden overflow-y-scroll">
+    <body class="antialiased text-main">
         @include('partials._header')
 
         {{-- Smooth scroll viewport, fixed --}}
         {{-- To disable smooth scroll, remove fixed position here ! --}}
-        <div id="js-viewport" class="overflow-hidden w-full h-full inset-0 fixed">
+        <div id="js-viewport" class="">
 
             {{-- Smooth scroll container, absolute --}}
             <div
