@@ -40,9 +40,9 @@ function fetchAndRefreshProject(event)
 
             let lastProjectWrapper = getLastWrapper();
             let newProjectWrapper = lastProjectWrapper.cloneNode();
-            
+
             deleteProject(lastProjectWrapper);
-            
+
             let animDelay = 0.0;
 
             // animation delay between each filter request
@@ -56,14 +56,14 @@ function fetchAndRefreshProject(event)
                     // set rel='nofollow' for professionnal project
                     setRelAttribute(newProject, categoryId);
                     newProject.style.animationDelay = `${animDelay}s`;
-    
+
                     //If we don't remove default opacity, we have a "flash" with
                     // animation-fill: forwards and animation-delay that apply
                     // opacity-0 before the slideLeftOut animation start
                     setTimeout(() => {
                         newProject.classList.remove('opacity-0');
                     }, 500);
-    
+
                     animDelay += 0.150;
                     newProjectWrapper.appendChild(newProject);
                 });
@@ -96,7 +96,7 @@ function getDOMTemplateProject()
 }
 
 function createProject(project, projectData)
-{ 
+{
     // Populate link on image. If empty, remove href attribute
     let imgContainer = getProjectElement(project, 'img-container');
     if (projectData.project_link) {
@@ -114,7 +114,7 @@ function createProject(project, projectData)
     let img = getProjectElement(project, 'img');
     imgWebp.srcset = projectData.url_image_webp;
     img.src = projectData.url_image;
-    
+
     // Populate title
     let title = getProjectElement(project, 'title');
     title.textContent = projectData.title;
@@ -124,7 +124,7 @@ function createProject(project, projectData)
     description.replaceChildren();
 
     description.innerHTML = projectData.description;
-    
+
     // Populate tools icons
     let toolContainer = getProjectElement(project, 'tools');
     toolContainer.replaceChildren();
@@ -148,7 +148,7 @@ function createProject(project, projectData)
         endDate.innerHTML = projectData.french_truncated_end_date;
         endDate.setAttribute('datetime', projectData.only_date_end)
     }
-    
+
     // Populate link CTA 'see project' and 'see source code'
     let fillBtn = createFillBtn();
     let wireframeBtn = createWireframeBtn();
@@ -164,14 +164,14 @@ function createProject(project, projectData)
             projectLinkCTAContainer.appendChild(fillBtn);
             fillBtn.setAttribute('href', projectData.project_link);
             fillBtn.setAttribute('target', '_blank');
-        } 
+        }
         else projectLinkCTAContainer.appendChild(disableFillBtn);
-    
+
         if (projectData.source_link) {
             projectLinkCTAContainer.appendChild(wireframeBtn);
             wireframeBtn.setAttribute('href', projectData.source_link);
             wireframeBtn.setAttribute('target', '_blank');
-        } 
+        }
         else projectLinkCTAContainer.appendChild(disableWireframeBtn);
     }
     else {
@@ -201,18 +201,18 @@ function setRelAttribute(project, categoryId) {
 function createFillBtn()
 {
     let fillBtn = document.createElement('a');
-    fillBtn.classList.add('relative', 'justify-center', 'py-5', 'px-11', 'rounded-full', 
+    fillBtn.classList.add('relative', 'justify-center', 'py-5', 'px-11', 'rounded-full',
     'text-base', 'uppercase', 'flex', 'items-center', 'group/link', 'bg-main', 'text-white');
-    
+
     let circle = document.createElement('i');
-    circle.classList.add('fa-solid', 'fa-circle', 'absolute', 'text-[0]', 
+    circle.classList.add('fa-solid', 'fa-circle', 'absolute', 'text-[0]',
     'group-hover/link:text-xs', 'transition-all', 'duration-700', 'ease-out', 'left-7');
-    
+
     let content = document.createElement('div');
-    content.classList.add('group-hover/link:translate-x-3', 'transition-transform', 
+    content.classList.add('group-hover/link:translate-x-3', 'transition-transform',
     'duration-700', 'ease-out', 'whitespace-nowrap');
     content.textContent = 'voir le projet';
-    
+
     fillBtn.appendChild(circle);
     fillBtn.appendChild(content);
     return fillBtn;
@@ -221,19 +221,19 @@ function createFillBtn()
 function createWireframeBtn()
 {
     let wireframeBtn = document.createElement('a');
-    wireframeBtn.classList.add('relative', 'justify-center', 'py-5', 'px-11', 'rounded-full', 
+    wireframeBtn.classList.add('relative', 'justify-center', 'py-5', 'px-11', 'rounded-full',
     'text-base', 'uppercase', 'flex', 'items-center', 'group/link', 'bg-white',
     'text-main', 'border-2', 'border-main',);
-    
+
     let circle = document.createElement('i');
-    circle.classList.add('fa-solid', 'fa-circle', 'absolute', 'text-[0]', 
+    circle.classList.add('fa-solid', 'fa-circle', 'absolute', 'text-[0]',
     'group-hover/link:text-xs', 'transition-all', 'duration-700', 'ease-out', 'left-7');
 
     let content = document.createElement('div');
     content.classList.add('group-hover/link:translate-x-3', 'transition-transform',
     'duration-700', 'ease-out', 'whitespace-nowrap');
     content.textContent = 'voir le code source';
-    
+
     wireframeBtn.appendChild(circle);
     wireframeBtn.appendChild(content);
     return wireframeBtn;
@@ -242,8 +242,8 @@ function createWireframeBtn()
 function createDisableFillBtn()
 {
     let disableFillBtn = document.createElement('div');
-    disableFillBtn.classList.add('relative', 'py-5', 'px-11', 'rounded-full', 
-    'justify-center', 'text-base', 'uppercase', 'flex', 'items-center', 
+    disableFillBtn.classList.add('relative', 'py-5', 'px-11', 'rounded-full',
+    'justify-center', 'text-base', 'uppercase', 'flex', 'items-center',
     'cursor-not-allowed', 'text-white', 'bg-gray-500');
 
     let content = document.createElement('div');
@@ -258,7 +258,7 @@ function createDisableWireframeBtn()
 {
     let disableWireframeBtn = document.createElement('div');
     disableWireframeBtn.classList.add('relative', 'py-5', 'px-11', 'rounded-full',
-     'justify-center', 'text-base','uppercase', 'flex', 'items-center', 
+     'justify-center', 'text-base','uppercase', 'flex', 'items-center',
      'cursor-not-allowed', 'bg-white','text-gray-500', 'border-2', 'border-gray-500');
 
     let content = document.createElement('div');
@@ -320,6 +320,5 @@ function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper =
 
 function setHeightBody()
 {
-    let height = document.getElementById('js-smooth-scroll').clientHeight;
-    body.style.height = height + "px";
+    body.style.height = body.clientHeight + "px";
 }
