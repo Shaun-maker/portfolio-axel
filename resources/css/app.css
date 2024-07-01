@@ -3,6 +3,7 @@
 
 @import url('./font.css');
 @import url('./tooltip.css');
+@import url('./lenis.css');
 
 :root {
     --main-color: #8f0f0f;

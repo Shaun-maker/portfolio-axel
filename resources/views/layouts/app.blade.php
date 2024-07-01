@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta 
-            name="description" 
+        <meta
+            name="description"
             content="Portfolio Axel Paillaud : développeur web frontend freelance basé à Orléans, spécialisé en JavaScript et Vue.js, bases en PHP et Laravel"
-        > 
+        >
 
         <title>{{ config('app.name', 'Axelweb') }}</title>
 
@@ -22,7 +22,7 @@
         <div id="js-viewport" class="overflow-hidden w-full h-full inset-0 fixed">
 
             {{-- Smooth scroll container, absolute --}}
-            <div 
+            <div
                 id="js-smooth-scroll"
                 class="relative overflow-hidden"
             >
@@ -39,7 +39,7 @@
 
         @auth
             @vite(['resources/js/auth.js'])
-            
+
             @include('partials._modals')
         @endauth
 
