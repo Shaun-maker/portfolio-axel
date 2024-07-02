@@ -13,7 +13,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/home.js'])
 
     </head>
-    <body class="antialiased text-main relative">
+    <body class="antialiased text-main relative overflow-hidden">
         @include('partials._header')
 
         <main class="relative z-0">
