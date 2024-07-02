@@ -1,7 +1,7 @@
 import Lenis from 'lenis';
 
 const lenis = new Lenis({
-    // duration: 2,
+    lerp: 0.08,
 });
 
 function raf(time) {
