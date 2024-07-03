@@ -24,7 +24,7 @@
                 alt="lorem-ipsum-dolor-sit-amet"
                 class="opacity-40 object-cover transition-all w-[640px] h-[400px]
                 group-hover:opacity-50 duration-700 group-hover:scale-105"
-                width="640" height="400"
+                width="640" height="640"
             >
         </picture>
     </a>
