@@ -27,7 +27,7 @@ function onScroll() {
         } else {
             header.target.style.transform = "translate(0, 0)"
         }
-        
+
         header.preventTrigger = true;
 
         setTimeout(() => {
@@ -36,3 +36,4 @@ function onScroll() {
     }
     header.y = scrollY;
 }
+

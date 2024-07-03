@@ -1,13 +1,13 @@
-<section>
+<section id="project">
 
     <x-marquee-project />
 
     <x-category-list :$categories />
 
-    <div class="relative my-20" id="js-project-container">
-        <div 
+    <div class="relative my-20 overflow-hidden" id="js-project-container">
+        <div
             data-project-wrapper
-            class="sm:px-12 gap-24 px-6 flex flex-col justify-center 
+            class="sm:px-12 gap-24 px-6 flex flex-col justify-center
             items-center absolute w-full"
         >
             @php
