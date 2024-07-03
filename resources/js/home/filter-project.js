@@ -299,26 +299,16 @@ function setHeightProjectContainer(height)
     mainProjectContainer.style.height = height + 'px';
 }
 
-function setHeightProjectContainerAndBody(height)
-{
-    setHeightProjectContainer(height);
-    setHeightBody();
-}
-
 function setHeightToAbsoluteProjectContainer(projectWrapper, oldProjectWrapper = null)
 {
     let height = projectWrapper.offsetHeight;
 
     if (!oldProjectWrapper) {
-        setHeightProjectContainerAndBody(height)
+        setHeightProjectContainer(height)
     }
     else {
         let height = projectWrapper.offsetHeight;
-        setHeightProjectContainerAndBody(height);
+        setHeightProjectContainer(height);
     }
 }
 
-function setHeightBody()
-{
-    body.style.height = body.clientHeight + "px";
-}

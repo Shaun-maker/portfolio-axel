@@ -7,6 +7,6 @@ import './home/line-expand';
 import './home/split-text';
 import './home/slide-up-presentation'
 import './home/filter-animation';
-// import './home/filter-project';
+import './home/filter-project';
 import './home/tooltip';
 import './home/split-char';
