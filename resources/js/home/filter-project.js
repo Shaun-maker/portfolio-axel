@@ -115,6 +115,9 @@ function createProject(project, projectData)
     imgWebp.srcset = projectData.url_image_webp;
     img.src = projectData.url_image;
 
+    // Populate alt img attribute
+    img.alt = `${projectData.title} screenshot`;
+
     // Populate title
     let title = getProjectElement(project, 'title');
     title.textContent = projectData.title;
