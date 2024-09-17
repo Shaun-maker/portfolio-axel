@@ -10,7 +10,7 @@
 <section
     id="js-presentation"
     class="flex flex-col xl:flex-row px-10 sm:px-32 pb-16 bg-light gap-8 relative
-     transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)]"
+     transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)] justify-center"
 >
 
     @auth
@@ -21,7 +21,33 @@
         />
     @endauth
 
-    {{-- Bloc 1 : Name and stack --}}
+    {{-- Description and picture --}}
+    <div class="flex gap-52">
+
+        {{-- Description --}}
+        <div>
+            Ma super description
+        </div>
+
+        {{-- Picture --}}
+        <div
+            class="border-x-2 border-b-2 border-main overflow-hidden
+            sm:w-[512px] sm:h-[512px] w-72 h-72"
+        >
+            <picture class="block">
+                <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
+                <img
+                    data-parallax data-direction="up" data-speed="0.1" data-defer="20" data-end-Y="1200"
+                    src="{{ $profile->url_image }}"
+                    alt="Axel Paillaud, développeur web"
+                    width="512" height="512"
+                    class="block object-cover relative"
+                >
+            </picture>
+        </div>
+    </div>
+
+<!--     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col gap-8 justify-evenly basis-1/3 order-2 xl:order-none">
         <div>
@@ -55,7 +81,7 @@
                     class="block object-cover relative"
                 >
             </picture>
-            </div>
+        </div>
         <div class="flex justify-evenly w-full">
             <x-social-media
                 class="fa-brands fa-github"
@@ -96,5 +122,5 @@
                 BAC + 2 RNCP
             </p>
         </div>
-    </div>
+    </div> -->
 </section>
