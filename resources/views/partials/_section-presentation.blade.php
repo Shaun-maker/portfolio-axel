@@ -13,20 +13,19 @@
     ease-out top-[calc(100vh-650px)]"
 >
 
-    @auth
-        <x-edit-button
-            data-edit-button="presentation"
-            isAbsolute
-            class="text-base top-[296px] sm:top-[521px] horizontal-center"
-        />
-    @endauth
-
     {{-- Description and picture --}}
     <div class="flex flex-col-reverse gap-16 sm:gap-24 xl:flex-row xl:gap-52 justify-center">
 
         {{-- Description --}}
         <div class="xl:pt-16 mx-auto xl:mx-0 sm:w-[512px] xl:w-auto w-72 max-w-[512px]">
-            {{ !! $profile->description !! }}
+            {!! $profile->description !!}
+
+            @auth
+            <x-edit-button
+            data-edit-button="presentation"
+            class="text-base mt-4"
+        />
+            @endauth
         </div>
 
         {{-- Picture --}}
