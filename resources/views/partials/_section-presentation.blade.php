@@ -9,7 +9,7 @@
 {{-- top-[calc(100vh-650px)] --}}
 <section
     id="js-presentation"
-    class="flex flex-col xl:flex-row px-10 sm:px-32 pb-16 bg-light gap-8 relative
+    class="flex flex-col xl:flex-row px-6 sm:px-32 pb-16 bg-light gap-8 relative
      transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)] justify-center"
 >
 
@@ -22,17 +22,17 @@
     @endauth
 
     {{-- Description and picture --}}
-    <div class="flex gap-52">
+    <div class="flex flex-col-reverse gap-16 sm:gap-24 xl:flex-row xl:gap-52">
 
         {{-- Description --}}
-        <div>
+        <div class="xl:pt-16 mx-auto sm:w-[512px] w-72">
             Ma super description
         </div>
 
         {{-- Picture --}}
         <div
             class="border-x-2 border-b-2 border-main overflow-hidden
-            sm:w-[512px] sm:h-[512px] w-72 h-72"
+            sm:w-[512px] sm:h-[512px] max-w-72 w-full h-72 mx-auto"
         >
             <picture class="block">
                 <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
