@@ -9,7 +9,7 @@
 {{-- top-[calc(100vh-650px)] --}}
 <section
     id="js-presentation"
-    class="flex flex-col xl:flex-row px-6 sm:px-32 pb-16 bg-light gap-8 relative
+    class="flex flex-col xl:flex-row px-6 pb-16 bg-light gap-8 relative
      transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)] justify-center"
 >
 
@@ -25,14 +25,26 @@
     <div class="flex flex-col-reverse gap-16 sm:gap-24 xl:flex-row xl:gap-52">
 
         {{-- Description --}}
-        <div class="xl:pt-16 mx-auto sm:w-[512px] w-72">
-            Ma super description
+        <div class="xl:pt-16 mx-auto sm:w-[512px] xl:w-auto w-72 max-w-[512px]">
+            <p><b>Axel Paillaud</b>, 30 ans.</p>
+            <p>
+                Développeur web indépendant sur Orléans,<br>
+                en région Centre-val de Loire.<br>
+                Mobile sur Paris, Tours, Blois.
+            </p>
+            <p>Plus de deux ans d'expérience an agence web.</p>
+            <br>
+            <p><b>Mes services</b></p>
+            <p>Création de site internet sur-mesure, site vitrine, portfolios...</p>
+            <p>Solution logicielle web sur-mesure.</p>
+            <p>Maintenance de site web WordPress ou PrestaShop déjà existant.</p>
+            <p>Accompagnement pour aider à créer son site web soi-même, avec HTML/CSS ou CMS WordPress/PrestaShop.</p>
         </div>
 
         {{-- Picture --}}
         <div
             class="border-x-2 border-b-2 border-main overflow-hidden
-            sm:w-[512px] sm:h-[512px] max-w-72 w-full h-72 mx-auto"
+            sm:w-[512px] sm:h-[512px] sm:max-w-fit max-w-72 w-full h-72 mx-auto"
         >
             <picture class="block">
                 <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
@@ -47,7 +59,26 @@
         </div>
     </div>
 
-<!--     {{-- Bloc 1 : Name and stack --}}
+    {{-- CTA and social media --}}
+<!--     <div class="flex w-full justify-center gap-16 mt-4">
+        <x-social-media
+            class="fa-brands fa-github"
+            href="https://github.com/axel-paillaud"
+        >
+            GitHub
+        </x-social-media>
+        <x-social-media
+            class="fa-brands fa-linkedin"
+            href="https://www.linkedin.com/in/axel-paillaud/"
+        >
+            LinkedIn
+        </x-social-media>
+        <x-cta-link class="self-start" href="/assets/cv/AxelPaillaud.pdf">
+            télécharger mon cv
+        </x-cta-link>
+    </div> -->
+
+    <!--     {{-- Bloc 1 : Name and stack --}}
 
     <div class="flex flex-col gap-8 justify-evenly basis-1/3 order-2 xl:order-none">
         <div>
