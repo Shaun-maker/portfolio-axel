@@ -32,8 +32,7 @@ class ProfileController extends Controller
         $profile = Profile::first();
 
         $attributes = $request->validate([
-            'presentation.stack' => ['required'],
-            'presentation.location' => ['required']
+            'presentation.description' => ['required'],
         ]);
 
         if ($request->hasFile('presentation.image') &&
