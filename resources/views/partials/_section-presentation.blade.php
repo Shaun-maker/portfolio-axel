@@ -26,19 +26,7 @@
 
         {{-- Description --}}
         <div class="xl:pt-16 mx-auto xl:mx-0 sm:w-[512px] xl:w-auto w-72 max-w-[512px]">
-            <p><b>Axel Paillaud</b>, 30 ans.</p>
-            <p>
-                Développeur web indépendant sur Orléans,<br>
-                en région Centre-val de Loire.<br>
-                Mobile sur Paris, Tours, Blois.
-            </p>
-            <p>Plus de deux ans d'expérience an agence web.</p>
-            <br>
-            <p><b>Mes services</b></p>
-            <p>Création de site internet sur-mesure, site vitrine, portfolios...</p>
-            <p>Solution logicielle web sur-mesure.</p>
-            <p>Maintenance de site web WordPress ou PrestaShop déjà existant.</p>
-            <p>Accompagnement pour aider à créer son site web soi-même, avec HTML/CSS ou CMS WordPress/PrestaShop.</p>
+            {{ !! $profile->description !! }}
         </div>
 
         {{-- Picture --}}
