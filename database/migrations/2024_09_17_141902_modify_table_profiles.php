@@ -15,7 +15,7 @@ return new class extends Migration
             $table->dropColumn('stack');
             $table->dropColumn('location');
             $table->dropColumn('phone');
-            $table->text('introduction');
+            $table->text('introduction')->nullable();
         });
     }
 
