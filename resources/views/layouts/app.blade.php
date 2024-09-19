@@ -29,7 +29,7 @@
         <!-- End Matomo Code -->
 
     </head>
-    <body class="antialiased text-main relative overflow-hidden">
+    <body class="antialiased text-main relative">
         @include('partials._header')
 
         <main class="relative z-0">
