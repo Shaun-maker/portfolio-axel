@@ -13,9 +13,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    scroll-behavior: smooth;
-}
+
 
 @layer components {
     .filter-transition {
@@ -37,4 +35,12 @@ html {
     .modal::backdrop {
         background: rgba(15, 14, 14, 0.70);
     }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p {
+    margin: 16px 0;
 }

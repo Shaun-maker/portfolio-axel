@@ -5,9 +5,9 @@
         <label for="intro-title">
             Titre
         </label>
-        <input 
+        <input
             class="border border-main p-2"
-            id="intro-title" 
+            id="intro-title"
             name="intro[title]"
             value="{{ $profile->title }}"
         >
@@ -19,8 +19,8 @@
         <textarea
             class="border border-main p-2 h-32"
             id="intro-description"
-            name="intro[description]"
-        >{{ $profile->description }}</textarea>
+            name="intro[introduction]"
+        >{{ $profile->introduction }}</textarea>
     </div>
     <div class="flex flex-col gap-2">
         <label for="intro-available">

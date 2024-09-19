@@ -6,10 +6,10 @@
         <x-edit-button
             data-edit-button="intro"
             isAbsolute
-            class="top-40 right-6 sm:top-44 sm:right-14 lg:top-64 lg:right-24" 
+            class="top-40 right-6 sm:top-44 sm:right-14 lg:top-64 lg:right-24"
         />
     @endauth
-    <h2 id="js-split-text" 
+    <h2 id="js-split-text"
         class="text-5xl sm:text-8.5xl lg:w-4/5 ml-auto mb-20 flex justify-end gap-5 flex-wrap
         invisible"
     >
@@ -17,10 +17,10 @@
     </h2>
     <div class="flex gap-24">
         <img src="images/svg/arrow-down.svg" alt="" class="relative top-12" width="16" height="100">
-        <p class="sm:w-1/3 animate-fadeIn opacity-0" 
+        <p class="sm:w-1/3 animate-fadeIn opacity-0"
             style="animation-delay: 1s; animation-fill-mode: forwards;"
         >
-            {{ $profile->description }}
+            {{ $profile->introduction }}
         </p>
     </div>
     <p class="text-right mt-8 sm:m-0">Dispo. : {{ $profile->available->translatedFormat('M Y') }}</p>

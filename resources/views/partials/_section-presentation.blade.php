@@ -9,41 +9,29 @@
 {{-- top-[calc(100vh-650px)] --}}
 <section
     id="js-presentation"
-    class="flex flex-col xl:flex-row px-10 sm:px-32 pb-16 bg-light gap-8 relative
-     transition-all duration-[2000ms] ease-out top-[calc(100vh-650px)]"
+    class="px-6 pb-2 bg-light relative transition-all duration-[2000ms]
+    ease-out top-[calc(100vh-650px)]"
 >
 
-    @auth
-        <x-edit-button
+    {{-- Description and picture --}}
+    <div class="flex flex-col-reverse gap-16 sm:gap-24 xl:flex-row xl:gap-52 justify-center">
+
+        {{-- Description --}}
+        <div class="xl:pt-16 mx-auto xl:mx-0 sm:w-[512px] xl:w-auto w-72 max-w-[512px]">
+            {!! $profile->description !!}
+
+            @auth
+            <x-edit-button
             data-edit-button="presentation"
-            isAbsolute
-            class="text-base top-[296px] sm:top-[521px] horizontal-center"
+            class="text-base mt-4"
         />
-    @endauth
-
-    {{-- Bloc 1 : Name and stack --}}
-
-    <div class="flex flex-col gap-8 justify-evenly basis-1/3 order-2 xl:order-none">
-        <div>
-            <p class="mb-4">Axel Paillaud, <span class="whitespace-nowrap">29 ans.</span></p>
-            <h3>
-                {!! $profile->location !!}
-            </h3>
+            @endauth
         </div>
-        <h3>
-            {!! $profile->stack !!}
-        </h3>
-    </div>
 
-    {{-- Bloc 2 : Pictures and social media --}}
-
-    <div
-        class="flex basis-1/3 flex-col gap-16 order-1 xl:order-none items-center
-        "
-    >
+        {{-- Picture --}}
         <div
             class="border-x-2 border-b-2 border-main overflow-hidden
-            sm:w-[512px] sm:h-[512px] w-72 h-72"
+            sm:w-[512px] sm:h-[512px] sm:max-w-fit max-w-72 w-full h-72 mx-auto xl:mx-0"
         >
             <picture class="block">
                 <source srcset="{{ $profile->url_image_webp }}" type="image/webp">
@@ -55,46 +43,28 @@
                     class="block object-cover relative"
                 >
             </picture>
-            </div>
-        <div class="flex justify-evenly w-full">
+        </div>
+    </div>
+
+    {{-- CTA and social media --}}
+    <div class="flex w-full justify-center flex-col sm:flex-row gap-16 mt-32 mb-40 items-center">
+        <div class="flex gap-16">
             <x-social-media
-                class="fa-brands fa-github"
+                class="fa-brands fa-github group-hover:scale-110 transition"
                 href="https://github.com/axel-paillaud"
             >
                 GitHub
             </x-social-media>
             <x-social-media
-                class="fa-brands fa-linkedin"
+                class="fa-brands fa-linkedin group-hover:scale-110 transition"
                 href="https://www.linkedin.com/in/axel-paillaud/"
             >
                 LinkedIn
             </x-social-media>
         </div>
-    </div>
-
-    {{-- Bloc 3 : CTA button and geographic mobility --}}
-
-    <div
-        class="basis-1/3 flex flex-col-reverse xl:flex-col justify-evenly
-        items-end order-3 xl:order-none gap-16"
-    >
-        <x-cta-link class="self-start" href="/assets/cv/AxelPaillaud.pdf">
+        <x-cta-link href="/assets/cv/AxelPaillaud.pdf">
             télécharger mon cv
         </x-cta-link>
-        <div class="text-base">
-            <ul class="mb-4 flex flex-col gap-2 list-disc">
-                <li>Création de site internet sur-mesure, site vitrine, portfolios</li>
-                <li>Solution logicielle web sur-mesure</li>
-                <li>Maintenance de site web WordPress ou PrestaShop déjà existant</li>
-                <li>Accompagnement pour aider à créer son site web soi-même, avec HTML/CSS ou CMS WordPress/PrestaShop</li>
-            </ul>
-            <p class="mb-4">
-                Plus de deux ans d'expérience pro en agence web.
-            </p>
-            <p class="mb-4">
-                Formation OpenClassrooms Développeur web :<br>
-                BAC + 2 RNCP
-            </p>
-        </div>
     </div>
+
 </section>

@@ -34,7 +34,7 @@
             class="sm:text-3xl text-2xl uppercase text-center">
             {{ $project->title }}
         </h4>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col">
             {!! $project->description !!}
         </div>
         {{-- Start time and End time --}}

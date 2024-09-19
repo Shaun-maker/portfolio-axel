@@ -6,7 +6,7 @@ export default {
     "./resources/**/*.js",
     //"./resources/**/*.vue",
   ],
-  theme: { 
+  theme: {
     extend: {
       keyframes: {
         marquee: {
@@ -45,7 +45,7 @@ export default {
       },
       colors: {
         main: '#8f0f0f',
-        light: '#f3e5e0',
+        light: '#fff0f0',
       },
       fontSize: {
         '8.5xl': ['5.25rem', '1.15'],
