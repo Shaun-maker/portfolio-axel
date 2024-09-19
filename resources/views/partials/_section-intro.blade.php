@@ -16,8 +16,8 @@
         {{ $profile->title }}
     </h2>
     <div class="flex gap-24">
-        <img src="images/svg/arrow-down.svg" alt="" class="relative top-12" width="16" height="100">
-        <p class="sm:w-1/3 animate-fadeIn opacity-0"
+        <img src="images/svg/arrow-down.svg" alt="arrow down" width="16" height="100">
+        <p class="sm:w-1/3 animate-fadeIn opacity-0 m-0"
             style="animation-delay: 1s; animation-fill-mode: forwards;"
         >
             {{ $profile->introduction }}
