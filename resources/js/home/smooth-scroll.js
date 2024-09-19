@@ -12,3 +12,4 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+export { lenis };
